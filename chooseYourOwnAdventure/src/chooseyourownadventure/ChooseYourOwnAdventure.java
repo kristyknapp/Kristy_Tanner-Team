@@ -71,6 +71,7 @@ public class ChooseYourOwnAdventure {
         String rescueInfo = rescueOne.toString();
         System.out.println(rescueInfo);
         
+        
     }
     
 }
