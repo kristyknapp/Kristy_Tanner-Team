@@ -19,6 +19,8 @@ public class BeachScene implements Serializable{
     private String BeachScene;
     private double visited;
     private double notVisited;
+    private double healthPoints;
+    private double sleepPoints;
 
     public BeachScene() {
     }
@@ -32,11 +34,11 @@ public class BeachScene implements Serializable{
     }
 
     public double getNotVisited() {
-        return notvisited;
+        return notVisited;
     }
 
     public void setNotVisited(double Visited) {
-        this.notVisted = notVisited;
+        this.notVisited = notVisited;
     }
 
     public double getHealthPoints() {
