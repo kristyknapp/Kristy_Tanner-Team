@@ -19,7 +19,9 @@ public class CliffScene implements Serializable{
     private String CliffScene;
     private double visited;
     private double notVisited;
-
+    private double healthPoints;
+    private double sleepPoints;
+    
     public CliffScene() {
     }
     
@@ -32,7 +34,7 @@ public class CliffScene implements Serializable{
     }
 
     public double getNotVisited() {
-        return notvisited;
+        return notVisited;
     }
 
     public void setNotVisited(double Visited) {
