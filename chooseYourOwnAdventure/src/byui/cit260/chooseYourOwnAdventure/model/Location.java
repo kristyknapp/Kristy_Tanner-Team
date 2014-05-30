@@ -13,14 +13,15 @@ import java.util.Objects;
  *
  * @author tannerwoolstenhulme
  */
-public class SceneLocation implements Serializable{
+public class Location implements Serializable{
     
     //Class instance variables
     private String SceneLocation;
-    private double visited;
-    private double notVisited;
-
-    public SceneLocation() {
+    private String visited;
+    private String notVisited;
+    private double healthPoints;
+    
+    public Location() {
     }
     
         public String getVisited() {
@@ -31,12 +32,12 @@ public class SceneLocation implements Serializable{
         this.visited = visited;
     }
 
-    public double getNotVisited() {
-        return notvisited;
+    public String getNotVisited() {
+        return notVisited;
     }
 
-    public void setNotVisited(double Visited) {
-        this.notVisted = notVisited;
+    public void setNotVisited(String notVisited) {
+        this.notVisited = notVisited;
     }
 
     public double getHealthPoints() {
@@ -48,16 +49,12 @@ public class SceneLocation implements Serializable{
     }
 
     @Override
-    public String toString() {
-        return "SceneLocation{" + "visited=" + visited + ", sleepPoints=" + sleepPoints + ", healthPoints=" + healthPoints + '}';
-    }
-
-    @Override
     public int hashCode() {
         int hash = 5;
-        hash = 34 * hash + Objects.hashCode(this.name);
-        hash = 34 * hash + (int) (Double.doubleToLongBits(this.sleepPoints) ^ (Double.doubleToLongBits(this.sleepPoints) >>> 32));
-        hash = 34 * hash + (int) (Double.doubleToLongBits(this.healthPoints) ^ (Double.doubleToLongBits(this.healthPoints) >>> 32));
+        hash = 67 * hash + Objects.hashCode(this.SceneLocation);
+        hash = 67 * hash + Objects.hashCode(this.visited);
+        hash = 67 * hash + Objects.hashCode(this.notVisited);
+        hash = 67 * hash + (int) (Double.doubleToLongBits(this.healthPoints) ^ (Double.doubleToLongBits(this.healthPoints) >>> 32));
         return hash;
     }
 
@@ -69,11 +66,14 @@ public class SceneLocation implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final SceneLocation other = (SceneLocation) obj;
-        if (!Objects.equals(this.name, other.name)) {
+        final Location other = (Location) obj;
+        if (!Objects.equals(this.SceneLocation, other.SceneLocation)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.sleepPoints) != Double.doubleToLongBits(other.sleepPoints)) {
+        if (!Objects.equals(this.visited, other.visited)) {
+            return false;
+        }
+        if (!Objects.equals(this.notVisited, other.notVisited)) {
             return false;
         }
         if (Double.doubleToLongBits(this.healthPoints) != Double.doubleToLongBits(other.healthPoints)) {
@@ -81,6 +81,13 @@ public class SceneLocation implements Serializable{
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "Location{" + "SceneLocation=" + SceneLocation + ", visited=" + visited + ", notVisited=" + notVisited + ", healthPoints=" + healthPoints + '}';
+    }
+
+    
     
     
     

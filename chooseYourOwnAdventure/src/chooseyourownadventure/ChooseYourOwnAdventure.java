@@ -11,6 +11,7 @@ import byui.cit260.chooseYourOwnAdventure.model.Map;
 import byui.cit260.chooseYourOwnAdventure.model.Player;
 import byui.cit260.chooseYourOwnAdventure.model.Rescue;
 import byui.cit260.chooseYourOwnAdventure.model.Resources;
+import byui.cit260.chooseYourOwnAdventure.view.StartProgramView;
 
 /**
  *
@@ -18,60 +19,30 @@ import byui.cit260.chooseYourOwnAdventure.model.Resources;
  */
 public class ChooseYourOwnAdventure {
 
-    /**
-     * @param args the command line arguments
-     */
+    private static Game currentGame = null;
+    private static Player player = null;
+    
     public static void main(String[] args) {
-        Player playerOne = new Player();
-        
-        playerOne.setName("Kristy");
-        playerOne.setSleepPoints(28);
-        playerOne.setHealthPoints(30);
-        
-        String playerInfo = playerOne.toString();
-        System.out.println(playerInfo);
-        
-        
-        //Test code for the Game class
-        Game gameOne = new Game();
-        
-        gameOne.setDatePlayed("March 8");
-        gameOne.setTotalTime(50);
-        
-        String gameInfo = gameOne.toString();
-        System.out.println(gameInfo);
-        
-        
-        //Test code for the Map class
-        Map mapOne = new Map();
-        
-        mapOne.setNoRows(30);
-        mapOne.setNoColumns(20);
-        
-        String mapInfo = mapOne.toString();
-        System.out.println(mapInfo);
-        
-        //Test code for the Resources class
-        Resources resourcesOne = new Resources();
-        
-        resourcesOne.setResourcesCollected(9);
-        resourcesOne.setResourceType("water");
-        resourcesOne.setAmountRequired(10);
-        
-        String resourcesInfo = resourcesOne.toString();
-        System.out.println(resourcesInfo);
-        
-        //Test code for the Rescue Class
-        Rescue rescueOne = new Rescue();
-        
-        rescueOne.setRescueOptions("Create a Fire");
-        rescueOne.setEnergyAvailable(40);
-        rescueOne.setEnergyRequired(30);
-        
-        String rescueInfo = rescueOne.toString();
-        System.out.println(rescueInfo);
-        
-        
+       StartProgramView startProgramView = new StartProgramView();
+       startProgramView.startProgram();
     }
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        ChooseYourOwnAdventure.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        ChooseYourOwnAdventure.player = player;
+    }
+
+     
     
 }

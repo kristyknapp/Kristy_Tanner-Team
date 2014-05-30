@@ -12,15 +12,14 @@ package byui.cit260.chooseYourOwnAdventure.control;
  */
 public class PointsControl {
     
-    public double calcTotalPoints(double sleepPoints, double healthPoints) {
+    public double calcTotalPoints(double sleepPoints, double healthPoints){
         
-      if (sleepPoints < 0 || sleepPoints> 40) { // sleep points OUT OF RANGE?
+        if(sleepPoints < 0 || sleepPoints >40) { // sleep points OUT OF RANGE?
                 return -1;
-      }
-      
-      if (healthPoints < 0 || healthPoints > 60) { // health points OUT OF RANGE?
+        }
+        if(healthPoints < 0 || sleepPoints >60) { // health points OUT OF RANGE?
                 return -1;
-      }
+        }
         
         double totalPoints = sleepPoints + healthPoints;
         

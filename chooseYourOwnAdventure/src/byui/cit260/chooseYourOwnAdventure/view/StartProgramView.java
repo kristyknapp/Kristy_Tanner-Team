@@ -8,12 +8,13 @@ package byui.cit260.chooseYourOwnAdventure.view;
 
 import byui.cit260.chooseYourOwnAdventure.control.ProgramControl;
 import byui.cit260.chooseYourOwnAdventure.model.Player;
+import java.util.Scanner;
 
 /**
  *
  * @author Tanner
  */
-public class startProgram {
+public class StartProgramView {
     
     public void startProgram() {
 
