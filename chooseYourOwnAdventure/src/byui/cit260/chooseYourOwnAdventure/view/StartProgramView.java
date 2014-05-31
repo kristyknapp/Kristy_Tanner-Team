@@ -36,34 +36,28 @@ public class StartProgramView {
     MainMenuView mainMenuView = new MainMenuView();
     mainMenuView.displayMenu();
     
-    //IF no name was entered THEN
-   //     RETURN
-   // ENDIF
     
-    //Create a New Player
-    //DISPLAY a customized welcome message
-    //DISPLAY the main menu
     }
     public void displayBanner() {
-        System.out.println("\n\n*********************************");
-        System.out.println("*                                    *"
-                +"\n* This is Choose Your Own Adventure!        *"
-                +"\n* In this game, you will have to survive    *"
-                +"\n* on a deserted island and stay alive long  *"
-                +"\n* enough to be rescued from the island      *");
+        System.out.println("\n\n*********************************************");
+        System.out.println("\n*                                               *"
+                +"\n* This is Choose Your Own Adventure!            *"
+                +"\n* In this game, you will have to survive        *"
+                +"\n* on a deserted island and stay alive long      *"
+                +"\n* enough to be rescued from the island          *");
         
-        System.out.println("*                                      *"
-                + "You must collect resources around the island,"
-                + "and collect enough resources to be able to create"
-                + "a way to get off the island. Also, you must"
-                + "eat and sleep enough to keep going."
-                + "You will also have the options to look for other survivors,"
-                + "but you will have to provide for their health and rescue"
-                + "as well as your own.");
-        System.out.println("*                                      *"
-                + "\n* Good luck. We hope you can survive. *"
-                + "\n*                                      *");
-        System.out.println("****************************************");
+        System.out.println("*                                               *"
+                + "\n* You must collect resources around the island  *"
+                + "\n* and collect enough resources to be able to    *"
+                + "\n* create a way to get off the island. Also, you *"
+                + "\n* must eat and sleep enough to keep going. You  *"
+                + "\n* will also have the options to look for other  *"
+                + "\n* survivors, but you will have to provide for   *"
+                + "\n* their health and rescue as well as your own.  *");
+        System.out.println("*                                               *"
+                + "\n* Good luck. We hope you can survive.           *"
+                + "\n*                                               *");
+        System.out.println("***************************************************");
     }
      public String getPlayersName(){
         boolean valid = false; // indicates if the name has been retrieved
@@ -96,10 +90,10 @@ public class StartProgramView {
     }                  
 
     public void displayWelcomeMessage(Player player) {
-       System.out.println("\n\n==============================");
+       System.out.println("\n\n==============================================");
        System.out.println("\tWelcome to the game " + player.getName());
        System.out.println("\tWe hope you survive the night.");
-       System.out.println("==============================");
+       System.out.println("==================================================");
     }
 
-    }
+}

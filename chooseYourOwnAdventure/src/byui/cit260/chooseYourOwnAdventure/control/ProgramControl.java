@@ -6,6 +6,7 @@
 
 package byui.cit260.chooseYourOwnAdventure.control;
 
+import byui.cit260.chooseYourOwnAdventure.model.Game;
 import byui.cit260.chooseYourOwnAdventure.model.Player;
 import chooseyourownadventure.ChooseYourOwnAdventure;
 
@@ -23,6 +24,10 @@ public class ProgramControl {
         ChooseYourOwnAdventure.setPlayer(player); //save player
         
         return player;
+    }
+
+    public static void saveGame(Game currentGame) {
+        System.out.println("/n*** saveGame stub function called ***");
     }
     
 }

@@ -6,9 +6,9 @@
 
 package byui.cit260.chooseYourOwnAdventure.view;
 
-import byui.cit260.chooseYourOwnAdventure.model.Player;
+import byui.cit260.chooseYourOwnAdventure.control.ProgramControl;
 import chooseyourownadventure.ChooseYourOwnAdventure;
-import com.sun.corba.se.spi.orbutil.fsm.Input;
+import java.util.Scanner;
 
 /**
  *
@@ -30,20 +30,65 @@ public class MainMenuView {
         do {
             
             System.out.println(MENU); //display the main menu
+            
             String input = this.getInput();
             selection = input.charAt(0); //get the first character of the string
+            
             this.doAction(selection); //do action based on selection
         } while (selection != 'E'); //a selection is not "Exit"
-            
+        
+        
     }
-
-    private String getInput() {
-       System.out.println("*** getInput called ***");
-       Input input = new Input() {};
-       input.setInput(input);
-       return input;
-
-    private void doAction(char selection) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+           
+        public String getInput(){
+        boolean valid = false; // indicates if the value has been retrieved
+        String input = null;
+        Scanner keyboard = new Scanner(System.in); //keyboard input stream
+        
+      while (!valid) {//while a valid value has not been retrieved
+          //prompt for a value
+         System.out.println("Enter your selection below");
+         
+         //get the value from the keyboard and trim off the blanks
+         input = keyboard.nextLine();
+         input = input.trim();
+         
+         if (input.toUpperCase().equals("E")) { // Exit
+             return null;
+         }
+         
+         if (input.length() < 0) {
+             //display and error
+             System.out.println("Invalid value - the value cannot be blank");
+        }
+         else {
+             valid = true; //signal that valid input was entered
+         }
+      }
+      return input; //return the input.
+    }     
+    
+        public void doAction(char choice) {
+            switch (choice) {
+                case 'G': // display the game menu
+                    GameMenuView gameMenu = new GameMenuView();
+                    gameMenu.displayMenu();
+                    break;
+                case 'H': // display the help menu
+                    HelpMenuView helpMenu = new HelpMenuView();
+                    helpMenu.displayMenu();
+                    break;
+                case 'S': //save the current game to disk
+                    ProgramControl.saveGame(ChooseYourOwnAdventure.getCurrentGame());
+                    break;
+                case 'E': // Exit the program
+                    System.exit(0); 
+                default:
+                    System.out.println("/n*** Invalid selection *** Try again");
+                    break;
+                    
+            } 
+        }
+       
 }
+
