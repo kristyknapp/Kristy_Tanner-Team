@@ -53,10 +53,6 @@ public class MainMenuView {
          input = keyboard.nextLine();
          input = input.trim();
          
-         if (input.toUpperCase().equals("E")) { // Exit
-             return null;
-         }
-         
          if (input.length() < 0) {
              //display and error
              System.out.println("Invalid value - the value cannot be blank");

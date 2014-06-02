@@ -33,7 +33,7 @@ public class HelpMenuView {
             String input = this.getInput();
             selection = input.charAt(0); //get the first character of the string
             this.doAction(selection); //do action based on selection
-        } while (selection != 'Q'); //a selection is not "Exit"
+        } while (selection != 'E'); //a selection is not "Exit"
         
         
     }
@@ -51,10 +51,7 @@ public class HelpMenuView {
          input = keyboard.nextLine();
          input = input.trim();
          
-         if (input.toUpperCase().equals("E")) { // Quit
-             return null;
-         }
-         
+        
          if (input.length() < 0) {
              //display and error
              System.out.println("Invalid value - the value cannot be blank");
