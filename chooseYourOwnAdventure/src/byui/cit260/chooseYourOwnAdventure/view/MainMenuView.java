@@ -78,7 +78,7 @@ public class MainMenuView {
                     ProgramControl.saveGame(ChooseYourOwnAdventure.getCurrentGame());
                     break;
                 case 'E': // Exit the program
-                    System.exit(0); 
+                    return; 
                 default:
                     System.out.println("/n*** Invalid selection *** Try again");
                     break;
