@@ -67,8 +67,8 @@ public class MainMenuView {
         public void doAction(char choice) {
             switch (choice) {
                 case 'G': // display the game menu
-                    GameMenuView gameMenu = new GameMenuView();
-                    gameMenu.displayMenu();
+                    IntroChoiceView introChoice = new IntroChoiceView();
+                    introChoice.displayMenu();
                     break;
                 case 'H': // display the help menu
                     HelpMenuView helpMenu = new HelpMenuView();

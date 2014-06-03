@@ -16,7 +16,7 @@ import java.util.Objects;
 public class Location implements Serializable{
     
     //Class instance variables
-    private String SceneLocation;
+    private String Location;
     private String visited;
     private String notVisited;
     private double healthPoints;
@@ -48,10 +48,21 @@ public class Location implements Serializable{
         this.healthPoints = healthPoints;
     }
 
+    public String getLocation() {
+        return Location;
+    }
+
+    public void setLocation(String Location) {
+        this.Location = Location;
+    }
+    
+    
+    
+
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 67 * hash + Objects.hashCode(this.SceneLocation);
+        hash = 67 * hash + Objects.hashCode(this.Location);
         hash = 67 * hash + Objects.hashCode(this.visited);
         hash = 67 * hash + Objects.hashCode(this.notVisited);
         hash = 67 * hash + (int) (Double.doubleToLongBits(this.healthPoints) ^ (Double.doubleToLongBits(this.healthPoints) >>> 32));
@@ -67,7 +78,7 @@ public class Location implements Serializable{
             return false;
         }
         final Location other = (Location) obj;
-        if (!Objects.equals(this.SceneLocation, other.SceneLocation)) {
+        if (!Objects.equals(this.Location, other.Location)) {
             return false;
         }
         if (!Objects.equals(this.visited, other.visited)) {
@@ -84,11 +95,8 @@ public class Location implements Serializable{
 
     @Override
     public String toString() {
-        return "Location{" + "SceneLocation=" + SceneLocation + ", visited=" + visited + ", notVisited=" + notVisited + ", healthPoints=" + healthPoints + '}';
+        return "Location{" + "SceneLocation=" + Location + ", visited=" + visited + ", notVisited=" + notVisited + ", healthPoints=" + healthPoints + '}';
     }
 
-    
-    
-    
     
 }

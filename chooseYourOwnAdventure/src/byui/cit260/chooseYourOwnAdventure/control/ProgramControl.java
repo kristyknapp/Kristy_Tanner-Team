@@ -7,8 +7,10 @@
 package byui.cit260.chooseYourOwnAdventure.control;
 
 import byui.cit260.chooseYourOwnAdventure.model.Game;
+import byui.cit260.chooseYourOwnAdventure.model.Location;
 import byui.cit260.chooseYourOwnAdventure.model.Player;
 import chooseyourownadventure.ChooseYourOwnAdventure;
+import java.awt.Choice;
 
 /**
  *
@@ -29,5 +31,17 @@ public class ProgramControl {
     public static void saveGame(Game currentGame) {
         System.out.println("/n*** saveGame stub function called ***");
     }
+
+    public static Location createLocation(String locationChoice) {
+         System.out.println("\n**** createLocation function called ****");
+         Location location = new Location();
+         location.setLocation(locationChoice);
+         
+         ChooseYourOwnAdventure.setLocation(location); //save Location
+         
+         return location;
+    }
+    
+  
     
 }
