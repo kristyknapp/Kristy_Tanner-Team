@@ -39,8 +39,8 @@ public class StartProgramView {
     
     }
     public void displayBanner() {
-        System.out.println("\n\n*********************************************");
-        System.out.println("\n*                                               *"
+        System.out.println("\n\n*************************************************");
+        System.out.println("*                                               *"
                 +"\n* This is Choose Your Own Adventure!            *"
                 +"\n* In this game, you will have to survive        *"
                 +"\n* on a deserted island and stay alive long      *"
@@ -57,7 +57,7 @@ public class StartProgramView {
         System.out.println("*                                               *"
                 + "\n* Good luck. We hope you can survive.           *"
                 + "\n*                                               *");
-        System.out.println("***************************************************");
+        System.out.println("*************************************************");
     }
      public String getPlayersName(){
         boolean valid = false; // indicates if the name has been retrieved
@@ -93,7 +93,7 @@ public class StartProgramView {
        System.out.println("\n\n==============================================");
        System.out.println("\tWelcome to the game " + player.getName());
        System.out.println("\tWe hope you survive the night.");
-       System.out.println("==================================================");
+       System.out.println("==============================================");
     }
 
 }

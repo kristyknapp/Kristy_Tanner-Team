@@ -18,8 +18,37 @@ public class Game implements Serializable{
     //class instance variables
     private double totalTime;
     private String datePlayed;
+    private Resources[] resources;
+    private Rescue[] rescue;
+    private Map map;
+        
 
     public Game() {
+    }
+    
+    public Resources[] getResources() {
+        return resources;
+    }
+
+    public void setResources(Resources[] resources) {
+        this.resources = resources;
+    }
+
+    public Rescue[] getRescue() {
+        return rescue;
+    }
+
+    public void setRescue(Rescue[] rescue) {
+        this.rescue = rescue;
+    }
+    
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
     }
 
     public double getTotalTime() {

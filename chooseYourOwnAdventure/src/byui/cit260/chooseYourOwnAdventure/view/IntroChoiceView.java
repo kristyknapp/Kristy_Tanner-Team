@@ -27,8 +27,10 @@ public class IntroChoiceView {
         
         //get the player's choice
          String locationChoice = this.getLocationChoice();
+         
          if (locationChoice == null) //user wants to quit
         return; //Exit the game
+         
     
         //create the plater object and save it in the ProgramControl class
         Location location = ProgramControl.createLocation(locationChoice);
@@ -37,8 +39,8 @@ public class IntroChoiceView {
         GameMenuView gameMenuView = new GameMenuView();
         gameMenuView.displayMenu();
 
+    
     }
-
     
        
     public void displayIntro() {
@@ -58,7 +60,7 @@ public class IntroChoiceView {
                 + "\n----- \t\tYour first choice           -----"
                 + "\n--   What's left of your plane is on the beach --"
                 + "\n--   Will you...                               --"
-                + "\n--   Stay on the beach or Move to the cliffs?  --"
+                + "\n--   beach or cliffs?  --"
                 + "\n\n-------------------------------------------------");
         
         }
@@ -69,23 +71,25 @@ public class IntroChoiceView {
         String locationChoice = null;
         Scanner keyboard = new Scanner(System.in); //keyboard input stream
         
-      while (!valid) {//while a valid choice has not been retrieved
+        while (!valid) {//while a valid choice has not been retrieved
           //prompt for the players choice
          System.out.println("Enter your choice below:");
          
          //get the name from the keyboard and trim off the blanks
          locationChoice = keyboard.nextLine();
          locationChoice = locationChoice.trim();
+         locationChoice = locationChoice.toLowerCase();
+        
          
          if (locationChoice.toUpperCase().equals("Q")) { //Quitting?
              return null;
          }
-                 
-         if (locationChoice.length() < 2) {
-             //display an error
+         
+         if (!locationChoice.equals("beach") && !locationChoice.equals("cliffs")) {
              System.out.println("Invalid choice - the choice cannot be blank");
-                                       
          }
+                            
+         
          else {
              valid = true; //signal that a valid choice was entered
          }

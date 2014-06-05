@@ -31,7 +31,6 @@ public class GameMenuView {
             +"\n-------------------------------------------";
     
     public void displayMenu(){
-        System.out.println("*** GameMenu displayMenu stub function called ***");
         
         char selection = ' ';
         do {
