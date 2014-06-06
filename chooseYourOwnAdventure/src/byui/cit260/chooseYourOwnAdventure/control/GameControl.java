@@ -7,7 +7,7 @@
 package byui.cit260.chooseYourOwnAdventure.control;
 
 import byui.cit260.chooseYourOwnAdventure.model.Game;
-import byui.cit260.chooseYourOwnAdventure.model.Location;
+import byui.cit260.chooseYourOwnAdventure.model.Map;
 import byui.cit260.chooseYourOwnAdventure.model.Player;
 import byui.cit260.chooseYourOwnAdventure.model.Rescue;
 import byui.cit260.chooseYourOwnAdventure.model.Resources;
@@ -55,8 +55,8 @@ public class GameControl {
     ChooseYourOwnAdventure.setCurrentGame(game);
     
     GameControl.game.setResources(GameControl.createResourcesList()); // create the resources list
-    GameControl.createRescue(); // create the rescue list
-    GameControl.createMap(); // create and initialize the map
+    GameControl.game.setRescue(GameControl.createRescue()); // create the rescue list
+    GameControl.game.setMap(GameControl.createMap()); // create and initialize the map
     
     // move player to starting position
     MapControl.moveActorToLocation(0,3);
@@ -107,11 +107,10 @@ public static void startSavedGame() {
         sleep.setRequiredAmount(0);
         resources [GameControl.SLEEP] = sleep;
         
-        return resources;
-        
+        return resources; 
     }
 
-    private static void createRescue() {
+    private static Rescue[] createRescue() {
         Rescue[] rescue = new Rescue[GameControl.NUMBER_OF_RESCUE_OPTIONS];
         
         Rescue fire = new Rescue();
@@ -138,14 +137,31 @@ public static void startSavedGame() {
         message.setRequiredAmount(0);
         rescue [GameControl.MESSAGE] = message;
         
+        return rescue;
         
     }
     
+    
+    
 
-    private static void createMap() {
-     // Location[][] map = new Location[Constants.MAP_ROW_COUNT][Constants.MAP_COLUMN_COUNT];
-        Location location = new Location();
+    private static Map createMap() {
+    
+        Map map = new Map(2,2);
         
+        //assign scenes to locations in map
+        return map;
+         
     }
+    
+    /*assign scenes to locations in map
+    RegularScene cliffScene = new RegularScene();
+    cliffScene.setDescription{
+            "\nThis is a tall cliff, you can not climb over the cliff."
+            +"\nYou will have to go another way.");
+    CliffScene.setMapSymbol(" || ");
+    cliffScene.setBlocked(true);
+    cliffScene.setTravelTime(Double.POSITIVE_INFINITY);
+    locations[2][1].setScene[cliffScene); //assign scene to location
+    */
     
 }
