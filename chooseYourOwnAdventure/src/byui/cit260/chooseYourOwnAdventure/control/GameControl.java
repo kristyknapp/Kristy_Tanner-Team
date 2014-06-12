@@ -60,6 +60,7 @@ public class GameControl {
     GameControl.game.setResources(GameControl.createResourcesList()); // create the resources list
     GameControl.game.setRescue(GameControl.createRescue()); // create the rescue list
     GameControl.game.setMap(MapControl.createBeachMap()); // create and initialize the map
+        
 
 }
 
@@ -120,21 +121,13 @@ public static void startSavedGame() {
         Resource[] createResourcesList = ChooseYourOwnAdventure.getCurrentGame().getResources();
         
         //sort the inventory list
-        GameControl.sortResources(createResourcesList);
+        GameControl.sortedResources(createResourcesList);
         
         return createResourcesList;
 }
+
     
-        
-    public void displaySortedResources(Resource[] resources) {
-         //display the sorted Resources
-        sortResources(resources);
-        for (Resource resource : resources) {
-        System.out.println(resource);
-        }
-    }
-    
-    public static void sortResources(Resource[] resources) {
+    public static Resource[] sortedResources(Resource[] resources) {
         
         // using an exchange sort to put the list of Resources in alphabetical order.
         int i, j;
@@ -143,14 +136,14 @@ public static void startSavedGame() {
         for (i = 0; i<resources.length-1; i++) {
             for (j = i+ 1; j < resources.length; j++) {
                         //ascending sort
-                if (resources[i].getResourceType().compareToIgnoreCase(resources[j].getResourceType()) > 0) {
+                if (resources[i].getDescription().compareToIgnoreCase(resources[j].getDescription()) > 0) {
                     temp = resources[i];
                     resources[i] = resources[j]; //swapping
                     resources[j] = temp;
                 }
             }
         }
-    
+        return resources;
     }
 
     private static Rescue[] createRescue() {
@@ -190,7 +183,11 @@ public static void startSavedGame() {
         
     }
 
-        
+    public static Location[][] getMapLocations() {
+        return ChooseYourOwnAdventure.getCurrentGame().getMap().getLocations();
+    }
+
+     
 }
     
 

@@ -76,7 +76,7 @@ public class HelpMenuView {
                     break;
                 case 'R': //display the different resources
                     ResourcesView resourcesView = new ResourcesView();
-                    resourcesView.displayMenu();
+                    resourcesView.displayResources();
                     break;
                 case 'E': // Exit the program
                     return; 

@@ -115,7 +115,7 @@ public class MapControl {
         
         location = new Location("Shelter");
         
-        resources = new Resource[3];
+        resources = new Resource[4];
         
         resources[0] = resourceList[GameControl.FOOD];
         resources[1] = resourceList[GameControl.WATER];

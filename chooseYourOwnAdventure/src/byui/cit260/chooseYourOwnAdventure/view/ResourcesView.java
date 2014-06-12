@@ -15,8 +15,20 @@ import byui.cit260.chooseYourOwnAdventure.model.Resource;
  */
 public class ResourcesView {
 
-    public void displayMenu() {
-        GameControl.getSortedResources();
+    public void displayResources() {
+         Resource[] resources = GameControl.getSortedResources();
+         
+         System.out.println("\nList of Resources");
+         System.out.println("Description" + "\t" + "Required" + "\t" + "In Stock");
+         
+         for (Resource collectResources : resources) {
+             // DISPLAY the description, the required amount and amount in stock
+             System.out.println(collectResources.getDescription() + "\t" +
+                                collectResources.getRequiredAmount() + "\t" +
+                                collectResources.getQuantityInStock());
+                     
+        }
+     
     }
 
     
