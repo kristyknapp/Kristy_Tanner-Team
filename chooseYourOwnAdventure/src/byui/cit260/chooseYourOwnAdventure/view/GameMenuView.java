@@ -6,7 +6,12 @@
 
 package byui.cit260.chooseYourOwnAdventure.view;
 
+import byui.cit260.chooseYourOwnAdventure.control.GameControl;
+import byui.cit260.chooseYourOwnAdventure.control.MapControl;
 import byui.cit260.chooseYourOwnAdventure.control.ProgramControl;
+import byui.cit260.chooseYourOwnAdventure.model.Location;
+import byui.cit260.chooseYourOwnAdventure.model.Map;
+import byui.cit260.chooseYourOwnAdventure.model.Resource;
 import chooseyourownadventure.ChooseYourOwnAdventure;
 import java.util.Scanner;
 
@@ -83,6 +88,7 @@ public class GameMenuView {
                 case 'R': // collect resources
                     CollectResources collectResources = new CollectResources();
                     collectResources.displayMenu();
+                    this.collectResources();
                     break;
                 case 'O': // rescue options
                     RescueOptions rescueOptions = new RescueOptions();
@@ -107,5 +113,43 @@ public class GameMenuView {
                     
             } 
         }
+     
+     private int collectResources() {
+         Resource[] resources = GameControl.getSortedResources();
+         
+         System.out.println("\nList of Resources");
+         System.out.println("Description" + "\t" + "Required" + "\t" + "In Stock");
+         
+         for (Resource collectResources : resources) {
+             System.out.println(collectResources.getResourceType() + "\t" +
+                                collectResources.getRequiredAmount() + "\t" +
+                                collectResources.getResourcesCollected());
+         }
+         return 0;
+     }
+     
+ /*    public void displayMap() {
+         //get the map for the game
+         Location[] locations = MapControl.get();
+         
+         //display every location in the map
+        for (int row = 0; row < arr.length; row++) {
+            
+            
+            
+             for (int column = 0; i < locations[row].length; i++) {
+                 Location location = locations[row][column];
+                 if (location.isVisited()) {  // if location is visited 
+                     Scene scene = location.getScene();
+                     System.out.println(scene.getMapSymbol());
+                 }
+                 else {
+                     System.out.println(" ?? ");
+                 }
+             }
+              System.out.println("!"); //print last colum divider   
+             }
+     }
+*/
     
 }

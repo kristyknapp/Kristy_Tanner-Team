@@ -6,14 +6,18 @@
 
 package byui.cit260.chooseYourOwnAdventure.view;
 
+import byui.cit260.chooseYourOwnAdventure.control.GameControl;
+import byui.cit260.chooseYourOwnAdventure.model.Resource;
+
 /**
  *
  * @author kristyknapp
  */
-class ResourcesView {
+public class ResourcesView {
 
     public void displayMenu() {
-        System.out.println("*** ResourcesView displayMenu stub function called ***");
+        GameControl.getSortedResources();
     }
+
     
 }

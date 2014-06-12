@@ -19,8 +19,35 @@ public class Rescue implements Serializable{
     private String rescueOptions;
     private double energyAvailable;
     private double energyRequired;
+    private String description;
+    private double quantityInStock;
+    private double requiredAmount;
 
     public Rescue() {
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    
+    public double getQuantityInStock() {
+        return quantityInStock;
+    }
+
+    public void setQuantityInStock(double quantityInStock) {
+        this.quantityInStock = quantityInStock;
+    }
+
+    public double getRequiredAmount() {
+        return requiredAmount;
+    }
+
+    public void setRequiredAmount(double requiredAmount) {
+        this.requiredAmount = requiredAmount;
     }
     
     
@@ -83,19 +110,6 @@ public class Rescue implements Serializable{
         }
         return true;
     }
-
-    public void setDescription(String fire) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void setQuantityInStock(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void setRequiredAmount(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
     
     
 }

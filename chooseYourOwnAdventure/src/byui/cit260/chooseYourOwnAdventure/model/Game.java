@@ -16,21 +16,30 @@ import java.util.Objects;
 public class Game implements Serializable{
     
     //class instance variables
+    private Player player;
     private double totalTime;
     private String datePlayed;
-    private Resources[] resources;
+    private Resource[] resources;
     private Rescue[] rescue;
     private Map map;
         
 
     public Game() {
     }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
     
-    public Resources[] getResources() {
+    public Resource[] getResources() {
         return resources;
     }
 
-    public void setResources(Resources[] resources) {
+    public void setResources(Resource[] resources) {
         this.resources = resources;
     }
 

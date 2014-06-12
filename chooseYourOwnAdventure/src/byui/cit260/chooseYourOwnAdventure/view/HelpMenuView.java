@@ -6,6 +6,7 @@
 
 package byui.cit260.chooseYourOwnAdventure.view;
 
+import byui.cit260.chooseYourOwnAdventure.model.Resource;
 import static java.awt.SystemColor.MENU;
 import java.util.Scanner;
 

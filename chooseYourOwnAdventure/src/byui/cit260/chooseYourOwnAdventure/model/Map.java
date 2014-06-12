@@ -23,6 +23,20 @@ public class Map implements Serializable{
 
     public Map() {
     }
+    
+    public Map(int noOfRows, int noOfColumns) {
+        if (noOfRows < 1 || noOfColumns < 1) {
+            System.out.println("The number of rows and columns must be > zero");
+            return;
+        }
+        
+        this.noOfRows = noOfRows;
+        this.noOfColumns = noOfColumns;
+        
+        //create 2-D array for location objects
+        this.locations = new Location[noOfRows][noOfColumns];
+        
+    }
 
     public int getNoOfRows() {
         return noOfRows;
@@ -79,35 +93,8 @@ public class Map implements Serializable{
             return false;
         }
         return true;
-    }
-    
-    public Map(int noOfRows, int noOfColumns) {
-        if (noOfRows < 1 || noOfColumns < 1) {
-            System.out.println("The number of rows and columns must be > zero");
-        }
-        
-        this.noOfRows = noOfRows;
-        this.noOfColumns = noOfColumns;
-        
-        //Create 2-D array fro location objects
-        this.locations = new Location[noOfRows][noOfColumns];
-        
-        for (int row = 0; row < noOfRows; row++) {
-            for (int column = 0; column <noOfColumns; column++) {
-                //create and initialize new location object instance
-                Location location = new Location();
-                location.setnoColumns(column);
-                location.setnoOfRows(row);
-                location.setVisited(false);
-                
-                //assign the location object to the current position in array
-                locations [row][column] = location;
-                
-            }
-        }
-        
-        
-    }
+    }  
+ }
     
     
-}
+

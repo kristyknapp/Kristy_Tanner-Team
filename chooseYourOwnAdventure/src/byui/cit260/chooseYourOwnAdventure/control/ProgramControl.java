@@ -10,7 +10,6 @@ import byui.cit260.chooseYourOwnAdventure.model.Game;
 import byui.cit260.chooseYourOwnAdventure.model.Location;
 import byui.cit260.chooseYourOwnAdventure.model.Player;
 import chooseyourownadventure.ChooseYourOwnAdventure;
-import java.awt.Choice;
 
 /**
  *
@@ -33,14 +32,15 @@ public class ProgramControl {
     }
 
     public static Location createLocation(String locationChoice) {
-         System.out.println("\n**** createLocation function called ****");
-         Location location = new Location();
-         location.setLocation(locationChoice);
-         
-         ChooseYourOwnAdventure.setLocation(location); //save Location
-         
-         return location;
+        System.out.println("/n*** createLocation stub function called");
+        Location location = new Location();
+        location.setDescription(locationChoice);
+        
+        ChooseYourOwnAdventure.setLocation(location); //save location
+        
+        return location;
     }
+
     
   
     

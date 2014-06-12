@@ -11,7 +11,7 @@ import byui.cit260.chooseYourOwnAdventure.model.Location;
 import byui.cit260.chooseYourOwnAdventure.model.Map;
 import byui.cit260.chooseYourOwnAdventure.model.Player;
 import byui.cit260.chooseYourOwnAdventure.model.Rescue;
-import byui.cit260.chooseYourOwnAdventure.model.Resources;
+import byui.cit260.chooseYourOwnAdventure.model.Resource;
 import byui.cit260.chooseYourOwnAdventure.view.StartProgramView;
 
 /**

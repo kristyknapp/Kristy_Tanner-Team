@@ -7,10 +7,11 @@
 package byui.cit260.chooseYourOwnAdventure.control;
 
 import byui.cit260.chooseYourOwnAdventure.model.Game;
+import byui.cit260.chooseYourOwnAdventure.model.Location;
 import byui.cit260.chooseYourOwnAdventure.model.Map;
 import byui.cit260.chooseYourOwnAdventure.model.Player;
 import byui.cit260.chooseYourOwnAdventure.model.Rescue;
-import byui.cit260.chooseYourOwnAdventure.model.Resources;
+import byui.cit260.chooseYourOwnAdventure.model.Resource;
 import chooseyourownadventure.ChooseYourOwnAdventure;
 
 /**
@@ -22,24 +23,23 @@ import chooseyourownadventure.ChooseYourOwnAdventure;
 
 public class GameControl {
     
-        private static Game game;
-        public final static int NUMBER_OF_RESOURCE_ITEMS = 5;
+        public static Game game;
+        
+        public final static int NUMBER_OF_RESOURCE_ITEMS = 7;
         public final static int FOOD = 0;
         public final static int WATER = 1;
         public final static int LOGS = 2;
         public final static int ROCKS = 3;
         public final static int VINES = 4;
         public final static int SLEEP = 5;
+        public final static int SURVIVORS = 6;
         
-        public final static int NUMBER_OF_RESCUE_OPTIONS = 4;
+        public final static int NUMBER_OF_RESCUE_OPTIONS = 5;
         public final static int FIRE = 0;
         public final static int PLANE = 1;
-        public final static int RAFT = 2;
+        public final static int BUILD_RAFT = 2;
         public final static int MESSAGE = 3;
-
-        public final static int MAP_ROW_COUNT = 0;
-        public final static int MAP_COLUMN_COUNT = 1;
-    
+        public final static int LAUNCH_RAFT = 4;
 
     
     public static Game getGame() {
@@ -54,13 +54,13 @@ public class GameControl {
     // save as current game
     ChooseYourOwnAdventure.setCurrentGame(game);
     
+    //set (save) the player in the game object
+    GameControl.game.setPlayer(ChooseYourOwnAdventure.getPlayer());
+    
     GameControl.game.setResources(GameControl.createResourcesList()); // create the resources list
     GameControl.game.setRescue(GameControl.createRescue()); // create the rescue list
-    GameControl.game.setMap(GameControl.createMap()); // create and initialize the map
-    
-    // move player to starting position
-    MapControl.moveActorToLocation(0,3);
-    
+    GameControl.game.setMap(MapControl.createBeachMap()); // create and initialize the map
+
 }
 
 public static void startSavedGame() {
@@ -68,46 +68,89 @@ public static void startSavedGame() {
     System.out.println("\n*** Calling startSavedGame stub function ***");
 }
 
-    private static Resources[] createResourcesList() {
-        Resources[] resources = new Resources[GameControl.NUMBER_OF_RESOURCE_ITEMS];
+    private static Resource[] createResourcesList() {
+        Resource[] resources = new Resource[GameControl.NUMBER_OF_RESOURCE_ITEMS];
         
-        Resources food = new Resources();
+        Resource food = new Resource();
         food.setDescription("name");
         food.setQuantityInStock(0);
         food.setRequiredAmount(0);
         resources [GameControl.FOOD] = food;
         
-        Resources water = new Resources();
+        Resource water = new Resource();
         water.setDescription("water");
         water.setQuantityInStock(0);
         water.setRequiredAmount(0);
         resources [GameControl.WATER] = water;
         
-        Resources logs = new Resources();
+        Resource logs = new Resource();
         logs.setDescription("logs");
         logs.setQuantityInStock(0);
         logs.setRequiredAmount(0);
         resources [GameControl.LOGS] = logs;
         
-        Resources rocks = new Resources();
+        Resource rocks = new Resource();
         rocks.setDescription("name");
         rocks.setQuantityInStock(0);
         rocks.setRequiredAmount(0);
         resources [GameControl.ROCKS] = rocks;
         
-        Resources vines = new Resources();
+        Resource vines = new Resource();
         vines.setDescription("vines");
         vines.setQuantityInStock(0);
         vines.setRequiredAmount(0);
         resources [GameControl.VINES] = vines;
         
-        Resources sleep = new Resources();
+        Resource sleep = new Resource();
         sleep.setDescription("sleep");
         sleep.setQuantityInStock(0);
         sleep.setRequiredAmount(0);
         resources [GameControl.SLEEP] = sleep;
         
+        Resource survivors = new Resource();
+        survivors.setDescription("survivors");
+        survivors.setQuantityInStock(0);
+        survivors.setRequiredAmount(0);
+        resources [GameControl.SURVIVORS] = survivors;
+        
         return resources; 
+    }
+    
+    public static Resource[] getSortedResources() {
+        Resource[] createResourcesList = ChooseYourOwnAdventure.getCurrentGame().getResources();
+        
+        //sort the inventory list
+        GameControl.sortResources(createResourcesList);
+        
+        return createResourcesList;
+}
+    
+        
+    public void displaySortedResources(Resource[] resources) {
+         //display the sorted Resources
+        sortResources(resources);
+        for (Resource resource : resources) {
+        System.out.println(resource);
+        }
+    }
+    
+    public static void sortResources(Resource[] resources) {
+        
+        // using an exchange sort to put the list of Resources in alphabetical order.
+        int i, j;
+        Resource temp;
+        
+        for (i = 0; i<resources.length-1; i++) {
+            for (j = i+ 1; j < resources.length; j++) {
+                        //ascending sort
+                if (resources[i].getResourceType().compareToIgnoreCase(resources[j].getResourceType()) > 0) {
+                    temp = resources[i];
+                    resources[i] = resources[j]; //swapping
+                    resources[j] = temp;
+                }
+            }
+        }
+    
     }
 
     private static Rescue[] createRescue() {
@@ -129,7 +172,7 @@ public static void startSavedGame() {
         raft.setDescription("raft");
         raft.setQuantityInStock(0);
         raft.setRequiredAmount(0);
-        rescue [GameControl.RAFT] = raft;
+        rescue [GameControl.BUILD_RAFT] = raft;
         
         Rescue message = new Rescue();
         message.setDescription("message");
@@ -137,31 +180,17 @@ public static void startSavedGame() {
         message.setRequiredAmount(0);
         rescue [GameControl.MESSAGE] = message;
         
+        Rescue launch = new Rescue();
+        launch.setDescription("Launch Raft");
+        launch.setQuantityInStock(0);
+        launch.setRequiredAmount(0);
+        rescue [GameControl.LAUNCH_RAFT] = launch;
+        
         return rescue;
         
     }
-    
-    
+
+        
+}
     
 
-    private static Map createMap() {
-    
-        Map map = new Map(2,2);
-        
-        //assign scenes to locations in map
-        return map;
-         
-    }
-    
-    /*assign scenes to locations in map
-    RegularScene cliffScene = new RegularScene();
-    cliffScene.setDescription{
-            "\nThis is a tall cliff, you can not climb over the cliff."
-            +"\nYou will have to go another way.");
-    CliffScene.setMapSymbol(" || ");
-    cliffScene.setBlocked(true);
-    cliffScene.setTravelTime(Double.POSITIVE_INFINITY);
-    locations[2][1].setScene[cliffScene); //assign scene to location
-    */
-    
-}

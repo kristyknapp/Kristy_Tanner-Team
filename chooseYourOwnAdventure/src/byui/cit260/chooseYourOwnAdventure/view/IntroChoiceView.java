@@ -32,7 +32,7 @@ public class IntroChoiceView {
         return; //Exit the game
          
     
-        //create the plater object and save it in the ProgramControl class
+        //create the player object and save it in the ProgramControl class
         Location location = ProgramControl.createLocation(locationChoice);
         
         //Display the Game Menu

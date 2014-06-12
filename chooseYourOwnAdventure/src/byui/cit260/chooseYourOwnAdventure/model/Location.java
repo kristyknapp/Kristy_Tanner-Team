@@ -16,82 +16,64 @@ import java.util.Objects;
 public class Location implements Serializable{
     
     //Class instance variables
-    private String Location;
-    private boolean visited;
-    private double healthPoints;
+    private int row;
+    private int column;
+    private Resource[] resources;
+    private Rescue[] rescue;
+    private String description;
     
     public Location() {
     }
 
-    public boolean isVisited() {
-        return visited;
-    }
-
-    public void setVisited(boolean visited) {
-        this.visited = visited;
-    }
-
-    public double getHealthPoints() {
-        return healthPoints;
-    }
-
-    public void setHealthPoints(double healthPoints) {
-        this.healthPoints = healthPoints;
-    }
-
-    public String getLocation() {
-        return Location;
-    }
-
-    public void setLocation(String Location) {
-        this.Location = Location;
+    public Location(String description) {
+        this.description = description;
     }
     
     
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    
+    public int getRow() {
+        return row;
+    }
+
+    public void setRow(int row) {
+        this.row = row;
+    }
+
+    public int getColumn() {
+        return column;
+    }
+
+    public void setColumn(int column) {
+        this.column = column;
+    }
+
+    public Resource[] getResources() {
+        return resources;
+    }
+
+    public void setResources(Resource[] resources) {
+        this.resources = resources;
+    }
+
+    public Rescue[] getRescue() {
+        return rescue;
+    }
+
+    public void setRescue(Rescue[] rescue) {
+        this.rescue = rescue;
+    }
+    
     
 
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 67 * hash + Objects.hashCode(this.Location);
-        hash = 67 * hash + Objects.hashCode(this.visited);
-        hash = 67 * hash + (int) (Double.doubleToLongBits(this.healthPoints) ^ (Double.doubleToLongBits(this.healthPoints) >>> 32));
-        return hash;
-    }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Location other = (Location) obj;
-        if (!Objects.equals(this.Location, other.Location)) {
-            return false;
-        }
-        if (!Objects.equals(this.visited, other.visited)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.healthPoints) != Double.doubleToLongBits(other.healthPoints)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Location{" + "SceneLocation=" + Location + ", visited=" + visited +  ", healthPoints=" + healthPoints + '}';
-    }
-
-    void setnoColumns(int column) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    void setnoOfRows(int row) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     
 }

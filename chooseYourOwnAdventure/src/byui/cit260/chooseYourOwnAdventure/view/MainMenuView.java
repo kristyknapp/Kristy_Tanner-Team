@@ -6,6 +6,7 @@
 
 package byui.cit260.chooseYourOwnAdventure.view;
 
+import byui.cit260.chooseYourOwnAdventure.control.GameControl;
 import byui.cit260.chooseYourOwnAdventure.control.ProgramControl;
 import chooseyourownadventure.ChooseYourOwnAdventure;
 import java.util.Scanner;
@@ -67,9 +68,11 @@ public class MainMenuView {
     
         public void doAction(char choice) {
             switch (choice) {
-                case 'G': // display the game menu
-                    IntroChoiceView introChoice = new IntroChoiceView();
-                    introChoice.displayMenu();
+                case 'G':  //create a new game
+                    GameControl.createNewGame(ChooseYourOwnAdventure.getPlayer());
+                           //display the game menu
+                    GameMenuView gameMenu = new GameMenuView();
+                    gameMenu.displayMenu();
                     break;
                 case 'H': // display the help menu
                     HelpMenuView helpMenu = new HelpMenuView();
@@ -86,6 +89,8 @@ public class MainMenuView {
                     
             } 
         }
+        
+
        
 }
 
