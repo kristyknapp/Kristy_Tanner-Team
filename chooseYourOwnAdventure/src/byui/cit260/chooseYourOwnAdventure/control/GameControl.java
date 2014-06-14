@@ -116,6 +116,7 @@ public static void startSavedGame() {
         
         return resources; 
     }
+
     
     public static Resource[] getSortedResources() {
         Resource[] createResourcesList = ChooseYourOwnAdventure.getCurrentGame().getResources();

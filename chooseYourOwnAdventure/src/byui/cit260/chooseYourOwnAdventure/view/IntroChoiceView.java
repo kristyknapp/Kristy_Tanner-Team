@@ -96,8 +96,6 @@ public class IntroChoiceView {
       }
       return locationChoice; //return the choice.
     } 
-       
-
     
 }
 

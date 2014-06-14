@@ -70,9 +70,9 @@ public class MainMenuView {
             switch (choice) {
                 case 'G':  //create a new game
                     GameControl.createNewGame(ChooseYourOwnAdventure.getPlayer());
-                           //display the game menu
-                    GameMenuView gameMenu = new GameMenuView();
-                    gameMenu.displayMenu();
+                           //display the IntroChoiceView
+                    IntroChoiceView introMenu = new IntroChoiceView();
+                    introMenu.displayMenu();
                     break;
                 case 'H': // display the help menu
                     HelpMenuView helpMenu = new HelpMenuView();
