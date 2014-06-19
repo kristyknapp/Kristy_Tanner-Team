@@ -10,8 +10,15 @@ package byui.cit260.chooseYourOwnAdventure.view;
  *
  * @author kristyknapp
  */
-class RescueOptions {
-     public void displayMenu() {
-        System.out.println("*** rescueOptions displayMenu stub function called ***");
+public class RescueOptions extends MenuView {
+
+    public RescueOptions() {
+        super(menu);
+    }
+    
+
+    @Override
+    public void doAction(String value) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

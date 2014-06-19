@@ -41,6 +41,10 @@ public class ProgramControl {
         return location;
     }
 
+    public static String createBuildRaft(int numberLogs) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
   
     
