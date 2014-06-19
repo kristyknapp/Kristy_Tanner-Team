@@ -34,7 +34,7 @@ public class HelpMenuView {
             String input = this.getInput();
             selection = input.charAt(0); //get the first character of the string
             this.doAction(selection); //do action based on selection
-        } while (selection != 'E'); //a selection is not "Exit"
+        } while (selection != 'Q'); //a selection is not "Exit"
         
         
     }
@@ -64,21 +64,21 @@ public class HelpMenuView {
       return input; //return the input.
     }     
     
-        public void doAction(char choice) {
+        public void doAction(String choice) {
             switch (choice) {
-                case 'A': // display the goals of the game
+                case "A": // display the goals of the game
                     HelpGoalsView helpGoals = new HelpGoalsView();
                     helpGoals.displayMenu();
                     break;
-                case 'N': // display the different scenarios
+                case "N": // display the different scenarios
                     ScenariosView scenariosView = new ScenariosView();
                     scenariosView.displayMenu();
                     break;
-                case 'R': //display the different resources
+                case "R": //display the different resources
                     ResourcesView resourcesView = new ResourcesView();
                     resourcesView.displayResources();
                     break;
-                case 'E': // Exit the program
+                case "Q": // Exit the program
                     return; 
                 default:
                     System.out.println("/n*** Invalid selection *** Try again");

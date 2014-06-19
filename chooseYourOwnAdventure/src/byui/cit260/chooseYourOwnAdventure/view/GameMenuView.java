@@ -75,37 +75,37 @@ public class GameMenuView {
     }     
     
     
-     public void doAction(char choice) {
+     public void doAction(String choice) {
             switch (choice) {
-                case 'M': // move to new location
+                case "M": // move to new location
                     this.displayMap();
                     MoveLocation moveLocation = new MoveLocation();
                     moveLocation.displayMenu();
                     break;
-                case 'L': // look for other survivors
+                case "L": // look for other survivors
                     FindSurvivors findSurvivors = new FindSurvivors();
                     findSurvivors.displayMenu();
                     break;
-                case 'R': // collect resources
+                case "R": // collect resources
                     CollectResources collectResources = new CollectResources();
                     collectResources.displayMenu();
                     break;
-                case 'O': // rescue options
+                case "O": // rescue options
                     RescueOptions rescueOptions = new RescueOptions();
                     rescueOptions.displayMenu();
                     break;
-                case 'P': // sleep
+                case "P": // sleep
                     SleepView sleepView = new SleepView();
                     sleepView.displayMenu();
                     break;
-                case 'H': // display the help menu
+                case "H": // display the help menu
                     HelpMenuView helpMenu = new HelpMenuView();
                     helpMenu.displayMenu();
                     break;
-                case 'S': //save the current game to disk
+                case "S": //save the current game to disk
                     ProgramControl.saveGame(ChooseYourOwnAdventure.getCurrentGame());
                     break;
-                case 'Q': // Quit the game - finish
+                case "Q": // Quit the game - finish
                     return; 
                 default:
                     System.out.println("/n*** Invalid selection *** Try again");
