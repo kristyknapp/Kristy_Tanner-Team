@@ -24,15 +24,16 @@ public abstract class MenuView implements ViewInterface {
     }
     
     @Override
-    public void display() {
+    public void display() { 
+        boolean success = false;
         String input;
         do {
             System.out.println(this.menu); //display the main menu
             
             input = this.getInput();
            
-            this.doAction(input); //do action based on selection
-        } while (!input.equals("E")); //a selection is not "Exit"
+            success = this.doAction(input); //do action based on selection
+        } while (!input.equals("E")  && !success); //a selection is not "Exit"
     }
 
     @Override

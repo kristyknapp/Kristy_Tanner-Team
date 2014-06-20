@@ -32,7 +32,7 @@ public class MainMenuView extends MenuView {
 
  
     @Override
-    public void doAction(String choice) {
+    public boolean doAction(String choice) {
        
         switch (choice) {
             case "G":  //create a new game
@@ -49,12 +49,13 @@ public class MainMenuView extends MenuView {
                 ProgramControl.saveGame(ChooseYourOwnAdventure.getCurrentGame());
                 break;
             case "E": // Exit the program
-                return; 
+                return true; 
             default:
                 System.out.println("/n*** Invalid selection *** Try again");
                 break;
 
         } 
+        return false;
     }
         
 

@@ -13,6 +13,6 @@ package byui.cit260.chooseYourOwnAdventure.view;
 public interface ViewInterface {
     public void display();
     public String getInput();
-    public void doAction(String value);
+    public boolean doAction(String value);
     
 }

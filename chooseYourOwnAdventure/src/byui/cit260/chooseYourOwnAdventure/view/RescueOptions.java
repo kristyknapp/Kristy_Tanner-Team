@@ -13,12 +13,13 @@ package byui.cit260.chooseYourOwnAdventure.view;
 public class RescueOptions extends MenuView {
 
     public RescueOptions() {
-        super(menu);
+        super("menu - changed this to string to get rid of the error");
     }
     
 
     @Override
-    public void doAction(String value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean doAction(String value) {
+        System.out.println("*** RescueOptions doAction called");
+        return true;
     }
 }

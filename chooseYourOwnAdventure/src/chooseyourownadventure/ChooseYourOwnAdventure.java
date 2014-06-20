@@ -24,7 +24,7 @@ public class ChooseYourOwnAdventure {
     private static Game currentGame = null;
     private static Player player = null;
     private static Location location = null;
-
+    private static Map map = null;
 
     
     public static void main(String[] args) {
@@ -55,5 +55,15 @@ public class ChooseYourOwnAdventure {
     public static void setLocation(Location location) {
         ChooseYourOwnAdventure.location = location;
     }
+
+    public static Map getMap() {
+        return map;
+    }
+
+    public static void setMap(Map map) {
+        ChooseYourOwnAdventure.map = map;
+    }
+    
+    
     
 }

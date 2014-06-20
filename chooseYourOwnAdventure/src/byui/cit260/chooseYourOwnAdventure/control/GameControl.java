@@ -60,6 +60,7 @@ public class GameControl {
     GameControl.game.setResources(GameControl.createResourcesList()); // create the resources list
     GameControl.game.setRescue(GameControl.createRescue()); // create the rescue list
     GameControl.game.setMap(MapControl.createBeachMap()); // create and initialize the map
+    ChooseYourOwnAdventure.setLocation(GameControl.game.getMap().getLocations()[0][0]);
         
 
 }

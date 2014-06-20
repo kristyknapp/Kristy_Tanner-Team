@@ -7,6 +7,7 @@
 package byui.cit260.chooseYourOwnAdventure.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -19,6 +20,8 @@ public class Player implements Serializable{
     private String name;
     private double sleepPoints;
     private double healthPoints;
+    private double location;
+    private ArrayList<Resource> resources = new ArrayList<Resource>();
 
     public Player() {
     }
@@ -48,6 +51,25 @@ public class Player implements Serializable{
     public void setHealthPoints(double healthPoints) {
         this.healthPoints = healthPoints;
     }
+
+    public double getLocation() {
+        return location;
+    }
+
+    public void setLocation(double location) {
+        this.location = location;
+    }
+
+    public ArrayList<Resource> getResources() {
+        return resources;
+    }
+
+    public void setResources(ArrayList<Resource> resources) {
+        this.resources = resources;
+    }
+
+    
+    
 
     @Override
     public String toString() {

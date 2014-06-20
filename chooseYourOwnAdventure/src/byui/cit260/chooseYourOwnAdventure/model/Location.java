@@ -24,6 +24,8 @@ public class Location implements Serializable{
     
     public Location() {
     }
+    
+    
 
     public Location(String description) {
         this.description = description;
@@ -72,8 +74,13 @@ public class Location implements Serializable{
     }
     
     
-
-
-
-    
+    public Resource findResource(Resource resourceDefined) {
+        for (int i = 0; i < resources.length; i++) {
+            Resource resource = resources[i];
+            if (resourceDefined.equals(resource)) {
+                return resource;
+            }
+        }
+        return null;
+    }
 }

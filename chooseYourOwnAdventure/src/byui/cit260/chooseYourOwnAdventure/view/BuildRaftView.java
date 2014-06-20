@@ -97,13 +97,13 @@ public class BuildRaftView extends MenuView{
     }
 
     @Override
-    public void doAction(String value) {
+    public boolean doAction(String value) {
         //create the plater object and save it in the ProgramControl class
        int numberLogs = Integer.parseInt(value);
         String buildRaftMessage = ProgramControl.createBuildRaft(numberLogs);
         System.out.println(buildRaftMessage);
         
-        return;
+        return true;
         
     }
 }

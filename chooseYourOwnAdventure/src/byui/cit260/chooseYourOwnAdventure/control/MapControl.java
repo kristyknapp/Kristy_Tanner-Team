@@ -64,12 +64,13 @@ public class MapControl {
             
         Location location = new Location("Plane Crash Site");
         
-        Resource[] resources = new Resource[2];
+        Resource[] resources = new Resource[3];
         
         Rescue[] rescueOptions = new Rescue[2];
         
         resources[0] = resourceList[GameControl.WATER];
         resources[1] = resourceList[GameControl.FOOD];
+        resources[2] = resourceList[GameControl.SURVIVORS];
         
         rescueOptions[0] = rescueList[GameControl.BUILD_RAFT];
         rescueOptions[1] = rescueList[GameControl.PLANE];
@@ -98,12 +99,13 @@ public class MapControl {
         
         location = new Location("Treeline");
         
-        resources = new Resource[3];
+        resources = new Resource[4];
         rescueOptions = new Rescue[2];
         
         resources[0] = resourceList[GameControl.FOOD];
         resources[1] = resourceList[GameControl.LOGS];
         resources[2] = resourceList[GameControl.ROCKS];
+        resources[3] = resourceList[GameControl.SURVIVORS];
         
         rescueOptions[0] = rescueList[GameControl.FIRE];
         rescueOptions[1] = rescueList[GameControl.BUILD_RAFT];
@@ -134,14 +136,15 @@ public class MapControl {
         
         Location location = new Location("Jungle");
             
-        Resource[] resources = new Resource[3];
+        Resource[] resources = new Resource[4];
         
         Rescue[] rescueOptions = new Rescue[1];
         
         resources[0] = resourceList[GameControl.WATER];
         resources[1] = resourceList[GameControl.FOOD];
         resources[2] = resourceList[GameControl.VINES];
-        
+        resources[3] = resourceList[GameControl.SURVIVORS];
+
         
         rescueOptions[0] = rescueList[GameControl.FIRE];
         
@@ -154,8 +157,8 @@ public class MapControl {
         
         resources = new Resource[2];
         
-        resources[1] = resourceList[GameControl.WATER];
-        resources[2] = resourceList[GameControl.ROCKS];
+        resources[0] = resourceList[GameControl.WATER];
+        resources[1] = resourceList[GameControl.ROCKS];
         
         location.setResources(resources);
         
@@ -163,10 +166,11 @@ public class MapControl {
         
         location = new Location("Cliff Tops");
         
-        resources = new Resource[1];
+        resources = new Resource[2];
         rescueOptions = new Rescue[1];
         
-        resources[2] = resourceList[GameControl.ROCKS];
+        resources[0] = resourceList[GameControl.ROCKS];
+        resources[1] = resourceList[GameControl.SURVIVORS];
         
         rescueOptions[0] = rescueList[GameControl.PLANE];
         
