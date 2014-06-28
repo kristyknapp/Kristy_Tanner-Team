@@ -13,6 +13,7 @@ import byui.cit260.chooseYourOwnAdventure.model.Player;
 import byui.cit260.chooseYourOwnAdventure.model.Rescue;
 import byui.cit260.chooseYourOwnAdventure.model.Resource;
 import chooseyourownadventure.ChooseYourOwnAdventure;
+import java.util.ArrayList;
 
 /**
  *
@@ -59,8 +60,7 @@ public class GameControl {
     
     GameControl.game.setResources(GameControl.createResourcesList()); // create the resources list
     GameControl.game.setRescue(GameControl.createRescue()); // create the rescue list
-    GameControl.game.setMap(MapControl.createBeachMap()); // create and initialize the map
-    ChooseYourOwnAdventure.setLocation(GameControl.game.getMap().getLocations()[0][0]);
+
         
 
 }
@@ -75,43 +75,43 @@ public static void startSavedGame() {
         
         Resource food = new Resource();
         food.setDescription("name");
-        food.setQuantityInStock(0);
+        food.setQuantityInStock(5);
         food.setRequiredAmount(0);
         resources [GameControl.FOOD] = food;
         
         Resource water = new Resource();
         water.setDescription("water");
-        water.setQuantityInStock(0);
+        water.setQuantityInStock(5);
         water.setRequiredAmount(0);
         resources [GameControl.WATER] = water;
         
         Resource logs = new Resource();
         logs.setDescription("logs");
-        logs.setQuantityInStock(0);
+        logs.setQuantityInStock(5);
         logs.setRequiredAmount(0);
         resources [GameControl.LOGS] = logs;
         
         Resource rocks = new Resource();
         rocks.setDescription("name");
-        rocks.setQuantityInStock(0);
+        rocks.setQuantityInStock(5);
         rocks.setRequiredAmount(0);
         resources [GameControl.ROCKS] = rocks;
         
         Resource vines = new Resource();
         vines.setDescription("vines");
-        vines.setQuantityInStock(0);
+        vines.setQuantityInStock(5);
         vines.setRequiredAmount(0);
         resources [GameControl.VINES] = vines;
         
         Resource sleep = new Resource();
         sleep.setDescription("sleep");
-        sleep.setQuantityInStock(0);
+        sleep.setQuantityInStock(5);
         sleep.setRequiredAmount(0);
         resources [GameControl.SLEEP] = sleep;
         
         Resource survivors = new Resource();
         survivors.setDescription("survivors");
-        survivors.setQuantityInStock(0);
+        survivors.setQuantityInStock(1);
         survivors.setRequiredAmount(0);
         resources [GameControl.SURVIVORS] = survivors;
         
@@ -147,6 +147,26 @@ public static void startSavedGame() {
         }
         return resources;
     }
+
+    public static int getTotalPlayerResources() {
+        ArrayList<Resource> resources = ChooseYourOwnAdventure.getPlayer().getResources();
+     
+        int sum=0;
+        for (Resource resource : resources) {
+                //find the total from quantity
+                sum ++;
+
+            }
+        //check to make sure amount is not too great:
+        if(sum > 60) {
+            System.out.println("Too many resources collected");
+        }
+        else {
+        System.out.println("Total Resources: ");
+        }
+        return sum;
+    }
+
 
     private static Rescue[] createRescue() {
         Rescue[] rescue = new Rescue[GameControl.NUMBER_OF_RESCUE_OPTIONS];

@@ -11,6 +11,7 @@ import byui.cit260.chooseYourOwnAdventure.model.Map;
 import byui.cit260.chooseYourOwnAdventure.model.Rescue;
 import byui.cit260.chooseYourOwnAdventure.model.Resource;
 import byui.cit260.chooseYourOwnAdventure.model.Scene;
+import chooseyourownadventure.ChooseYourOwnAdventure;
 
 
 /**
@@ -41,6 +42,10 @@ public class MapControl {
         //assign locations to positions on map
         MapControl.assignLocationsToBeachMap(map, locations);
         
+        ChooseYourOwnAdventure.getCurrentGame().setMap(map);
+        
+        ChooseYourOwnAdventure.setLocation(GameControl.game.getMap().getLocations()[0][0]);
+        
         return map;
     }
     
@@ -54,6 +59,11 @@ public class MapControl {
         
         //assign locations to positions on map
         MapControl.assignLocationsToCliffMap(map, locations);
+        
+        ChooseYourOwnAdventure.getCurrentGame().setMap(map);
+        
+        ChooseYourOwnAdventure.setLocation(GameControl.game.getMap().getLocations()[0][0]);
+
         
         return map;
     }
@@ -181,7 +191,7 @@ public class MapControl {
         
         location = new Location("Cave");
         
-        resources = new Resource[3];
+        resources = new Resource[4];
         
         resources[0] = resourceList[GameControl.FOOD];
         resources[1] = resourceList[GameControl.WATER];

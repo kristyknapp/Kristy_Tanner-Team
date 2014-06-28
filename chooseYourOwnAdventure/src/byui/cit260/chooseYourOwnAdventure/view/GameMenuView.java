@@ -28,6 +28,7 @@ public class GameMenuView extends MenuView {
             +"\nR - Collect Resources"
             +"\nO - Rescue Options"
             +"\nP - Sleep"
+            +"\nC - Check Health"
             +"\nH - Help"
             +"\nS - Save Game"
             +"\nQ - Give up and Die"
@@ -48,7 +49,7 @@ public class GameMenuView extends MenuView {
                     break;
                 case "R": // collect resources
                     CollectResources collectResources = new CollectResources();
-                    collectResources.displayMenu();
+                    collectResources.display();
                     break;
                 case "O": // rescue options
                     RescueOptions rescueOptions = new RescueOptions();
@@ -57,6 +58,10 @@ public class GameMenuView extends MenuView {
                 case "P": // sleep
                     SleepView sleepView = new SleepView();
                     sleepView.displayMenu();
+                    break;
+                case "C": // check health
+                    HealthView healthView = new HealthView();
+                    healthView.display();
                     break;
                 case "H": // display the help menu
                     HelpMenuView helpMenu = new HelpMenuView();

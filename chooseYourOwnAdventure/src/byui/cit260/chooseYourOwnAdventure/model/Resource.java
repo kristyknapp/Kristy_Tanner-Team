@@ -31,8 +31,6 @@ public class Resource implements Serializable{
     public void setDescription(String description) {
         this.description = description;
     }
-    
-    
 
     public double getRequiredAmount() {
         return requiredAmount;
@@ -49,9 +47,7 @@ public class Resource implements Serializable{
     public void setQuantityInStock(double quantityInStock) {
         this.quantityInStock = quantityInStock;
     }
-    
-    
-
+     
     public double getResourcesCollected() {
         return resourcesCollected;
     }
