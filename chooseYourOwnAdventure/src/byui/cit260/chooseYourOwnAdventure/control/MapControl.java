@@ -6,12 +6,15 @@
 
 package byui.cit260.chooseYourOwnAdventure.control;
 
+import byui.cit260.chooseYourOwnAdventure.exceptions.ChooseYourOwnAdventureException;
 import byui.cit260.chooseYourOwnAdventure.model.Location;
 import byui.cit260.chooseYourOwnAdventure.model.Map;
+import byui.cit260.chooseYourOwnAdventure.model.Player;
 import byui.cit260.chooseYourOwnAdventure.model.Rescue;
 import byui.cit260.chooseYourOwnAdventure.model.Resource;
 import byui.cit260.chooseYourOwnAdventure.model.Scene;
 import chooseyourownadventure.ChooseYourOwnAdventure;
+import java.awt.Point;
 
 
 /**
@@ -46,6 +49,8 @@ public class MapControl {
         
         ChooseYourOwnAdventure.setLocation(GameControl.game.getMap().getLocations()[0][0]);
         
+        ChooseYourOwnAdventure.getPlayer().setLocation(new Point(0,0));
+        
         return map;
     }
     
@@ -63,6 +68,8 @@ public class MapControl {
         ChooseYourOwnAdventure.getCurrentGame().setMap(map);
         
         ChooseYourOwnAdventure.setLocation(GameControl.game.getMap().getLocations()[0][0]);
+        
+        ChooseYourOwnAdventure.getPlayer().setLocation(new Point(0,0));
 
         
         return map;
@@ -222,4 +229,39 @@ public class MapControl {
         locations[1][1] = locationList[MapControl.CAVE];
     }
     
+    public static void movePlayer(String locationDescription) {
+
+      Point position = MapControl.findLocation(ChooseYourOwnAdventure.getMap().getLocations(), locationDescription);
+      if (position == null) {
+          return;
+      }
+
+      // MOVE setLocation in player
+      ChooseYourOwnAdventure.getPlayer().setLocation(position);
+
+    }
+
+    private static Point findLocation(Location[][] locations, String locationDescription) {
+        for (int i = 0; i < locations.length; i++) {
+            for (int j = 0; j < locations[i].length; j++) {
+                Location currentLocation = locations[i][j];
+                if (currentLocation.getDescription().equals(locationDescription)) {
+                    return new Point(i, j);
+                }
+
+            }    
+        }
+        return null;
+    }
+    
+        public static void movePlayerToLocation(Player player, int row, int column) 
+                                throws ChooseYourOwnAdventureException {
+            Point map = ChooseYourOwnAdventure.getPlayer().getLocation();
+            if (row < 1 || row > map.getX() || column < 1 || column > map.getY()) {
+                throw new ChooseYourOwnAdventureException("Invalid Row and Column");
+            }
+    }
+  
 }
+  
+

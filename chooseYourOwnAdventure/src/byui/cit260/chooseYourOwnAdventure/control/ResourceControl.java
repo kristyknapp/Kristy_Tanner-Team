@@ -5,17 +5,18 @@
  */
 package byui.cit260.chooseYourOwnAdventure.control;
 
+import byui.cit260.chooseYourOwnAdventure.exceptions.ChooseYourOwnAdventureException;
 import byui.cit260.chooseYourOwnAdventure.model.Location;
 import byui.cit260.chooseYourOwnAdventure.model.Resource;
 import chooseyourownadventure.ChooseYourOwnAdventure;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
  * @author kristyknapp
  */
 public class ResourceControl {
-
 
     public static Resource findResource(Resource[] resources, String description) {
 
@@ -26,11 +27,11 @@ public class ResourceControl {
         }
         return null;
     }
-    
+
     public static boolean addResourceToPlayer(String description) {
-        
+
         Location location = ChooseYourOwnAdventure.getLocation();
-        
+
         Resource locationResource = ResourceControl.findResource(location.getResources(), description);
         if (locationResource != null) {
             Resource[] playerResources = ChooseYourOwnAdventure.getPlayer().getResources().toArray(new Resource[0]);
@@ -42,16 +43,14 @@ public class ResourceControl {
                 playerResource.setRequiredAmount(0);
                 playerResource.setResourcesCollected(0);
                 ChooseYourOwnAdventure.getPlayer().getResources().add(playerResource);
-            
+
             }
             double locationQuantity = locationResource.getQuantityInStock();
             double playerQuantity = playerResource.getQuantityInStock() + locationQuantity;
             playerResource.setQuantityInStock(playerQuantity);
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
 }
-

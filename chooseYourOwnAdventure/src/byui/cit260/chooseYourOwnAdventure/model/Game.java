@@ -106,6 +106,10 @@ public class Game implements Serializable{
         }
         return true;
     }
+
+    public Location getLocation() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
 

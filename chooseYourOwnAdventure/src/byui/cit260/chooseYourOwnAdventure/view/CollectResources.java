@@ -34,9 +34,10 @@ class CollectResources extends MenuView {
                 + "\nS - Sleep"
                 + "\nE - Exit"
                 + "\n-------------------------------------------"
-                + "\n" + GameControl.getTotalPlayerResources()
+                + GameControl.getTotalPlayerResources() 
                 + "\nSearching for Resources in your Location...");
     }
+
 
     @Override
     public boolean doAction(String value) {

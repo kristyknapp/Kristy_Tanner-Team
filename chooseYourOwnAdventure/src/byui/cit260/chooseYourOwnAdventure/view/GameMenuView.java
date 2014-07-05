@@ -40,8 +40,8 @@ public class GameMenuView extends MenuView {
             switch (choice) {
                 case "M": // move to new location
                     this.displayMap();
-                    MoveLocation moveLocation = new MoveLocation();
-                    moveLocation.displayMenu();
+                    LocationView locationView = new LocationView();
+                    locationView.display();
                     break;
                 case "L": // look for other survivors
                     FindSurvivors findSurvivors = new FindSurvivors();

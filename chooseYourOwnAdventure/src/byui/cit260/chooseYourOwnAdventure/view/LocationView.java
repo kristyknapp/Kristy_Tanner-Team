@@ -3,9 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package byui.cit260.chooseYourOwnAdventure.view;
 
+import byui.cit260.chooseYourOwnAdventure.control.GameControl;
+import static byui.cit260.chooseYourOwnAdventure.control.GameControl.game;
+import byui.cit260.chooseYourOwnAdventure.control.MapControl;
+import byui.cit260.chooseYourOwnAdventure.model.Location;
+import byui.cit260.chooseYourOwnAdventure.model.Map;
+import chooseyourownadventure.ChooseYourOwnAdventure;
+import java.awt.Point;
 import static java.awt.SystemColor.MENU;
 import java.util.Scanner;
 
@@ -13,66 +19,78 @@ import java.util.Scanner;
  *
  * @author Tanner
  */
-public class LocationView {
-    private static final String Location = "\n"
-            +"\n-------------------------------------------"
-            +"\n|Location Menu                            |"
-            +"\n-------------------------------------------"
-            +"\n Where do you want to go?                  "
-            +"\nN - Move To A New Location                 "
-            +"\nE - Stay Where I'm At(Exit)                "
-            +"\n-------------------------------------------";
-    
-    public void displayMenu() {
-        char selection = ' ';
-        do {
-            
-            System.out.println(Location); //display main menu
-            
-            String input = this.getInput();
-            selection = input.charAt(0); //get first character of string
-            this.doAction(selection); //do action based on selection
-        } while (selection != 'E'); //a selection is not "Exit"
+public class LocationView extends MenuView {
+    private String getinput;
+
+    public LocationView() {
+        super("Where do you want to go?"
+             +"Enter in the coordinates...ex: 1 0");
     }
-
-    public String getInput(){
-        boolean valid = false; // indicates if the value has been retrieved
-        String input = null;
-        Scanner keyboard = new Scanner(System.in); //keyboard input stream
-        
-      while (!valid) {//while a valid value has not been retrieved
-          //prompt for a value
-         System.out.println("Enter your selection below");
-         
-         //get the value from the keyboard and trim off the blanks
-         input = keyboard.nextLine();
-         input = input.trim();
-         
-        
-         if (input.length() < 0) {
-             //display and error
-             System.out.println("Invalid value - the value cannot be blank");
-        }
-         else {
-             valid = true; //signal that valid input was entered
-         }
-      }
-      return input; //return the input.
-    }     
     
-        public void doAction(char choice) {
-            switch (choice) {
-                case 'N': // display the goals of the game
-                    LocationView Location = new LocationView();
-                    Location.displayMenu();
-                    break;
-                case 'E': // "Stay Where I Am (Exit)"
-                    return; 
-                default:
-                    System.out.println("/n*** Invalid selection *** Try again");
-                    break;
-                    
-            } 
+    @Override
+    public boolean doAction(String choice) {
+        switch (choice) {
+            case "P": // Move Player Plane Crash Site
+                MapControl.movePlayer("Plane Crash Site");
+                break;
+            case "T": //Move Player to the Tree line
+                MapControl.movePlayer("Treeline");
+                break;
+            case "O": //move player to the ocean
+                MapControl.movePlayer("Ocean");
+                break;
+            case "S": // move player to shelter
+                MapControl.movePlayer("Shelter");
+                break;
+            case "J": //move player to the Jungle
+                MapControl.movePlayer("Jungle");
+                break;
+            case "L": //move player to the Cliff Tops
+                MapControl.movePlayer("Cliff Tops");
+                break;
+            case "A": // Move player to the stream
+                MapControl.movePlayer("Stream");
+                break;
+            case "V": // move player to the cave
+                MapControl.movePlayer("Cave");
+                break;
+            case "E": // "Stay Where I Am (Exit)"
+                return true;
+            default:
+                System.out.println("/n*** Invalid selection *** Try again");
+                break;
         }
+        return false;
 
+    }
+    
+    public static String chooseMapLocations() {
+        
+        Map map = ChooseYourOwnAdventure.getMap();
+        String menu;
+        if (map != MapControl.createCliffMap()) {
+            menu ="\n\n"
+            +"\n-------------------------------------------"
+            +"\n|Choose New Location                      |"
+            +"\n-------------------------------------------"
+            +"\nP - Plane Crash Site"
+            +"\nT - Tree Line"
+            +"\nO - Ocean"
+            +"\nS - Shelter"
+            +"\nE - Stay in Current Location"
+            +"\n--------------------------------------------";
+        } else {
+            menu = "\n\n"
+            +"\n-------------------------------------------"
+            +"\n|Choose New Location                      |"
+            +"\n-------------------------------------------"
+            +"\nJ - Jungle"
+            +"\nL - Cliff Tops"
+            +"\nA - Stream"
+            +"\nV - Cave"
+            +"\nE - Stay in Current Location"
+            +"\n-------------------------------------------";
+        }
+        return menu;
+    }
 }

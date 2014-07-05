@@ -8,6 +8,7 @@ package byui.cit260.chooseYourOwnAdventure.view;
 import byui.cit260.chooseYourOwnAdventure.control.GameControl;
 import byui.cit260.chooseYourOwnAdventure.control.ResourceControl;
 import byui.cit260.chooseYourOwnAdventure.model.Location;
+import byui.cit260.chooseYourOwnAdventure.model.Player;
 import byui.cit260.chooseYourOwnAdventure.model.Resource;
 import chooseyourownadventure.ChooseYourOwnAdventure;
 import java.util.ArrayList;
@@ -25,9 +26,9 @@ public class FindSurvivors extends MenuView {
 
     @Override
     public boolean doAction(String value) {
-        
+
         value = value.toUpperCase();
-        
+
         switch (value) {
             case "Y": // Add survivor to resources
                 this.addSurvivorToResource();
@@ -40,7 +41,8 @@ public class FindSurvivors extends MenuView {
         }
         return false;
     }
-    
+
+
     public boolean addSurvivorToResource() {
 
         Location location = ChooseYourOwnAdventure.getLocation();
@@ -48,18 +50,16 @@ public class FindSurvivors extends MenuView {
         /*Get resources in Location
          Search resource list for Survivors */
         Resource survivor = GameControl.getGame().getResources()[GameControl.SURVIVORS];
-        
+
         //Search Resource List Function
-        boolean success = ResourceControl.addResourceToPlayer("survivor");
+        boolean success = ResourceControl.addResourceToPlayer("survivors");
         if (success) {
-            System.out.println("Survivors add  to player.");
+            System.out.println("Survivor added to player.");
             return true;
-        }
-        else {
+        } else {
             System.out.println("There are no survivors in this location.");
             return false;
         }
-            
 
     }
 

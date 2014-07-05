@@ -16,6 +16,20 @@ import java.util.Scanner;
  */
 public class StartProgramView {
     
+        public static void main(String[] args) {
+        try {
+            // create StartProgram View and start the program
+            StartProgramView startProgramView = new StartProgramView();
+            startProgramView.displayBanner();
+        } catch (Throwable e) {
+            System.out.println("An abnormal error ocurred. "
+                                + "Try running the program again."
+                                + "\nIf the error persists try contacting support. ");
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+    }
+    
     public void startProgram() {
 
     //Display the banner screen

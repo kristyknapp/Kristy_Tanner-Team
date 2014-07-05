@@ -55,6 +55,4 @@ public class PointsControl {
         return sum;
     }
 
-    
-
 }
