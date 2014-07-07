@@ -42,8 +42,7 @@ public class BuildRaftView extends MenuView{
         this.displayIntro();
 
         //create the plater object and save it in the ProgramControl class
-        BuildRaft buildraft;
-        buildraft = ProgramControl.createBuildRaft(numberLogs);
+        //CALL FUNCTION TO CALCULATE/LAUNCH RAFT IN THE RESCUE OPTIONS VIEW.
 
         //Display the Game Menu
         GameMenuView gameMenuView = new GameMenuView();
