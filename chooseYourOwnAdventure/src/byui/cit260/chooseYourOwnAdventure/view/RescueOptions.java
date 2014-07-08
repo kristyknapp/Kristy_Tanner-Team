@@ -25,8 +25,8 @@ public abstract class RescueOptions extends MenuView {
             +"\nE - Exit                                                     "
             +"\n-------------------------------------------------------------");
     }
-    public doAction(String choice) {
-            switch (choice) {
+    public doAction(input) {
+            switch (input) {
                 case "F": //Build a fire
                     System.out.println
                 ("Create signal fire to try and be seen"
@@ -43,9 +43,9 @@ public abstract class RescueOptions extends MenuView {
                         System.out.println
                         ("Congratulations, you have escaped the island."
                         +"Do you want to play again? [Y] or [N]?");
-                            if input="Y"; //RESTART SAVE STATE AND GO BACK TO START MENU.
-                            if input="N"; //PROGRAM WILL SHUT DOWN.
-                if OUTCOME="1"; //FAILURE
+                            if (input="Y"); //RESTART SAVE STATE AND GO BACK TO START MENU.
+                            if (input="N"); //PROGRAM WILL SHUT DOWN.
+                if (OUTCOME="1"); //FAILURE
                 System.out.println ("Failure. Please Try again when ready.");
                         return //return to the previous menu
                 else("N");
@@ -67,7 +67,7 @@ public abstract class RescueOptions extends MenuView {
                         +"Do you want to play again? [Y] or [N]?");
                             if input="Y"; //RESTART SAVE STATE AND GO BACK TO START MENU.
                             if input="N"; //PROGRAM WILL SHUT DOWN.
-                if OUTCOME="1"; //FAILURE
+                if (OUTCOME="1"); //FAILURE
                 System.out.println ("Failure. Please Try again when ready.");
                         return //return to the previous menu
                 else("N");
@@ -89,7 +89,7 @@ public abstract class RescueOptions extends MenuView {
                         +"Do you want to play again? [Y] or [N]?");
                             if input="Y"; //RESTART SAVE STATE AND GO BACK TO START MENU.
                             if input="N"; //PROGRAM WILL SHUT DOWN.
-                if OUTCOME="1"; //FAILURE
+                if (OUTCOME="1"); //FAILURE
                 System.out.println ("Failure. Please Try again when ready.");
                         return //return to the previous menu
                 else("N");
@@ -105,14 +105,14 @@ public abstract class RescueOptions extends MenuView {
                     break;
                 if(input=="Y"); //RANDOM OUTCOME
                     int= (int)(Math.random() * (1)); 
-                        if OUTCOME="0"; //SUCCESS
+                        if (OUTCOME="0"); //SUCCESS
                         System.out.println
                         ("Congratulations, you have escaped the island."
                         +"Do you want to play again? [Y] or [N]?");
-                            if input="Y"; //RESTART SAVE STATE AND GO BACK TO START MENU.
-                            if input="N"; //PROGRAM WILL SHUT DOWN.
+                            if (input="Y"); //RESTART SAVE STATE AND GO BACK TO START MENU.
+                            if (input="N"); //PROGRAM WILL SHUT DOWN.
                 
-                        else OUTCOME="1"; //FAILURE
+                        else (OUTCOME="1"); //FAILURE
                         System.out.println ("Failure. Please Try again when ready.");
                         return //return to the previous menu
                 
