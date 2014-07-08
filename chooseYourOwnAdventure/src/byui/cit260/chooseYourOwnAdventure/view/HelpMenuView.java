@@ -31,7 +31,7 @@ public class HelpMenuView {
             
             String input = this.getInput();
             selection = input.charAt(0); //get the first character of the string
-            this.doAction(selection); //do action based on selection
+            this.doAction(input); //do action based on selection
         } while (selection != 'Q'); //a selection is not "Exit"    
     }
 
@@ -64,11 +64,11 @@ public class HelpMenuView {
             switch (choice) {
                 case "A": // display the goals of the game
                     HelpGoalsView helpGoals = new HelpGoalsView();
-                    helpGoals.displayMenu();
+                    helpGoals.displayHelpGoalsView();
                     break;
                 case "N": // display the different scenarios
                     ScenariosView scenariosView = new ScenariosView();
-                    scenariosView.displayMenu();
+                    scenariosView.displaySenariosView();
                     break;
                 case "R": //display the different resources
                     ResourcesView resourcesView = new ResourcesView();
