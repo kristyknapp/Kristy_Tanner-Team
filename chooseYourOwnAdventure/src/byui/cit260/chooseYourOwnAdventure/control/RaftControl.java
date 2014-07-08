@@ -5,41 +5,50 @@
  */
 
 package byui.cit260.chooseYourOwnAdventure.control;
-
+    import java.until.Scanner;
 /**
  *
- * @author tannerwoolstenhulme
+ * @author Tanner
  */
 public class RaftControl {
-    
-  //  public double calcRaftArea(double raftLength, double raftWidth, double numSurvivors){
+    public String getInput() {
+        boolean valid = false; // indicates if the choice has been retrieved
+        String input = null;
+        Scanner keyboard = new Scanner(System.in); //keyboard input stream
+
+        while (!valid) {//while a valid choice has not been retrieved
+            //prompt for the players choice
+            System.out.println("Enter ammount of logs collected below:");
+
+            //get the value from the keyboard and trim off the blanks
+            input = keyboard.nextLine();
+            input = input.trim();
+
+            if (input.length() < 6) 
+            {
+                return "You have enough logs!";
+            } 
+            
+            else if (input.length() > 6)//signal that a valid, but low choice was entered
+            {
+                return "You do not have enough logs!";
+            } 
+            
+            else //signal that a valid choice was entered
+            {
+                return "You have enough logs!";
+            }
+        }
+        return "";
+    }
+
+    public boolean doAction(String value) {
+        //create the plater object and save it in the ProgramControl class
+       int numberLogs = Integer.parseInt(value);
+        String buildRaftMessage = ProgramControl.createBuildRaft(numberLogs);
+        System.out.println(buildRaftMessage);
         
-//        if(numSurvivors == 1){
-//            raftLength <= 6 || raftLength => 20;
-//            raftWidth <= 3 || raftWidth => 5;
-//            System.out.println("Raft will not fit survivors. Try again");
-//        }
-//        else if System.out.println("Raft fits all survivors. Nice work.");
-//    
-//                return -1;
-//        if(numSurvivors = 2){
-//            raftLength <= 12 || raftLength => 20;
-//            raftWidth <= 3 || raftWidth => 5;
-//        }
-//        System.out.println("Raft will not fit survivors. Try again");
-//        }
-//        else if System.out.println("Raft fits all survivors. Nice work.");
-//    
-//                return -1;
-//         if(numSurvivors = 1){
-//            raftLength <= 18 || raftLength => 20;
-//            raftWidth <= 3 || raftWidth => 5;
-//         
-//         System.out.println("Raft will not fit survivors. Try again");
-//        
-//        else if System.out.println("Raft fits all survivors. Nice work.");
-//    
-//        double raftArea = raftLength * raftWidth * numSurvivors;
-//        System.out.println("You raft surface area is" + raftArea);
- //   }
+        return true;
+        
+    }
 }
