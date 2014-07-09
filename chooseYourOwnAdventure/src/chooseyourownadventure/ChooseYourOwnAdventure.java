@@ -30,6 +30,8 @@ public class ChooseYourOwnAdventure {
     
     public static void main(String[] args) {
         
+
+    try {
         java.awt.EventQueue.invokeLater(
                     new Runnable(){
                 public void run(){
@@ -38,6 +40,10 @@ public class ChooseYourOwnAdventure {
                 }
                 }
             );
+    } catch (Exception e) {
+        System.out.println(e.getMessage());
+        
+    }
 
 //       StartProgramView startProgramView = new StartProgramView();
 //       startProgramView.startProgram();
