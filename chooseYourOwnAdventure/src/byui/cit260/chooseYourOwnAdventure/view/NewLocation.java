@@ -51,6 +51,7 @@ public class NewLocation extends MenuView{
     }
     
   
+    @Override
     public boolean doAction(String choice) {
         try { 
             //move player to chosen location

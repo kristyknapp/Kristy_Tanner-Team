@@ -12,11 +12,11 @@ package byui.cit260.chooseYourOwnAdventure.control;
  */
 public class RaftControl {
     
-  //  public double calcRaftArea(double raftLength, double raftWidth, double numSurvivors){
+//  public double calcRaftArea(double raftLength, double raftWidth, double numSurvivors) throws RaftControlException{
         
-//        if(numSurvivors == 1){
-//            raftLength <= 6 || raftLength => 20;
-//            raftWidth <= 3 || raftWidth => 5;
+//        if(numSurvivors == 1 ||
+//            raftLength <= 6 || raftLength => 20
+//            raftWidth <= 3 || raftWidth => 5) {
 //            System.out.println("Raft will not fit survivors. Try again");
 //        }
 //        else if System.out.println("Raft fits all survivors. Nice work.");

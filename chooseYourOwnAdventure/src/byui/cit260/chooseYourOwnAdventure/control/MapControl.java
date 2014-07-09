@@ -7,6 +7,7 @@
 package byui.cit260.chooseYourOwnAdventure.control;
 
 import byui.cit260.chooseYourOwnAdventure.exceptions.ChooseYourOwnAdventureException;
+import byui.cit260.chooseYourOwnAdventure.exceptions.MapControlException;
 import byui.cit260.chooseYourOwnAdventure.model.Location;
 import byui.cit260.chooseYourOwnAdventure.model.Map;
 import byui.cit260.chooseYourOwnAdventure.model.Player;
@@ -255,10 +256,10 @@ public class MapControl {
     }
     
         public static void movePlayerToLocation(Player player, int row, int column) 
-                                throws ChooseYourOwnAdventureException {
+                                throws MapControlException {
             Point map = ChooseYourOwnAdventure.getPlayer().getLocation();
             if (row < 1 || row > map.getX() || column < 1 || column > map.getY()) {
-                throw new ChooseYourOwnAdventureException("Invalid Row and Column");
+                throw new MapControlException("Invalid Row and Column");
             }
     }
   

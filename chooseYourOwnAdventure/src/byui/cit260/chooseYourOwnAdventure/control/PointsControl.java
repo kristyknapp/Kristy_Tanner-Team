@@ -11,6 +11,7 @@ import byui.cit260.chooseYourOwnAdventure.model.Location;
 import byui.cit260.chooseYourOwnAdventure.model.Player;
 import byui.cit260.chooseYourOwnAdventure.model.Resource;
 import chooseyourownadventure.ChooseYourOwnAdventure;
+import java.awt.Point;
 import java.util.ArrayList;
 
 /**
@@ -32,6 +33,23 @@ public class PointsControl {
 
         return totalPoints;
 
+    }
+    
+    public static int letPlayerSleep() {
+     //get players location 
+        Point playerLocation = ChooseYourOwnAdventure.getPlayer().getLocation();
+       //IF player location is in shelter or cave
+        if (playerLocation.equals(CAVE || SHELTER)) {
+            //THEN make totalSleep = 40pts
+            int sleepPoints = 40;
+        }
+        
+        else {
+            //ELSE Inform user they are not in right location to sleep
+            System.out.println("You cannot sleep in this location");
+        }
+        return 0;
+        
     }
 
     public static int calcHealth() {

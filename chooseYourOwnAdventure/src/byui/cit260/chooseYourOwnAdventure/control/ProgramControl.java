@@ -6,6 +6,7 @@
 
 package byui.cit260.chooseYourOwnAdventure.control;
 
+import byui.cit260.chooseYourOwnAdventure.exceptions.ProgramControlException;
 import byui.cit260.chooseYourOwnAdventure.model.Game;
 import byui.cit260.chooseYourOwnAdventure.model.Location;
 import byui.cit260.chooseYourOwnAdventure.model.Player;
@@ -18,10 +19,12 @@ import chooseyourownadventure.ChooseYourOwnAdventure;
 public class ProgramControl {
     
 
-    public static Player createPlayer(String playersName) {
+    public static Player createPlayer(String playersName) 
+                                        throws ProgramControlException{
         System.out.println("\n**** createPlayer function called ****");
         Player player = new Player();
         player.setName(playersName);
+        
         
         ChooseYourOwnAdventure.setPlayer(player); //save player
         
