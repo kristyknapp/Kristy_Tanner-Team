@@ -188,29 +188,29 @@ public class StartProgramFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jlTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jlTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jlTextField1ActionPerformed
+    private void jbQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbQuitActionPerformed
+        // dispose of this frame "Quit".
+        this.dispose();
+    }//GEN-LAST:event_jbQuitActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       //get the players name
+        //get the players name
         String playersName = this.jtfPlayersName.getText();
         // trim off exxcess blanks from the plaer name
         playersName = playersName.trim();
         //chek to see if the platers name isgreater than one charager
         if (playersName.length()<1)
-            
+
         //create the plater
-        
+
         //create the main frame
         //set the welcome message on the main frame
-            //create the start program
+        //create the start program
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jbQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbQuitActionPerformed
-        // dispose of this frame "Quit".
-        this.dispose();
-    }//GEN-LAST:event_jbQuitActionPerformed
+    private void jlTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jlTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jlTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
