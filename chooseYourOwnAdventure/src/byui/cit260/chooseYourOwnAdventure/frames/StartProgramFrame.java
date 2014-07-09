@@ -6,6 +6,8 @@
 
 package byui.cit260.chooseYourOwnAdventure.frames;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Tanner
@@ -34,15 +36,15 @@ public class StartProgramFrame extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jlTextField1 = new javax.swing.JTextField();
         jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jbStart = new javax.swing.JButton();
         jbQuit = new javax.swing.JButton();
-        jTextField2 = new javax.swing.JTextField();
+        nameEnter = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jlTitle = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jpMainPanel.setBackground(new java.awt.Color(153, 255, 204));
+        jpMainPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         jlImage1.setText("jLabel1");
 
@@ -87,13 +89,12 @@ public class StartProgramFrame extends javax.swing.JFrame {
                 .addContainerGap(64, Short.MAX_VALUE))
         );
 
-        jTextField1.setBackground(new java.awt.Color(153, 255, 204));
         jTextField1.setText("Enter Your Name and Press Start");
 
-        jButton1.setText("Start");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jbStart.setText("Start");
+        jbStart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jbStartActionPerformed(evt);
             }
         });
 
@@ -120,10 +121,10 @@ public class StartProgramFrame extends javax.swing.JFrame {
                         .addGroup(jpMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jpMainPanelLayout.createSequentialGroup()
-                                .addComponent(jButton1)
+                                .addComponent(jbStart)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jbQuit))
-                            .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(nameEnter, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -137,10 +138,10 @@ public class StartProgramFrame extends javax.swing.JFrame {
                 .addGap(144, 144, 144)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(13, 13, 13)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(nameEnter, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(jbStart)
                     .addComponent(jbQuit))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
@@ -193,20 +194,26 @@ public class StartProgramFrame extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jbQuitActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jbStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbStartActionPerformed
         //get the players name
-        String playersName = this.jtfPlayersName.getText();
+        String playersName = this.nameEnter.getText();
         // trim off exxcess blanks from the plaer name
         playersName = playersName.trim();
         //chek to see if the platers name isgreater than one charager
-        if (playersName.length()<1)
+        if (playersName.length()<1) {
+            JOptionPane.showMessageDialog(this,
+                                            "This player's name must be greater than one character",
+                                            "Invalid platers name",
+                                            JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
         //create the plater
 
         //create the main frame
         //set the welcome message on the main frame
         //create the start program
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jbStartActionPerformed
 
     private void jlTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jlTextField1ActionPerformed
         // TODO add your handling code here:
@@ -248,16 +255,16 @@ public class StartProgramFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JButton jbQuit;
+    private javax.swing.JButton jbStart;
     private javax.swing.JLabel jlImage1;
     private javax.swing.JTextField jlTextField1;
     private javax.swing.JLabel jlTitle;
     private javax.swing.JPanel jpMainPanel;
+    private javax.swing.JTextField nameEnter;
     // End of variables declaration//GEN-END:variables
 }
