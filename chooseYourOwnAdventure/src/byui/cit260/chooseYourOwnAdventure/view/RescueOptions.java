@@ -10,7 +10,7 @@ package byui.cit260.chooseYourOwnAdventure.view;
  *
  * @author Tanner
  */
-public abstract class RescueOptions extends MenuView {
+public class RescueOptions extends MenuView {
 
     public RescueOptions() {
         super("\n"

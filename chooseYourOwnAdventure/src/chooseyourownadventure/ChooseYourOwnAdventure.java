@@ -28,6 +28,17 @@ public class ChooseYourOwnAdventure {
 
     
     public static void main(String[] args) {
+        
+        while(true) {
+            try{
+                java.awt.EventQueue.invokeLater(new Runnable()){
+                public void run(){
+                        StartProgramFrame startProgramView = new StartProgramFrame();
+                startProgramView.setVisible(true);
+                }
+            }:
+        }
+        
        StartProgramView startProgramView = new StartProgramView();
        startProgramView.startProgram();
     }
