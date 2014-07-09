@@ -5,7 +5,9 @@
  */
 
 package byui.cit260.chooseYourOwnAdventure.control;
-    import java.until.Scanner;
+
+import java.util.Scanner;
+
 /**
  *
  * @author Tanner

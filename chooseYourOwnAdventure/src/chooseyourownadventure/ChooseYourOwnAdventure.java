@@ -6,6 +6,7 @@
 
 package chooseyourownadventure;
 
+import byui.cit260.chooseYourOwnAdventure.frames.StartProgramFrame;
 import byui.cit260.chooseYourOwnAdventure.model.Game;
 import byui.cit260.chooseYourOwnAdventure.model.Location;
 import byui.cit260.chooseYourOwnAdventure.model.Map;
@@ -29,18 +30,18 @@ public class ChooseYourOwnAdventure {
     
     public static void main(String[] args) {
         
-        while(true) {
-            try{
-                java.awt.EventQueue.invokeLater(new Runnable()){
+
+        java.awt.EventQueue.invokeLater(
+                    new Runnable(){
                 public void run(){
-                        StartProgramFrame startProgramView = new StartProgramFrame();
-                startProgramView.setVisible(true);
+                    StartProgramFrame startProgramView = new StartProgramFrame();
+                    startProgramView.setVisible(true);
                 }
-            }:
-        }
-        
-       StartProgramView startProgramView = new StartProgramView();
-       startProgramView.startProgram();
+                }
+            );
+
+//       StartProgramView startProgramView = new StartProgramView();
+//       startProgramView.startProgram();
     }
 
     public static Game getCurrentGame() {
