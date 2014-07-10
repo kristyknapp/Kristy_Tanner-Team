@@ -33,12 +33,12 @@ public class StartProgramFrame extends javax.swing.JFrame {
         jpMainPanel = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jlImage1 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jlTextField1 = new javax.swing.JTextField();
         jTextField1 = new javax.swing.JTextField();
         jbStart = new javax.swing.JButton();
         jbQuit = new javax.swing.JButton();
         nameEnter = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
         jlTitle = new javax.swing.JLabel();
 
@@ -46,7 +46,7 @@ public class StartProgramFrame extends javax.swing.JFrame {
 
         jpMainPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        jlImage1.setText("jLabel1");
+        jlImage1.setText("Image");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -54,8 +54,8 @@ public class StartProgramFrame extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(48, 48, 48)
-                .addComponent(jlImage1)
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addComponent(jlImage1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -63,30 +63,6 @@ public class StartProgramFrame extends javax.swing.JFrame {
                 .addGap(50, 50, 50)
                 .addComponent(jlImage1)
                 .addContainerGap(63, Short.MAX_VALUE))
-        );
-
-        jlTextField1.setText("This is Choose Your Own Adventure!");
-        jlTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jlTextField1ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addComponent(jlTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(69, 69, 69)
-                .addComponent(jlTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(64, Short.MAX_VALUE))
         );
 
         jTextField1.setText("Enter Your Name and Press Start");
@@ -105,37 +81,45 @@ public class StartProgramFrame extends javax.swing.JFrame {
             }
         });
 
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("This is Choose Your Own Adventure!You find yourself on a deserted island, \nin this game you will become a survivor of a horrific plane crash. \nChoose your path wisely, collect and conserve resources and cope \nwith various situations on the island in order to survive long enough \nfor help to arrive. \nAs far as you know, you are the only survivor and have landed on a lush \nisland, but you must venture out for food, fresh water, and other supplies,\nrisking your safety.\n\nEverything to survive is located on the island, but you must make \ncareful decisions to stay alive. Before doing any major action, \nyou must have enough resources to perform that action. \nThroughout the game, you will be given options of what to do, \nsome decisions are big, others are small. But all can decide whether\nyou live or die. The outcome of whether you are successful in a given \nchoice you make is randomly generated through the program.\n\nEach major action (moving to a new location, collecting supplies, \nbuilding a raft, and creating signal fire) costs 20 points. \nYou start out on the island with 100 health points, but must \nconserve and build energy through collecting and eating food and sleeping. \nIf health gets below 40 points, your character will die.\n\nGood luck. We hope to see you come out alive...");
+        jScrollPane1.setViewportView(jTextArea1);
+
         javax.swing.GroupLayout jpMainPanelLayout = new javax.swing.GroupLayout(jpMainPanel);
         jpMainPanel.setLayout(jpMainPanelLayout);
         jpMainPanelLayout.setHorizontalGroup(
             jpMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpMainPanelLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
                 .addGroup(jpMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpMainPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jpMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jpMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(jpMainPanelLayout.createSequentialGroup()
+                                    .addComponent(jbStart)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jbQuit))
+                                .addComponent(nameEnter, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 6115, Short.MAX_VALUE))
                     .addGroup(jpMainPanelLayout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addGroup(jpMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jpMainPanelLayout.createSequentialGroup()
-                                .addComponent(jbStart)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jbQuit))
-                            .addComponent(nameEnter, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 607, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jpMainPanelLayout.setVerticalGroup(
             jpMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpMainPanelLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
                 .addGroup(jpMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(144, 144, 144)
+                    .addGroup(jpMainPanelLayout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jpMainPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(28, 28, 28)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(13, 13, 13)
                 .addComponent(nameEnter, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -175,7 +159,7 @@ public class StartProgramFrame extends javax.swing.JFrame {
             .addComponent(jpMainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 32, Short.MAX_VALUE))
+                .addGap(0, 5915, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,17 +191,14 @@ public class StartProgramFrame extends javax.swing.JFrame {
                                             JOptionPane.ERROR_MESSAGE);
             return;
         }
-
+        //display the main menu
+        
         //create the plater
 
         //create the main frame
         //set the welcome message on the main frame
         //create the start program
     }//GEN-LAST:event_jbStartActionPerformed
-
-    private void jlTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jlTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jlTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -257,12 +238,12 @@ public class StartProgramFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JButton jbQuit;
     private javax.swing.JButton jbStart;
     private javax.swing.JLabel jlImage1;
-    private javax.swing.JTextField jlTextField1;
     private javax.swing.JLabel jlTitle;
     private javax.swing.JPanel jpMainPanel;
     private javax.swing.JTextField nameEnter;
