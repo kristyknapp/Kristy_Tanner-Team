@@ -37,13 +37,14 @@ public class mainMenuFrame extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel1.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setText("Start New Game");
 
         jTextField1.setEditable(false);
-        jTextField1.setBackground(new java.awt.Color(153, 255, 204));
+        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
         jTextField1.setText("Main Menu");
 
         jLabel2.setText("Continue Saved Game");
