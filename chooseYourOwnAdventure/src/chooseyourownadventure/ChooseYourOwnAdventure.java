@@ -26,7 +26,15 @@ public class ChooseYourOwnAdventure {
     private static Player player = null;
     private static Location location = null;
     private static Map map = null;
+    private static Main mainMenuView = null;
 
+    public static Main getMainMenuView() {
+        return mainMenuView;
+    }
+
+    public static void setMainMenuView(Main mainMenuView) {
+        ChooseYourOwnAdventure.mainMenuView = mainMenuView;
+    }
     
     public static void main(String[] args) {
         
@@ -44,7 +52,7 @@ public class ChooseYourOwnAdventure {
         System.out.println(e.getMessage());
         
     }
-
+   
 //       StartProgramView startProgramView = new StartProgramView();
 //       startProgramView.startProgram();
     }
