@@ -84,7 +84,8 @@ class CollectResources extends MenuView {
         String description = resource.getDescription();
         
         //Search Resource List Function
-        boolean success = ResourceControl.addResourceToPlayer(description);
+        try {
+           boolean success = ResourceControl.addResourceToPlayer(description);
         if (success) {
             System.out.println(description + " added to Player Resources.");
             return true;
@@ -92,7 +93,12 @@ class CollectResources extends MenuView {
         else {
             System.out.println("No " + description + " found in this location.");
             return false;
-        }
+        } 
+        }catch (Exception e) {
+                System.out.println("Invalid Letter Entered");
+                } 
+        return false;
+        
             
 
     }

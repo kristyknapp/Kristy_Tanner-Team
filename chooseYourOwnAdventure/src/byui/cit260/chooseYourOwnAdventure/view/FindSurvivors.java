@@ -42,7 +42,6 @@ public class FindSurvivors extends MenuView {
         return false;
     }
 
-
     public boolean addSurvivorToResource() {
 
         Location location = ChooseYourOwnAdventure.getLocation();
@@ -52,15 +51,20 @@ public class FindSurvivors extends MenuView {
         Resource survivor = GameControl.getGame().getResources()[GameControl.SURVIVORS];
 
         //Search Resource List Function
-        boolean success = ResourceControl.addResourceToPlayer("survivors");
-        if (success) {
-            System.out.println("Survivor added to player.");
-            return true;
-        } else {
-            System.out.println("There are no survivors in this location.");
-            return false;
+        try {
+            boolean success = ResourceControl.addResourceToPlayer("survivors");
+            if (success) {
+                System.out.println("Survivor added to player.");
+                return true;
+            } else {
+                System.out.println("There are no survivors in this location.");
+                return false;
+            }
+
+        } catch (Exception e) {
+            System.out.println("Invalid Value Entered");
         }
+        return false;
 
     }
-
 }

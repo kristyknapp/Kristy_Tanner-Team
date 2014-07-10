@@ -6,6 +6,7 @@
 package byui.cit260.chooseYourOwnAdventure.control;
 
 import byui.cit260.chooseYourOwnAdventure.exceptions.ChooseYourOwnAdventureException;
+import byui.cit260.chooseYourOwnAdventure.exceptions.ResourceControlException;
 import byui.cit260.chooseYourOwnAdventure.model.Location;
 import byui.cit260.chooseYourOwnAdventure.model.Resource;
 import chooseyourownadventure.ChooseYourOwnAdventure;
@@ -28,7 +29,7 @@ public class ResourceControl {
         return null;
     }
 
-    public static boolean addResourceToPlayer(String description) {
+    public static boolean addResourceToPlayer(String description) throws ResourceControlException {
 
         Location location = ChooseYourOwnAdventure.getLocation();
 

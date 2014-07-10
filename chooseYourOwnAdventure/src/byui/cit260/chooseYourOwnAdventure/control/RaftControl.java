@@ -6,6 +6,7 @@
 
 package byui.cit260.chooseYourOwnAdventure.control;
 
+import byui.cit260.chooseYourOwnAdventure.exceptions.RaftControlException;
 import java.util.Scanner;
 
 /**
