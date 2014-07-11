@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package byui.cit260.chooseYourOwnAdventure.frames;
 
+import byui.cit260.chooseYourOwnAdventure.model.Player;
+import byui.cit260.chooseYourOwnAdventure.frames.mainMenuFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -65,7 +66,12 @@ public class StartProgramFrame extends javax.swing.JFrame {
                 .addContainerGap(63, Short.MAX_VALUE))
         );
 
-        jTextField1.setText("Enter Your Name and Press Start");
+        jTextField1.setText("Enter Your Name Below and Press Start");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
         jbStart.setText("Start");
         jbStart.addActionListener(new java.awt.event.ActionListener() {
@@ -94,19 +100,18 @@ public class StartProgramFrame extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addGroup(jpMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpMainPanelLayout.createSequentialGroup()
-                        .addGroup(jpMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jpMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(jpMainPanelLayout.createSequentialGroup()
-                                    .addComponent(jbStart)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jbQuit))
-                                .addComponent(nameEnter, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 6115, Short.MAX_VALUE))
-                    .addGroup(jpMainPanelLayout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 607, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 5556, Short.MAX_VALUE)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jpMainPanelLayout.createSequentialGroup()
+                        .addGroup(jpMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jpMainPanelLayout.createSequentialGroup()
+                                .addComponent(jbStart)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jbQuit))
+                            .addComponent(nameEnter)
+                            .addComponent(jTextField1))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jpMainPanelLayout.setVerticalGroup(
@@ -156,10 +161,13 @@ public class StartProgramFrame extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpMainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 5915, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jpMainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -183,7 +191,7 @@ public class StartProgramFrame extends javax.swing.JFrame {
         String playersName = this.nameEnter.getText();
         // trim off exxcess blanks from the plaer name
         playersName = playersName.trim();
-        //chek to see if the platers name isgreater than one charager
+        //chek to see if the players name isgreater than one charager
         if (playersName.length()<1) {
             JOptionPane.showMessageDialog(this,
                                             "This player's name must be greater than one character",
@@ -191,14 +199,16 @@ public class StartProgramFrame extends javax.swing.JFrame {
                                             JOptionPane.ERROR_MESSAGE);
             return;
         }
-        //display the main menu
+        //display main menu
+        byui.cit260.chooseYourOwnAdventure.frames.mainMenuFrame.getmainMenuFrame.setVisible(true);
         
-        //create the plater
-
-        //create the main frame
-        //set the welcome message on the main frame
-        //create the start program
+        //Initialize the player
+        byui.cit260.chooseYourOwnAdventure.model.Player.getPlayer.setVisible(false);
     }//GEN-LAST:event_jbStartActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
