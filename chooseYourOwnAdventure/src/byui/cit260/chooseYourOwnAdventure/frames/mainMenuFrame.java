@@ -170,4 +170,14 @@ public class mainMenuFrame extends javax.swing.JFrame {
     private javax.swing.JButton jStartGame;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+
+    static class getmainMenuFrame {
+
+        static void setVisible(boolean b) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        public getmainMenuFrame() {
+        }
+    }
 }

@@ -16,6 +16,10 @@ import java.util.Objects;
  * @author kristyknapp
  */
 public class Player implements Serializable{
+
+    public static Object getPlayer() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     //Class instance variables
     private String name;
@@ -106,7 +110,15 @@ public class Player implements Serializable{
         }
         return true;
     }
-    
-    
-    
+
+    public static class getPlayer {
+
+        public static void setVisible(boolean b) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        public getPlayer() {
+        }
+    }
+
 }
