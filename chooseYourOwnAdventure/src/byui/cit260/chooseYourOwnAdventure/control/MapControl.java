@@ -255,7 +255,7 @@ public class MapControl {
         return null;
     }
     
-        public static void movePlayerToLocation(Player player, int row, int column) 
+        public static void movePlayerToLocation(int row, int column) 
                                 throws MapControlException {
             Point map = ChooseYourOwnAdventure.getPlayer().getLocation();
             if (row < 1 || row > map.getX() || column < 1 || column > map.getY()) {

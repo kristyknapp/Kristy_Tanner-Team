@@ -39,7 +39,7 @@ public class PointsControl {
      //get players location 
         Point playerLocation = ChooseYourOwnAdventure.getPlayer().getLocation();
        //IF player location is in shelter or cave
-        if (playerLocation.equals(CAVE || SHELTER)) {
+        if (playerLocation.equals(MapControl.SHELTER) || playerLocation.equals(MapControl.SHELTER)) {
             //THEN make totalSleep = 40pts
             int sleepPoints = 40;
         }

@@ -55,7 +55,9 @@ public class NewLocation extends MenuView{
     public boolean doAction(String choice) {
         try { 
             //move player to chosen location
-            MapControl.movePlayerToLocation(player, coordinates);
+            
+            
+            MapControl.movePlayerToLocation(row, column);
         } catch (MapControlException ex) {
             System.out.println(ex.getMessage());
         }

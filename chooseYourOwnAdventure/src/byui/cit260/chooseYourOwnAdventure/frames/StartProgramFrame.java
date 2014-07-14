@@ -197,9 +197,9 @@ public class StartProgramFrame extends javax.swing.JFrame {
     private void jbStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbStartActionPerformed
         //get the players name
         String playersName = this.nameEnter.getText();
-        // trim off exxcess blanks from the plaer name
+        // trim off excess blanks from the player name
         playersName = playersName.trim();
-        //chek to see if the platers name isgreater than one charager
+        //chek to see if the platers name is greater than one charager
         if (playersName.length()<1) {
             JOptionPane.showMessageDialog(this,
                                             "This player's name must be greater than one character",
@@ -208,8 +208,8 @@ public class StartProgramFrame extends javax.swing.JFrame {
             return;
         }
 
-        //create the plater
-
+        //create the player
+        
         //create the main frame
         //set the welcome message on the main frame
         //create the start program

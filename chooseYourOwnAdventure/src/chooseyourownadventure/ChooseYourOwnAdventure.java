@@ -6,6 +6,7 @@
 
 package chooseyourownadventure;
 
+import byui.cit260.chooseYourOwnAdventure.frames.MainMenuFrame;
 import byui.cit260.chooseYourOwnAdventure.frames.StartProgramFrame;
 import byui.cit260.chooseYourOwnAdventure.model.Game;
 import byui.cit260.chooseYourOwnAdventure.model.Location;
@@ -26,14 +27,14 @@ public class ChooseYourOwnAdventure {
     private static Player player = null;
     private static Location location = null;
     private static Map map = null;
-    private static Main mainMenuView = null;
+    private static MainMenuFrame mainMenuFrame = null;
 
-    public static Main getMainMenuView() {
-        return mainMenuView;
+    public static MainMenuFrame getMainMenuFrame() {
+        return mainMenuFrame;
     }
 
-    public static void setMainMenuView(Main mainMenuView) {
-        ChooseYourOwnAdventure.mainMenuView = mainMenuView;
+    public static void setMainMenuFrame(MainMenuFrame mainMenuFrame) {
+        ChooseYourOwnAdventure.mainMenuFrame = mainMenuFrame;
     }
     
     public static void main(String[] args) {

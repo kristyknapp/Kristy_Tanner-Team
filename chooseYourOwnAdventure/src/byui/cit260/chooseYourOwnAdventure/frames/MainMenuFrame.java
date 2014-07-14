@@ -6,17 +6,20 @@
 
 package byui.cit260.chooseYourOwnAdventure.frames;
 
+import chooseyourownadventure.ChooseYourOwnAdventure;
+
 /**
  *
  * @author Tanner
  */
-public class mainMenuFrame extends javax.swing.JFrame {
+public class MainMenuFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form mainMenuFrame
      */
-    public mainMenuFrame() {
+    public MainMenuFrame() {
         initComponents();
+        ChooseYourOwnAdventure.setMainMenuFrame(this);
     }
 
     /**
@@ -44,7 +47,6 @@ public class mainMenuFrame extends javax.swing.JFrame {
         jLabel1.setText("Start New Game");
 
         jTextField1.setEditable(false);
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
         jTextField1.setText("Main Menu");
 
         jLabel2.setText("Continue Saved Game");
@@ -127,20 +129,20 @@ public class mainMenuFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(mainMenuFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainMenuFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(mainMenuFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainMenuFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(mainMenuFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainMenuFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(mainMenuFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainMenuFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new mainMenuFrame().setVisible(true);
+                new MainMenuFrame().setVisible(true);
             }
         });
     }

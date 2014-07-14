@@ -7,7 +7,10 @@
 package byui.cit260.chooseYourOwnAdventure.frames;
 
 import byui.cit260.chooseYourOwnAdventure.control.GameControl;
+import byui.cit260.chooseYourOwnAdventure.control.RescueControl;
+import byui.cit260.chooseYourOwnAdventure.control.ResourceControl;
 import byui.cit260.chooseYourOwnAdventure.model.Resource;
+import chooseyourownadventure.ChooseYourOwnAdventure;
 
 /**
  *
@@ -40,6 +43,7 @@ public class HelpMenuFrame extends javax.swing.JFrame {
         JTextPaneHelp = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(204, 255, 204));
 
         jLabel1.setFont(new java.awt.Font("Eurostile", 1, 36)); // NOI18N
         jLabel1.setText("Help Menu");
@@ -148,22 +152,28 @@ public class HelpMenuFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_JBScenariosActionPerformed
 
     private void JBResourcesHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBResourcesHelpActionPerformed
-        Resource[] resources = GameControl.getSortedResources();
+        //Get the sorted resources
+            Resource[] resources = GameControl.getSortedResources();
+        //Display them
+            
          
-         this.JTextPaneHelp.setText("\nList of Resources"
-          + "\nDescription" + "\t" + "Required" + "\t" + "In Stock");
-         
-         for (Resource collectResources : resources) {
-             // DISPLAY the description, the required amount and amount in stock
-             System.out.println(collectResources.getDescription() + "\t" +
-                                collectResources.getRequiredAmount() + "\t" +
-                                collectResources.getQuantityInStock());
-                     
-        }
+
+             this.JTextPaneHelp.setText("List of Resources"
+                + GameControl.sortedResources(resources));
+                
+             //Attempt Below
+             /*"\n\n\tDescription"
+                + collectResources.getDescription()
+                +"\n\tRequired Amount"
+                + collectResources.getRequiredAmount()
+                +"\n\tIn Stock"
+                + collectResources.getQuantityInStock()
+             */  
     }//GEN-LAST:event_JBResourcesHelpActionPerformed
 
     private void JBQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBQuitActionPerformed
         //Quit or Exit
+        ChooseYourOwnAdventure.getMainMenuFrame().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_JBQuitActionPerformed
 
