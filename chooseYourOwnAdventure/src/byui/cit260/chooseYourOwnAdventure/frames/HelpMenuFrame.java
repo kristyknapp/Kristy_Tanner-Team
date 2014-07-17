@@ -152,23 +152,19 @@ public class HelpMenuFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_JBScenariosActionPerformed
 
     private void JBResourcesHelpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBResourcesHelpActionPerformed
-        //Get the sorted resources
-            Resource[] resources = GameControl.getSortedResources();
-        //Display them
-            
-         
-
+            //display available resources for game
              this.JTextPaneHelp.setText("List of Resources"
-                + GameControl.sortedResources(resources));
+             +"\n\nCollect as many resources as you can without exceeding the total of 60."
+             +"The available resources to collect are: "
+             +"\n\n\tFood"
+             +"\n\twater"
+             +"\n\tLogs"
+             +"\n\tRocks"
+             +"\n\tVines"
+             +"\n\nYou are also required to sleep to keep your total health up. Health is determined"
+             +"by how much food, water, and sleep you player has. You can have a total of 40 points for sleep.");
                 
-             //Attempt Below
-             /*"\n\n\tDescription"
-                + collectResources.getDescription()
-                +"\n\tRequired Amount"
-                + collectResources.getRequiredAmount()
-                +"\n\tIn Stock"
-                + collectResources.getQuantityInStock()
-             */  
+              
     }//GEN-LAST:event_JBResourcesHelpActionPerformed
 
     private void JBQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBQuitActionPerformed

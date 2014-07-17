@@ -3,9 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package byui.cit260.chooseYourOwnAdventure.frames;
 
+import byui.cit260.chooseYourOwnAdventure.control.GameControl;
+import byui.cit260.chooseYourOwnAdventure.control.MapControl;
+import byui.cit260.chooseYourOwnAdventure.control.ProgramControl;
+import byui.cit260.chooseYourOwnAdventure.frames.MainMenuFrame;
+import byui.cit260.chooseYourOwnAdventure.model.Map;
+import byui.cit260.chooseYourOwnAdventure.model.Player;
+import chooseyourownadventure.ChooseYourOwnAdventure;
 import javax.swing.JOptionPane;
 
 /**
@@ -30,66 +36,24 @@ public class StartProgramFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jpMainPanel = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jlImage1 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jlTextField1 = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
         jbStart = new javax.swing.JButton();
         jbQuit = new javax.swing.JButton();
         nameEnter = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jPanel3 = new javax.swing.JPanel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jlTitle = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setSize(new java.awt.Dimension(800, 504));
 
-        jpMainPanel.setBackground(new java.awt.Color(255, 255, 255));
-
-        jlImage1.setText("jLabel1");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(jlImage1)
-                .addContainerGap(59, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(jlImage1)
-                .addContainerGap(63, Short.MAX_VALUE))
-        );
-
-        jlTextField1.setText("This is Choose Your Own Adventure!");
-        jlTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jlTextField1ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addComponent(jlTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(69, 69, 69)
-                .addComponent(jlTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(64, Short.MAX_VALUE))
-        );
-
-        jTextField1.setText("Enter Your Name and Press Start");
+        jpMainPanel.setBackground(new java.awt.Color(102, 102, 102));
 
         jbStart.setText("Start");
         jbStart.addActionListener(new java.awt.event.ActionListener() {
@@ -105,81 +69,138 @@ public class StartProgramFrame extends javax.swing.JFrame {
             }
         });
 
+        nameEnter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nameEnterActionPerformed(evt);
+            }
+        });
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("This is Choose Your Own Adventure! You find yourself on a deserted island, \nin this game you will become a survivor of a horrific plane crash. \nChoose your path wisely, collect and conserve resources and cope \nwith various situations on the island in order to survive long enough \nfor help to arrive. \nAs far as you know, you are the only survivor and have landed on a lush \nisland, but you must venture out for food, fresh water, and other supplies,\nrisking your safety.\n\nEverything to survive is located on the island, but you must make \ncareful decisions to stay alive. Before doing any major action, \nyou must have enough resources to perform that action. \nThroughout the game, you will be given options of what to do, \nsome decisions are big, others are small. But all can decide whether\nyou live or die. The outcome of whether you are successful in a given \nchoice you make is randomly generated through the program.\n\nEach major action (moving to a new location, collecting supplies, \nbuilding a raft, and creating signal fire) costs 20 points. \nYou start out on the island with 100 health points, but must \nconserve and build energy through collecting and eating food and sleeping. \nIf health gets below 40 points, your character will die.\n\nGood luck. We hope to see you come out alive...");
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jPanel3.setBackground(new java.awt.Color(153, 153, 153));
+
+        buttonGroup1.add(jRadioButton1);
+        jRadioButton1.setText("Beach Map");
+
+        buttonGroup1.add(jRadioButton2);
+        jRadioButton2.setText("Cliff Map");
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jRadioButton2)
+                    .addComponent(jRadioButton1))
+                .addContainerGap(91, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jRadioButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jRadioButton2)
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Enter your name, select a map, and press start");
+
         javax.swing.GroupLayout jpMainPanelLayout = new javax.swing.GroupLayout(jpMainPanel);
         jpMainPanel.setLayout(jpMainPanelLayout);
         jpMainPanelLayout.setHorizontalGroup(
             jpMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpMainPanelLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
                 .addGroup(jpMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpMainPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jpMainPanelLayout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addGroup(jpMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jpMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jpMainPanelLayout.createSequentialGroup()
+                                .addGroup(jpMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(nameEnter))
+                                .addGap(29, 29, 29))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpMainPanelLayout.createSequentialGroup()
                                 .addComponent(jbStart)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jbQuit))
-                            .addComponent(nameEnter, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jbQuit)
+                                .addGap(18, 18, 18)))
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 607, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpMainPanelLayout.setVerticalGroup(
             jpMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpMainPanelLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
                 .addGroup(jpMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(144, 144, 144)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(13, 13, 13)
-                .addComponent(nameEnter, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jpMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbStart)
-                    .addComponent(jbQuit))
-                .addContainerGap(26, Short.MAX_VALUE))
+                    .addGroup(jpMainPanelLayout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(nameEnter, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jpMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jbQuit)
+                            .addComponent(jbStart)))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
         jPanel1.setFont(new java.awt.Font("Mistral", 0, 24)); // NOI18N
 
-        jlTitle.setFont(new java.awt.Font("Serif", 0, 24)); // NOI18N
+        jlTitle.setFont(new java.awt.Font("Eurostile", 1, 36)); // NOI18N
+        jlTitle.setForeground(new java.awt.Color(255, 255, 255));
         jlTitle.setText("Choose Your Own Adventure!");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(92, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(84, 84, 84)
                 .addComponent(jlTitle)
-                .addGap(54, 54, 54))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jlTitle)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpMainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 32, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jpMainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jpMainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -199,25 +220,56 @@ public class StartProgramFrame extends javax.swing.JFrame {
         String playersName = this.nameEnter.getText();
         // trim off excess blanks from the player name
         playersName = playersName.trim();
+
         //chek to see if the platers name is greater than one charager
-        if (playersName.length()<1) {
+        //chek to see if the players name isgreater than one charager
+        if (playersName.length() < 1) {
             JOptionPane.showMessageDialog(this,
-                                            "This player's name must be greater than one character",
-                                            "Invalid platers name",
-                                            JOptionPane.ERROR_MESSAGE);
+                    "This player's name must be greater than one character",
+                    "Invalid platers name",
+                    JOptionPane.ERROR_MESSAGE);
             return;
         }
-
-        //create the player
         
+        //create the player
+        ProgramControl.createPlayer(playersName);
+
+        // create new game
+        GameControl.createNewGame(ChooseYourOwnAdventure.getPlayer());
+
+        // if beachmap or cliff map is selected
+        Map map;
+
+        if (this.jRadioButton1.isSelected()) {
+            map = MapControl.createBeachMap();
+        } else if (this.jRadioButton2.isSelected()) {
+            map = MapControl.createCliffMap();
+        } else {
+            JOptionPane.showMessageDialog(this, "You must select a map before you start the game", "Inalid map selected", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        ChooseYourOwnAdventure.getCurrentGame().setMap(map);
+
         //create the main frame
+        MainMenuFrame mainMenuFrame = new MainMenuFrame();
         //set the welcome message on the main frame
+        mainMenuFrame.getjLabelWelcomemsg().setText("Welcome " + playersName + " to Choose Your Own Adventure!");
         //create the start program
+
+        //display main menu
+        mainMenuFrame.setVisible(true);
+        this.dispose();
+
+
     }//GEN-LAST:event_jbStartActionPerformed
 
-    private void jlTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jlTextField1ActionPerformed
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jlTextField1ActionPerformed
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
+
+    private void nameEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameEnterActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameEnterActionPerformed
 
     /**
      * @param args the command line arguments
@@ -255,14 +307,16 @@ public class StartProgramFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton jbQuit;
     private javax.swing.JButton jbStart;
-    private javax.swing.JLabel jlImage1;
-    private javax.swing.JTextField jlTextField1;
     private javax.swing.JLabel jlTitle;
     private javax.swing.JPanel jpMainPanel;
     private javax.swing.JTextField nameEnter;

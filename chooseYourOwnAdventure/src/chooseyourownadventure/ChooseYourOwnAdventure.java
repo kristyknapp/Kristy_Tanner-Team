@@ -29,13 +29,7 @@ public class ChooseYourOwnAdventure {
     private static Map map = null;
     private static MainMenuFrame mainMenuFrame = null;
 
-    public static MainMenuFrame getMainMenuFrame() {
-        return mainMenuFrame;
-    }
-
-    public static void setMainMenuFrame(MainMenuFrame mainMenuFrame) {
-        ChooseYourOwnAdventure.mainMenuFrame = mainMenuFrame;
-    }
+    
     
     public static void main(String[] args) {
         
@@ -90,6 +84,14 @@ public class ChooseYourOwnAdventure {
         ChooseYourOwnAdventure.map = map;
     }
     
+    public static MainMenuFrame getMainMenuFrame() {
+        return mainMenuFrame;
+    }
+
+    public static void setMainMenuFrame(MainMenuFrame mainMenuFrame) {
+        ChooseYourOwnAdventure.mainMenuFrame = mainMenuFrame;
+    }
+
     
     
 }

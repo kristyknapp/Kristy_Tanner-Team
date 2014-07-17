@@ -38,14 +38,14 @@ public class RescueOptions extends MenuView {
                     break;
                 if("Y");
                 //TAKE AWAY TEN HEALTH POINTS
-                    int= Math.random(1); 
-                        if ("0"); //SUCCESS
+                    int= Math.random(1);
+                        if (Math.random=0); //SUCCESS
                         System.out.println
                         ("Congratulations, you have escaped the island."
                         +"Do you want to play again? [Y] or [N]?");
                             if (input="Y"); //RESTART SAVE STATE AND GO BACK TO START MENU.
                             if (input="N"); //PROGRAM WILL SHUT DOWN.
-                if (OUTCOME="1"); //FAILURE
+                if (Math.random="1"); //FAILURE
                 System.out.println ("Failure. Please Try again when ready.");
                         return //return to the previous menu
                 else("N");
@@ -61,13 +61,13 @@ public class RescueOptions extends MenuView {
                 if("Y"); //RANDOM OUTCOME
                 //TAKE AWAY 5 HEALTH POINTS
                     int= Math.random(1); 
-                        if ("0"); //SUCCESS
+                        if (Math.random=0); //SUCCESS
                         System.out.println
                         ("Congratulations, you have escaped the island."
                         +"Do you want to play again? [Y] or [N]?");
-                            if input="Y"; //RESTART SAVE STATE AND GO BACK TO START MENU.
-                            if input="N"; //PROGRAM WILL SHUT DOWN.
-                if (OUTCOME="1"); //FAILURE
+                            if input=("Y"); //RESTART SAVE STATE AND GO BACK TO START MENU.
+                            if input=("N"); //PROGRAM WILL SHUT DOWN.
+                if (Math.random="1"); //FAILURE
                 System.out.println ("Failure. Please Try again when ready.");
                         return //return to the previous menu
                 else("N");
@@ -83,13 +83,15 @@ public class RescueOptions extends MenuView {
                     break;
                 if("Y"); //RANDOM OUTCOME
                     int= Math.random(1); 
-                        if ("0"); //SUCCESS
+                        if (Math.random=0); //SUCCESS
                         System.out.println
                         ("Congratulations, you have escaped the island."
                         +"Do you want to play again? [Y] or [N]?");
-                            if input="Y"; //RESTART SAVE STATE AND GO BACK TO START MENU.
-                            if input="N"; //PROGRAM WILL SHUT DOWN.
-                if (OUTCOME="1"); //FAILURE
+                            if input=("Y");
+                        //RESTART SAVE STATE AND GO BACK TO START MENU.
+                            if input=("N");
+                        //PROGRAM WILL SHUT DOWN.
+                if (Math.random="1"); //FAILURE
                 System.out.println ("Failure. Please Try again when ready.");
                         return //return to the previous menu
                 else("N");
@@ -103,20 +105,20 @@ public class RescueOptions extends MenuView {
                 + "Writing a message will cost 5 health points.'"
                 + "Do you want to write a message? [Y] or [N]");
                     break;
-                if(input=="Y"); //RANDOM OUTCOME
+                if(input="Y"); //RANDOM OUTCOME
                     int= (int)(Math.random() * (1)); 
-                        if (OUTCOME="0"); //SUCCESS
+                        if (Math.random="0"); //SUCCESS
                         System.out.println
                         ("Congratulations, you have escaped the island."
                         +"Do you want to play again? [Y] or [N]?");
-                            if (input="Y"); //RESTART SAVE STATE AND GO BACK TO START MENU.
-                            if (input="N"); //PROGRAM WILL SHUT DOWN.
+                            if input=("Y"); //RESTART SAVE STATE AND GO BACK TO START MENU.
+                            if input=("N"); //PROGRAM WILL SHUT DOWN.
                 
-                        else (OUTCOME="1"); //FAILURE
+                        else (Math.random="1"); //FAILURE
                         System.out.println ("Failure. Please Try again when ready.");
                         return //return to the previous menu
                 
-                else(input=="N");
+                        else input==("N");
                     return //Return to the previous menu
                                 
                 case "E": // Exit the program

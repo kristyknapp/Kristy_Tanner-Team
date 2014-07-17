@@ -6,14 +6,12 @@
 
 package byui.cit260.chooseYourOwnAdventure.control;
 
-import byui.cit260.chooseYourOwnAdventure.exceptions.ChooseYourOwnAdventureException;
 import byui.cit260.chooseYourOwnAdventure.exceptions.MapControlException;
+import byui.cit260.chooseYourOwnAdventure.model.Game;
 import byui.cit260.chooseYourOwnAdventure.model.Location;
 import byui.cit260.chooseYourOwnAdventure.model.Map;
-import byui.cit260.chooseYourOwnAdventure.model.Player;
 import byui.cit260.chooseYourOwnAdventure.model.Rescue;
 import byui.cit260.chooseYourOwnAdventure.model.Resource;
-import byui.cit260.chooseYourOwnAdventure.model.Scene;
 import chooseyourownadventure.ChooseYourOwnAdventure;
 import java.awt.Point;
 
@@ -41,7 +39,9 @@ public class MapControl {
         Map map = new Map(2, 2);
         
         //create locations for the game
-        Location[] locations = createLocationsBeachMap(GameControl.game.getResources(), GameControl.game.getRescue());
+        Game game = GameControl.game;
+        Location[] locations = createLocationsBeachMap(game.getResources(), game.getRescue());
+        
         
         //assign locations to positions on map
         MapControl.assignLocationsToBeachMap(map, locations);
@@ -61,7 +61,8 @@ public class MapControl {
         Map map = new Map(2,2);
         
         //create locations for the game
-        Location[] locations = createLocationsCliffMap(GameControl.game.getResources(), GameControl.game.getRescue());
+        Game game = GameControl.game;
+        Location[] locations = createLocationsCliffMap(game.getResources(), game.getRescue());
         
         //assign locations to positions on map
         MapControl.assignLocationsToCliffMap(map, locations);

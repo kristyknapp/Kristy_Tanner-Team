@@ -6,7 +6,6 @@
 
 package byui.cit260.chooseYourOwnAdventure.control;
 
-import byui.cit260.chooseYourOwnAdventure.exceptions.ProgramControlException;
 import byui.cit260.chooseYourOwnAdventure.model.Game;
 import byui.cit260.chooseYourOwnAdventure.model.Location;
 import byui.cit260.chooseYourOwnAdventure.model.Player;
@@ -20,7 +19,7 @@ public class ProgramControl {
     
 
     public static Player createPlayer(String playersName) {
-        System.out.println("\n**** createPlayer function called ****");
+        
         Player player = new Player();
         player.setName(playersName);
         
@@ -35,7 +34,7 @@ public class ProgramControl {
     }
 
     public static Location createLocation(String locationChoice) {
-        System.out.println("/n*** createLocation stub function called");
+       
         Location location = new Location();
         location.setDescription(locationChoice);
         
