@@ -218,6 +218,22 @@
             <Property name="text" type="java.lang.String" value="Enter your name, select a map, and press start"/>
           </Properties>
         </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTextArea" name="jTextArea1">
+              <Properties>
+                <Property name="columns" type="int" value="20"/>
+                <Property name="rows" type="int" value="5"/>
+                <Property name="text" type="java.lang.String" value="This is Choose Your Own Adventure!You find yourself on a deserted island, &#xa;in this game you will become a survivor of a horrific plane crash. &#xa;Choose your path wisely, collect and conserve resources and cope &#xa;with various situations on the island in order to survive long enough &#xa;for help to arrive. &#xa;As far as you know, you are the only survivor and have landed on a lush &#xa;island, but you must venture out for food, fresh water, and other supplies,&#xa;risking your safety.&#xa;&#xa;Everything to survive is located on the island, but you must make &#xa;careful decisions to stay alive. Before doing any major action, &#xa;you must have enough resources to perform that action. &#xa;Throughout the game, you will be given options of what to do, &#xa;some decisions are big, others are small. But all can decide whether&#xa;you live or die. The outcome of whether you are successful in a given &#xa;choice you make is randomly generated through the program.&#xa;&#xa;Each major action (moving to a new location, collecting supplies, &#xa;building a raft, and creating signal fire) costs 20 points. &#xa;You start out on the island with 100 health points, but must &#xa;conserve and build energy through collecting and eating food and sleeping. &#xa;If health gets below 40 points, your character will die.&#xa;&#xa;Good luck. We hope to see you come out alive..."/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="jPanel1">
