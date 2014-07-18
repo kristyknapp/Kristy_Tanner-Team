@@ -24,6 +24,8 @@ public class MainMenuFrame extends javax.swing.JFrame {
      */
     public MainMenuFrame() {
         initComponents();
+        
+        ChooseYourOwnAdventure.setMainMenuFrame(this);
     }
 
     public JLabel getjLabelWelcomemsg() {
@@ -152,7 +154,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
         GameMenuFrame gameMenuFrame = new GameMenuFrame();
             //display the Game Menu
         gameMenuFrame.setVisible(true);
-        this.dispose();
+        this.setVisible(false);
                 
     }//GEN-LAST:event_jStartGameActionPerformed
 
