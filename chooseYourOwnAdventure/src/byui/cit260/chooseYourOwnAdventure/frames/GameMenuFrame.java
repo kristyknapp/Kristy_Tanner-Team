@@ -84,7 +84,7 @@ public class GameMenuFrame extends javax.swing.JFrame {
             }
         });
 
-        jbRescueOptions.setText("RescueOptions");
+        jbRescueOptions.setText("Rescue Options");
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Current Total Health");

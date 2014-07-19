@@ -5,7 +5,12 @@
  */
 
 package byui.cit260.chooseYourOwnAdventure.frames;
-
+import byui.cit260.chooseYourOwnAdventure.view.RescueOptionsView;
+import byui.cit260.chooseYourOwnAdventure.view.FireView;
+import byui.cit260.chooseYourOwnAdventure.view.MessageView;
+import byui.cit260.chooseYourOwnAdventure.view.RaftView;
+import byui.cit260.chooseYourOwnAdventure.view.CallPlaneView;
+import chooseyourownadventure.ChooseYourOwnAdventure;
 /**
  *
  * @author Tanner
@@ -45,12 +50,16 @@ public class RescueOptionsFrame extends javax.swing.JFrame {
         jLabel1.setText("Rescue Options");
 
         BuildRaft.setText("Build A Raft");
+        BuildRaft.setActionCommand("BuildRaft");
 
         jbSignalFire.setText("Build A Signal Fire");
+        jbSignalFire.setActionCommand("SignalFire");
 
         CallPlane.setText("Call Out to a Plane");
+        CallPlane.setActionCommand("CallPlane");
 
         Message.setText("Write Message");
+        Message.setActionCommand("WriteMessage");
 
         jLabel2.setText("Costs 5 Health");
 
@@ -152,13 +161,30 @@ public class RescueOptionsFrame extends javax.swing.JFrame {
             public void run() {
                 new RescueOptionsFrame().setVisible(true);
             }
-             private void jbBuildRaftActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+            private void jbBuildRaftActionPerformed(java.awt.event.ActionEvent evt) {                                                   
         BuildRaftFrame buildRaftFrame = new BuildRaftFrame();
         BuildRaftFrame.setVisible(true);
         
         this.dispose();
         }
-
+            private void jbSignalFireActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+        SignalFireView SignalFireView = new SignalFireView();
+        signalFireView.setVisible(true);
+        
+        this.dispose();
+        }
+            private void jbCallPlaneActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+        CallPlaneView CallPlaneView = new CallPlaneView();
+        callPlaneView.setVisible(true);
+        
+        this.dispose();
+        }
+            private void jbWriteMessageActionPerformed(java.awt.event.ActionEvent evt) {                                                   
+        WriteMessageView WriteMessageView = new WriteMessageView();
+        writeMessageView.setVisible(true);
+        
+        this.dispose();
+        }
             private void dispose() {
                 throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             };

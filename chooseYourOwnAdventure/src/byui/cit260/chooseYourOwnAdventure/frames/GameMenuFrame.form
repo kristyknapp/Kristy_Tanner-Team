@@ -169,7 +169,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="jbRescueOptions">
           <Properties>
-            <Property name="text" type="java.lang.String" value="RescueOptions"/>
+            <Property name="text" type="java.lang.String" value="Rescue Options"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">

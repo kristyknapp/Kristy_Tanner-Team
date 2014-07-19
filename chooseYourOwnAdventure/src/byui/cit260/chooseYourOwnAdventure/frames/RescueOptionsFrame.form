@@ -101,21 +101,25 @@
     <Component class="javax.swing.JButton" name="BuildRaft">
       <Properties>
         <Property name="text" type="java.lang.String" value="Build A Raft"/>
+        <Property name="actionCommand" type="java.lang.String" value="BuildRaft"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jbSignalFire">
       <Properties>
         <Property name="text" type="java.lang.String" value="Build A Signal Fire"/>
+        <Property name="actionCommand" type="java.lang.String" value="SignalFire"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="CallPlane">
       <Properties>
         <Property name="text" type="java.lang.String" value="Call Out to a Plane"/>
+        <Property name="actionCommand" type="java.lang.String" value="CallPlane"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="Message">
       <Properties>
         <Property name="text" type="java.lang.String" value="Write Message"/>
+        <Property name="actionCommand" type="java.lang.String" value="WriteMessage"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">

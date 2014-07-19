@@ -14,9 +14,9 @@ import java.util.Scanner;
  *
 **/
 
-public abstract class BuildRaftView extends MenuView{
+public abstract class RaftView extends MenuView{
 
-    public BuildRaftView() {
+    public RaftView() {
         super("\n-----------------------------------------------------------"
                 + "\n|Build a Raft                                              "
                 + "\n-----------------------------------------------------------"
@@ -33,12 +33,7 @@ public abstract class BuildRaftView extends MenuView{
                 + "\n and 18 logs if you have two others with you.                  "
                 + "\n\n-------------------------------------------------------------");
     }
-
-        //create the plater object and save it in the ProgramControl class
-       public class RescueControl{
-       public class RaftControl{
-        
+   
         }
     }
-}
     
