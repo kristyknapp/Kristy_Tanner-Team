@@ -90,6 +90,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
         jLabel1.setText("Main Menu");
 
         jLabelWelcomemsg.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelWelcomemsg.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelWelcomemsg.setText("welcome message");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

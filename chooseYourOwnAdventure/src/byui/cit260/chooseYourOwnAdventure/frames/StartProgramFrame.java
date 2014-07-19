@@ -9,9 +9,12 @@ import byui.cit260.chooseYourOwnAdventure.control.GameControl;
 import byui.cit260.chooseYourOwnAdventure.control.MapControl;
 import byui.cit260.chooseYourOwnAdventure.control.ProgramControl;
 import byui.cit260.chooseYourOwnAdventure.frames.MainMenuFrame;
+import byui.cit260.chooseYourOwnAdventure.model.Game;
+import byui.cit260.chooseYourOwnAdventure.model.Location;
 import byui.cit260.chooseYourOwnAdventure.model.Map;
 import byui.cit260.chooseYourOwnAdventure.model.Player;
 import chooseyourownadventure.ChooseYourOwnAdventure;
+import java.awt.Point;
 import javax.swing.JOptionPane;
 
 /**
@@ -36,7 +39,7 @@ public class StartProgramFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonChooseMap = new javax.swing.ButtonGroup();
         jpMainPanel = new javax.swing.JPanel();
         jbStart = new javax.swing.JButton();
         jbQuit = new javax.swing.JButton();
@@ -44,9 +47,11 @@ public class StartProgramFrame extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jPanel3 = new javax.swing.JPanel();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        jrBeachMap = new javax.swing.JRadioButton();
+        jrCliffMap = new javax.swing.JRadioButton();
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
         jlTitle = new javax.swing.JLabel();
 
@@ -82,16 +87,11 @@ public class StartProgramFrame extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(153, 153, 153));
 
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setText("Beach Map");
+        buttonChooseMap.add(jrBeachMap);
+        jrBeachMap.setText("Beach Map");
 
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setText("Cliff Map");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
-            }
-        });
+        buttonChooseMap.add(jrCliffMap);
+        jrCliffMap.setText("Cliff Map");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -100,22 +100,27 @@ public class StartProgramFrame extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton1))
+                    .addComponent(jrCliffMap)
+                    .addComponent(jrBeachMap))
                 .addContainerGap(91, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jRadioButton1)
+                .addComponent(jrBeachMap)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton2)
+                .addComponent(jrCliffMap)
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Enter your name, select a map, and press start");
+
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jTextArea2.setText("This is Choose Your Own Adventure!You find yourself on a deserted island, \nin this game you will become a survivor of a horrific plane crash. \nChoose your path wisely, collect and conserve resources and cope \nwith various situations on the island in order to survive long enough \nfor help to arrive. \nAs far as you know, you are the only survivor and have landed on a lush \nisland, but you must venture out for food, fresh water, and other supplies,\nrisking your safety.\n\nEverything to survive is located on the island, but you must make \ncareful decisions to stay alive. Before doing any major action, \nyou must have enough resources to perform that action. \nThroughout the game, you will be given options of what to do, \nsome decisions are big, others are small. But all can decide whether\nyou live or die. The outcome of whether you are successful in a given \nchoice you make is randomly generated through the program.\n\nEach major action (moving to a new location, collecting supplies, \nbuilding a raft, and creating signal fire) costs 20 points. \nYou start out on the island with 100 health points, but must \nconserve and build energy through collecting and eating food and sleeping. \nIf health gets below 40 points, your character will die.\n\nGood luck. We hope to see you come out alive...");
+        jScrollPane2.setViewportView(jTextArea2);
 
         javax.swing.GroupLayout jpMainPanelLayout = new javax.swing.GroupLayout(jpMainPanel);
         jpMainPanel.setLayout(jpMainPanelLayout);
@@ -240,9 +245,9 @@ public class StartProgramFrame extends javax.swing.JFrame {
         // if beachmap or cliff map is selected
         Map map;
 
-        if (this.jRadioButton1.isSelected()) {
+        if (this.jrBeachMap.isSelected()) {
             map = MapControl.createBeachMap();
-        } else if (this.jRadioButton2.isSelected()) {
+        } else if (this.jrCliffMap.isSelected()) {
             map = MapControl.createCliffMap();
         } else {
             JOptionPane.showMessageDialog(this, "You must select a map before you start the game", "Inalid map selected", JOptionPane.ERROR_MESSAGE);
@@ -263,14 +268,29 @@ public class StartProgramFrame extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jbStartActionPerformed
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
-
     private void nameEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameEnterActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nameEnterActionPerformed
 
+    private void buttonChooseMap(java.awt.event.ActionEvent evt) {
+        // Assign Map to Game
+        Map map = null;
+        if (jrBeachMap.isSelected()) {
+            map = MapControl.createBeachMap();
+
+        }
+        else if (jrCliffMap.isSelected()) {
+            map = MapControl.createCliffMap();
+
+        } else {
+            JOptionPane.showMessageDialog(this, "You must select a map before you start the game", "Inalid map selected", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        ChooseYourOwnAdventure.getCurrentGame().setMap(map);
+        //Assign Player to Beginning Location
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -307,18 +327,20 @@ public class StartProgramFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonChooseMap;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JButton jbQuit;
     private javax.swing.JButton jbStart;
     private javax.swing.JLabel jlTitle;
     private javax.swing.JPanel jpMainPanel;
+    private javax.swing.JRadioButton jrBeachMap;
+    private javax.swing.JRadioButton jrCliffMap;
     private javax.swing.JTextField nameEnter;
     // End of variables declaration//GEN-END:variables
 }

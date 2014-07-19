@@ -13,13 +13,15 @@ import chooseyourownadventure.ChooseYourOwnAdventure;
  * @author kristyknapp
  */
 public class GameMenuFrame extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form GameMenuFrame
      */
     public GameMenuFrame() {
         initComponents();
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -168,21 +170,20 @@ public class GameMenuFrame extends javax.swing.JFrame {
         CollectResourcesFrame collectResourcesFrame = new CollectResourcesFrame();
         collectResourcesFrame.setVisible(true);
         
-        this.dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_jbCollectResourcesActionPerformed
 
     private void jbFindSurvivorsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbFindSurvivorsActionPerformed
         FindSurvivorFrame findSurvivorFrame = new FindSurvivorFrame();
         findSurvivorFrame.setVisible(true);
-        
-        this.dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_jbFindSurvivorsActionPerformed
 
     private void jbChangeLocationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbChangeLocationActionPerformed
         BeachMapFrame mapFrame = new BeachMapFrame();
         mapFrame.setVisible(true);
         
-        this.dispose();
+        this.setVisible(false);
     }//GEN-LAST:event_jbChangeLocationActionPerformed
 
 
