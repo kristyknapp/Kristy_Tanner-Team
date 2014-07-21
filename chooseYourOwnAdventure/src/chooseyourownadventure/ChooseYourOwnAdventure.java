@@ -6,6 +6,7 @@
 
 package chooseyourownadventure;
 
+import byui.cit260.chooseYourOwnAdventure.frames.GameMenuFrame;
 import byui.cit260.chooseYourOwnAdventure.frames.MainMenuFrame;
 import byui.cit260.chooseYourOwnAdventure.frames.StartProgramFrame;
 import byui.cit260.chooseYourOwnAdventure.model.Game;
@@ -28,6 +29,7 @@ public class ChooseYourOwnAdventure {
     private static Location location = null;
     private static Map map = null;
     private static MainMenuFrame mainMenuFrame = null;
+    private static GameMenuFrame gameMenuFrame = null;
 
     
     
@@ -90,6 +92,14 @@ public class ChooseYourOwnAdventure {
 
     public static void setMainMenuFrame(MainMenuFrame mainMenuFrame) {
         ChooseYourOwnAdventure.mainMenuFrame = mainMenuFrame;
+    }
+
+    public static GameMenuFrame getGameMenuFrame() {
+        return gameMenuFrame;
+    }
+
+    public static void setGameMenuFrame(GameMenuFrame gameMenuFrame) {
+        ChooseYourOwnAdventure.gameMenuFrame = gameMenuFrame;
     }
 
     

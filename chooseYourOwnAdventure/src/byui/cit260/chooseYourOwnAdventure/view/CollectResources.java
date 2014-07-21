@@ -79,7 +79,7 @@ class CollectResources extends MenuView {
         Location location = ChooseYourOwnAdventure.getLocation();
 
         /*Get resources in Location
-         Search resource list for Survivors */
+         Search resource list for resources */
         Resource resource = GameControl.getGame().getResources()[resourceType];
         String description = resource.getDescription();
         

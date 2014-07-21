@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package byui.cit260.chooseYourOwnAdventure.frames;
 
 import byui.cit260.chooseYourOwnAdventure.control.GameControl;
@@ -34,94 +33,141 @@ public class FindSurvivorFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jbYesSurvivor = new javax.swing.JButton();
-        jbQuit = new javax.swing.JButton();
-        jTextFieldSurvivorInLocation = new javax.swing.JTextField();
-        jTextFieldTotalResource = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextAreaFindSurvivor = new javax.swing.JTextArea();
+        jLabel1 = new javax.swing.JLabel();
+        jbQuit = new javax.swing.JButton();
+        jbYesSurvivor = new javax.swing.JButton();
+        jlSurvivor = new javax.swing.JLabel();
+        jbExit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Eurostile", 1, 36)); // NOI18N
-        jLabel1.setText("Find Survivors");
-
-        jbYesSurvivor.setText("Yes");
-
-        jbQuit.setText("No");
-
-        jTextFieldSurvivorInLocation.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldSurvivorInLocationActionPerformed(evt);
-            }
-        });
+        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
 
         jTextAreaFindSurvivor.setColumns(20);
         jTextAreaFindSurvivor.setLineWrap(true);
         jTextAreaFindSurvivor.setRows(5);
-        jTextAreaFindSurvivor.setText("Make sure you have enough resources to take care of yourself as well as the survivor if you find one. Realize that a survivor may be able to help you, but they may also make it even more difficult for you to survivor, so choose wisely...Will you take care of this survivor?");
+        jTextAreaFindSurvivor.setText("Make sure you have enough resources to take care of yourself as well as the survivor if you find one. Realize that a survivor may be able to help you, but they may also make it even more difficult for you to survivor, so choose wisely...Will you take care a survivor if found?");
         jScrollPane2.setViewportView(jTextAreaFindSurvivor);
+
+        jLabel1.setFont(new java.awt.Font("Eurostile", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Find Survivors");
+
+        jbQuit.setText("No");
+        jbQuit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbQuitActionPerformed(evt);
+            }
+        });
+
+        jbYesSurvivor.setText("Yes");
+        jbYesSurvivor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbYesSurvivorActionPerformed(evt);
+            }
+        });
+
+        jlSurvivor.setForeground(new java.awt.Color(255, 255, 255));
+
+        jbExit.setText("Exit");
+        jbExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbExitActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(74, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel1)
+                            .addGap(89, 89, 89))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jbYesSurvivor)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jbQuit))
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(56, 56, 56)))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jbExit)
+                        .addComponent(jlSurvivor, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE))))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(65, 65, 65)
+                .addComponent(jLabel1)
+                .addGap(40, 40, 40)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbYesSurvivor)
+                    .addComponent(jbQuit))
+                .addGap(41, 41, 41)
+                .addComponent(jlSurvivor)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addComponent(jbExit)
+                .addGap(32, 32, 32))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(98, 98, 98))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextFieldSurvivorInLocation)
-                            .addComponent(jTextFieldTotalResource)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
-                        .addComponent(jbYesSurvivor)
-                        .addGap(94, 94, 94)
-                        .addComponent(jbQuit)))
-                .addContainerGap(69, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jTextFieldSurvivorInLocation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jTextFieldTotalResource, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jbYesSurvivor)
-                    .addComponent(jbQuit))
-                .addContainerGap(35, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextFieldSurvivorInLocationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldSurvivorInLocationActionPerformed
+    private void jbExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExitActionPerformed
+        ChooseYourOwnAdventure.getGameMenuFrame().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jbExitActionPerformed
 
+    private void jbYesSurvivorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbYesSurvivorActionPerformed
         Location location = ChooseYourOwnAdventure.getLocation();
 
         /*Get resources in Location
-        Search resource list for Survivors */
+         Search resource list for Survivors */
         Resource survivor = GameControl.getGame().getResources()[GameControl.SURVIVORS];
 
-        //if resource found tell player
-        if (survivor.equals(GameControl.SURVIVORS)) {
-            this.jTextFieldSurvivorInLocation.setText("Survivor Found in Location");
-        } else {
-            this.jTextFieldSurvivorInLocation.setText("No Survivors Found");
+        //Search Resource List Function
+        try {
+            boolean success = ResourceControl.addResourceToPlayer("survivors");
+            if (success) {
+                jlSurvivor.setText("Survivor was found in your Location and added to your Resources");
+
+            } else {
+                jlSurvivor.setText("There are no survivors in this location.");
+
+            }
+
+        } catch (Exception e) {
+            jlSurvivor.setText("No button was selected");
         }
-    }//GEN-LAST:event_jTextFieldSurvivorInLocationActionPerformed
+
+
+    }//GEN-LAST:event_jbYesSurvivorActionPerformed
+
+    private void jbQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbQuitActionPerformed
+        ChooseYourOwnAdventure.getGameMenuFrame().setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jbQuitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -160,11 +206,12 @@ public class FindSurvivorFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextAreaFindSurvivor;
-    private javax.swing.JTextField jTextFieldSurvivorInLocation;
-    private javax.swing.JTextField jTextFieldTotalResource;
+    private javax.swing.JButton jbExit;
     private javax.swing.JButton jbQuit;
     private javax.swing.JButton jbYesSurvivor;
+    private javax.swing.JLabel jlSurvivor;
     // End of variables declaration//GEN-END:variables
 }

@@ -26,6 +26,7 @@ public class Player implements Serializable{
     private double sleepPoints;
     private double healthPoints;
     private Point location;
+    private int moveLocation;
     private ArrayList<Resource> resources = new ArrayList<Resource>();
 
     public Player() {
@@ -61,6 +62,14 @@ public class Player implements Serializable{
 
     public void setLocation(Point location) {
         this.location = location;
+    }
+
+    public int getMoveLocation() {
+        return moveLocation;
+    }
+
+    public void setMoveLocation(int moveLocation) {
+        this.moveLocation = moveLocation;
     }
 
     
