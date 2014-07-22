@@ -33,26 +33,13 @@ public abstract class RaftView extends MenuView{
                 + "\n and 18 logs if you have two others with you.                  "
                 + "\n\n-------------------------------------------------------------");
     }
-   public String raftChoice (String value) {
+   public String doAction (String value) {
             value = value.toUpperCase();
                 switch (String value) {
-                    case "Y"://TAKE AWAY TEN HEALTH POINTS
-                    int= Math.random(1);
-                        if (Math.random=0); //SUCCESS
-                            System.out.println ("Congratulations, you have escaped the island."
-                            +"Do you want to play again? [Y] or [N]?");
-                                public String raftChoiceTwo (String value) {
-                                    value = value.toUpperCase();
-                                    switch (String value) {
-                                        case "Y": 
-                                            startProgramView();
-                                        case "N":
-                                            dispose();
-                        if (Math.random="1"); //FAILURE
-                            System.out.println ("Failure. Please Try again when ready.");
-                                MainMenuView(); //return to the previous menu
+                    case "Y":
+                        /*Display RaftControl, get input, display outcome.*/
                     case "N":
-                        MainMenuView(); //Return to the previous menu
+                        /*Return to Game Menu*/
         }
     }
     

@@ -30,22 +30,14 @@ public class RaftControl {
             if (input.length() < 6) 
             {
                 return "You have enough logs!";
-            } 
+                    /*Start RescueControl, display random outcome.*/
             
-            else if (input.length() > 6)//signal that a valid, but low choice was entered
+            else (input.length() > 6)//signal that a valid, but low choice was entered
             {
-                return "You do not have enough logs!";
-            } 
-            
-            else //signal that a valid choice was entered
-            {
-                return "You have enough logs!";
+                return "You do not have enough logs! Please get some more.";
             }
-        }
-        return "";
-    }
 
-    public boolean doAction(String value) {
+    public RaftControl(String value) {
         //create the plater object and save it in the ProgramControl class
        int numberLogs = Integer.parseInt(value);
         String buildRaftMessage = ProgramControl.createBuildRaft(numberLogs);

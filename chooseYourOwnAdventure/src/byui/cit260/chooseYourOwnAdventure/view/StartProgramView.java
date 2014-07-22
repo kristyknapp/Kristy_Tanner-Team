@@ -50,7 +50,7 @@ public class StartProgramView {
         this.displayWelcomeMessage(player);
 
         //Display the Main Menu
-        RescueOptionsView mainMenuView = new RescueOptionsView();
+        RescueView mainMenuView = new RescueView();
         mainMenuView.display();
 
     }
