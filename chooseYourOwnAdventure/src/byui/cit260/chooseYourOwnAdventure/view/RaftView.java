@@ -1,4 +1,4 @@
-/*
+*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -14,9 +14,9 @@ import java.util.Scanner;
  *
 **/
 
-public abstract class BuildRaftView extends MenuView{
+public abstract class RaftView extends MenuView{
 
-    public BuildRaftView() {
+    public RaftView() {
         super("\n-----------------------------------------------------------"
                 + "\n|Build a Raft                                              "
                 + "\n-----------------------------------------------------------"
@@ -33,12 +33,13 @@ public abstract class BuildRaftView extends MenuView{
                 + "\n and 18 logs if you have two others with you.                  "
                 + "\n\n-------------------------------------------------------------");
     }
-
-        //create the plater object and save it in the ProgramControl class
-       public class RescueControl{
-       public class RaftControl{
-        
+   public String doAction (String value) {
+            value = value.toUpperCase();
+                switch (String value) {
+                    case "Y":
+                        /*Display RaftControl, get input, display outcome.*/
+                    case "N":
+                        /*Return to Game Menu*/
         }
     }
-}
     
