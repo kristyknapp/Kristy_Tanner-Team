@@ -21,8 +21,17 @@ public class Location implements Serializable{
     private Resource[] resources;
     private Rescue[] rescue;
     private String description;
+    private Player player;
     
     public Location() {
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
     }
     
     

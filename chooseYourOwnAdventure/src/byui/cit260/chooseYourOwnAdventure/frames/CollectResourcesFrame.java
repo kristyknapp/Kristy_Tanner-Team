@@ -17,12 +17,19 @@ import javax.swing.ButtonModel;
  * @author kristyknapp
  */
 public class CollectResourcesFrame extends javax.swing.JFrame {
-
+    
+    GameMenuFrame gameMenuFrame;
     /**
      * Creates new form CollectResourcesFrame
      */
     public CollectResourcesFrame() {
         initComponents();
+    }
+    
+    public CollectResourcesFrame(GameMenuFrame gameMenuFrame) {
+        this();
+        this.gameMenuFrame = gameMenuFrame;
+        
     }
 
     /**
@@ -254,7 +261,7 @@ public class CollectResourcesFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jrbVinesActionPerformed
 
     private void jbExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExitActionPerformed
-        ChooseYourOwnAdventure.getGameMenuFrame().setVisible(true);
+        gameMenuFrame.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jbExitActionPerformed
 
@@ -331,7 +338,13 @@ public class CollectResourcesFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jlTotalResourcesAncestorAdded
 
     private void jbSelectResourceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSelectResourceActionPerformed
+        Resource resource = GameControl.getGame().getResources()[GameControl.NUMBER_OF_RESOURCE_ITEMS];
+        String description = resource.getDescription();
+
         //add resources to Player, Increase Total count
+//        if (this.jrbFood.isSelected()) {
+//            ResourceControl.addResourceToPlayer("Food");
+//        }
         //ButtonModel selection = this.bgResources.getSelection();
         //if (selection)
         

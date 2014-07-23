@@ -18,7 +18,39 @@ import java.util.Scanner;
  * @author kristyknapp
  */
 public class ResourceControl {
+    
+    //In Current Location, get Resources
+    //If Resource from Radio Selected, Display Message
 
+       public boolean addResource(int resourceType) {
+
+        Location location = ChooseYourOwnAdventure.getLocation();
+
+        /*Get resources in Location
+         Search resource list for resources */
+        Resource resource = GameControl.getGame().getResources()[resourceType];
+        String description = resource.getDescription();
+        
+        //Search Resource List Function
+        try {
+           boolean success = ResourceControl.addResourceToPlayer(description);
+        if (success) {
+            System.out.println(description + " added to Player Resources.");
+            return true;
+        }
+        else {
+            System.out.println("No " + description + " found in this location.");
+            return false;
+        } 
+        }catch (Exception e) {
+                System.out.println("Invalid Letter Entered");
+                } 
+        return false;
+        
+            
+
+    }
+    
     public static Resource findResource(Resource[] resources, String description) {
 
         for (Resource resource : resources) {

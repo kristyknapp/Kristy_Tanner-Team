@@ -12,11 +12,17 @@ package byui.cit260.chooseYourOwnAdventure.frames;
  */
 public class RescueOptionsFrame extends javax.swing.JFrame {
 
+    GameMenuFrame gameMenuFrame;
     /**
      * Creates new form RescueOptionsFrame
      */
     public RescueOptionsFrame() {
         initComponents();
+    }
+
+    RescueOptionsFrame(GameMenuFrame gameMenuFrame) {
+        this();
+        this.gameMenuFrame = gameMenuFrame;
     }
 
     /**

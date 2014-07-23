@@ -89,6 +89,11 @@ public class StartProgramFrame extends javax.swing.JFrame {
 
         buttonChooseMap.add(jrBeachMap);
         jrBeachMap.setText("Beach Map");
+        jrBeachMap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jrBeachMapActionPerformed(evt);
+            }
+        });
 
         buttonChooseMap.add(jrCliffMap);
         jrCliffMap.setText("Cliff Map");
@@ -241,6 +246,7 @@ public class StartProgramFrame extends javax.swing.JFrame {
 
         // create new game
         GameControl.createNewGame(ChooseYourOwnAdventure.getPlayer());
+        
 
         // if beachmap or cliff map is selected
         Map map;
@@ -250,10 +256,9 @@ public class StartProgramFrame extends javax.swing.JFrame {
         } else if (this.jrCliffMap.isSelected()) {
             map = MapControl.createCliffMap();
         } else {
-            JOptionPane.showMessageDialog(this, "You must select a map before you start the game", "Inalid map selected", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "You must select a map before you start the game", "Invalid map selected", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        ChooseYourOwnAdventure.getCurrentGame().setMap(map);
 
         //create the main frame
         MainMenuFrame mainMenuFrame = new MainMenuFrame();
@@ -272,6 +277,10 @@ public class StartProgramFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nameEnterActionPerformed
 
+    private void jrBeachMapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrBeachMapActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jrBeachMapActionPerformed
+
     private void buttonChooseMap(java.awt.event.ActionEvent evt) {
         // Assign Map to Game
         Map map = null;
@@ -283,12 +292,12 @@ public class StartProgramFrame extends javax.swing.JFrame {
             map = MapControl.createCliffMap();
 
         } else {
-            JOptionPane.showMessageDialog(this, "You must select a map before you start the game", "Inalid map selected", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "You must select a map before you start the game", "Invalid map selected", JOptionPane.ERROR_MESSAGE);
             return;
         }
         
-        ChooseYourOwnAdventure.getCurrentGame().setMap(map);
         //Assign Player to Beginning Location
+        ChooseYourOwnAdventure.getPlayer().setLocation(new Point(0,0));
     }
     
     /**

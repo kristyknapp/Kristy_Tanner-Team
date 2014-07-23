@@ -150,7 +150,7 @@ public class MainMenuFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jStartGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jStartGameActionPerformed
-        GameControl.createNewGame(ChooseYourOwnAdventure.getPlayer());
+
             //create the Game Menu
         GameMenuFrame gameMenuFrame = new GameMenuFrame();
             //display the Game Menu

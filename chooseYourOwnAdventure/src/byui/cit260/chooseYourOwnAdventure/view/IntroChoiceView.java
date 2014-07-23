@@ -47,7 +47,6 @@ public class IntroChoiceView {
             System.out.println("Invalid choice - try again.");
         }
         
-        ChooseYourOwnAdventure.getCurrentGame().setMap(map);
 
         //Display the Game Menu
         GameMenuView gameMenuView = new GameMenuView();

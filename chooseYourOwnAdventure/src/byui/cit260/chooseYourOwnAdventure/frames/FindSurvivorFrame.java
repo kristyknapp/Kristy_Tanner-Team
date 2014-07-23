@@ -10,6 +10,7 @@ import byui.cit260.chooseYourOwnAdventure.control.ResourceControl;
 import byui.cit260.chooseYourOwnAdventure.model.Location;
 import byui.cit260.chooseYourOwnAdventure.model.Resource;
 import chooseyourownadventure.ChooseYourOwnAdventure;
+import javax.swing.JButton;
 
 /**
  *
@@ -17,12 +18,20 @@ import chooseyourownadventure.ChooseYourOwnAdventure;
  */
 public class FindSurvivorFrame extends javax.swing.JFrame {
 
+    GameMenuFrame gameMenuFrame;
     /**
      * Creates new form FindSurvivorFrame
      */
     public FindSurvivorFrame() {
         initComponents();
     }
+
+    public FindSurvivorFrame(GameMenuFrame gameMenuFrame) {
+        this();
+        this.gameMenuFrame = gameMenuFrame;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -86,21 +95,26 @@ public class FindSurvivorFrame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(74, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel1)
-                            .addGap(89, 89, 89))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jbYesSurvivor)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jbQuit))
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(56, 56, 56)))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jbExit)
-                        .addComponent(jlSurvivor, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(89, 89, 89))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jbYesSurvivor)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jbQuit))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(56, 56, 56))))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(273, 273, 273)
+                        .addComponent(jbExit))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(jlSurvivor, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -113,9 +127,9 @@ public class FindSurvivorFrame extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbYesSurvivor)
                     .addComponent(jbQuit))
-                .addGap(41, 41, 41)
-                .addComponent(jlSurvivor)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addGap(42, 42, 42)
+                .addComponent(jlSurvivor, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addComponent(jbExit)
                 .addGap(32, 32, 32))
         );
@@ -135,38 +149,42 @@ public class FindSurvivorFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExitActionPerformed
-        ChooseYourOwnAdventure.getGameMenuFrame().setVisible(true);
-        this.setVisible(false);
+        gameMenuFrame.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jbExitActionPerformed
 
     private void jbYesSurvivorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbYesSurvivorActionPerformed
+        //get current location
         Location location = ChooseYourOwnAdventure.getLocation();
 
+        //search for survivors in that location
+        Resource survivor = GameControl.getGame().getResources()[GameControl.SURVIVORS];
+        
+        try {
+        boolean success = ResourceControl.addResourceToPlayer("survivors");
+        if (success) {
+            jlSurvivor.setText("Survivor found in your location"
+                    +"\nAdded to your resources...");
+            
+        } else {
+            jlSurvivor.setText("No survivor found in location.");
+        }
+        } catch (Exception e) {
+            jlSurvivor.setText("no button was selected");
+        }
+        //If found, add to player's resources and print message
+        
+        //else print message
+        
         /*Get resources in Location
          Search resource list for Survivors */
-        Resource survivor = GameControl.getGame().getResources()[GameControl.SURVIVORS];
-
-        //Search Resource List Function
-        try {
-            boolean success = ResourceControl.addResourceToPlayer("survivors");
-            if (success) {
-                jlSurvivor.setText("Survivor was found in your Location and added to your Resources");
-
-            } else {
-                jlSurvivor.setText("There are no survivors in this location.");
-
-            }
-
-        } catch (Exception e) {
-            jlSurvivor.setText("No button was selected");
-        }
 
 
     }//GEN-LAST:event_jbYesSurvivorActionPerformed
 
     private void jbQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbQuitActionPerformed
-        ChooseYourOwnAdventure.getGameMenuFrame().setVisible(true);
-        this.setVisible(false);
+        gameMenuFrame.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jbQuitActionPerformed
 
     /**

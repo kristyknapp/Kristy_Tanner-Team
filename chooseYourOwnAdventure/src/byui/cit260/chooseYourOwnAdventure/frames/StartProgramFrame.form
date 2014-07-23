@@ -196,6 +196,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Beach Map"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jrBeachMapActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JRadioButton" name="jrCliffMap">
               <Properties>

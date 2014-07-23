@@ -10,6 +10,7 @@ import byui.cit260.chooseYourOwnAdventure.exceptions.MapControlException;
 import byui.cit260.chooseYourOwnAdventure.model.Game;
 import byui.cit260.chooseYourOwnAdventure.model.Location;
 import byui.cit260.chooseYourOwnAdventure.model.Map;
+import byui.cit260.chooseYourOwnAdventure.model.Player;
 import byui.cit260.chooseYourOwnAdventure.model.Rescue;
 import byui.cit260.chooseYourOwnAdventure.model.Resource;
 import chooseyourownadventure.ChooseYourOwnAdventure;
@@ -33,6 +34,19 @@ public class MapControl {
         public final static int CLIFF_TOPS = 1;
         public final static int STREAM = 2;
         public final static int CAVE = 3;
+        
+        
+        public final static Point PLANE_CRASH_LOCATION = new Point(0,0);
+        public final static Point TREELINE_LOCATION = new Point(0,1);
+        public final static Point OCEAN_LOCATION = new Point(1,0);
+        public final static Point SHELTER_LOCATION = new Point(1,1);
+        
+        public final static Point JUNGLE_LOCATION = new Point(0,0);
+        public final static Point CLIFF_TOPS_LOCATION = new Point(0,1);
+        public final static Point STREAM_LOCATION = new Point(1,0);
+        public final static Point CAVE_LOCATION = new Point(1,1);
+        
+        
 
     public static Map createBeachMap() {
         //create the beach map
@@ -50,7 +64,10 @@ public class MapControl {
         
         ChooseYourOwnAdventure.setLocation(GameControl.game.getMap().getLocations()[0][0]);
         
-        ChooseYourOwnAdventure.getPlayer().setLocation(new Point(0,0));
+        Point startingLocation = MapControl.PLANE_CRASH_LOCATION;
+        Player player = ChooseYourOwnAdventure.getPlayer();
+        player.setLocation(startingLocation);       
+        map.getLocations()[startingLocation.x][startingLocation.y].setPlayer(player);
         
         return map;
     }
@@ -71,9 +88,12 @@ public class MapControl {
         
         ChooseYourOwnAdventure.setLocation(GameControl.game.getMap().getLocations()[0][0]);
         
-        ChooseYourOwnAdventure.getPlayer().setLocation(new Point(0,0));
-
+        Point startingLocation = MapControl.JUNGLE_LOCATION;
+        Player player = ChooseYourOwnAdventure.getPlayer();
+        player.setLocation(startingLocation);       
+        map.getLocations()[startingLocation.x][startingLocation.y].setPlayer(player);
         
+       
         return map;
     }
     
@@ -231,38 +251,47 @@ public class MapControl {
         locations[1][1] = locationList[MapControl.CAVE];
     }
     
-    public static void movePlayer(String locationDescription) {
-
-      Point position = MapControl.findLocation(ChooseYourOwnAdventure.getMap().getLocations(), locationDescription);
-      if (position == null) {
-          return;
-      }
-
-      // MOVE setLocation in player
-      ChooseYourOwnAdventure.getPlayer().setLocation(position);
-
-    }
-
-    private static Point findLocation(Location[][] locations, String locationDescription) {
-        for (int i = 0; i < locations.length; i++) {
-            for (int j = 0; j < locations[i].length; j++) {
-                Location currentLocation = locations[i][j];
-                if (currentLocation.getDescription().equals(locationDescription)) {
-                    return new Point(i, j);
-                }
-
-            }    
-        }
-        return null;
-    }
     
-        public static void movePlayerToLocation(int row, int column) 
-                                throws MapControlException {
-            Point map = ChooseYourOwnAdventure.getPlayer().getLocation();
-            if (row < 1 || row > map.getX() || column < 1 || column > map.getY()) {
-                throw new MapControlException("Invalid Row and Column");
-            }
-    }
+ 
+    
+    
+
+    
+    public static void movePlayer(Point newLocation) {
+        
+        Location[][] locations = ChooseYourOwnAdventure.getCurrentGame().getMap().getLocations();
+        Player player = ChooseYourOwnAdventure.getPlayer();
+        
+        // get current location of player
+        Point currentLocation = player.getLocation();
+        
+        // set Player to null in current location
+        locations[currentLocation.x][currentLocation.y].setPlayer(null);
+        
+        // set Player in new location
+        locations[newLocation.x][newLocation.y].setPlayer(player);
+        
+        // set new location in player
+        player.setLocation(newLocation);
+        
+        ChooseYourOwnAdventure.setLocation(locations[newLocation.x][newLocation.y]);
+      } 
+
+    
+
+//    private static Point findLocation(Location[][] locations, String locationDescription) {
+//        for (int i = 0; i < locations.length; i++) {
+//            for (int j = 0; j < locations[i].length; j++) {
+//                Location currentLocation = locations[i][j];
+//                if (currentLocation.getDescription().equals(locationDescription)) {
+//                    return new Point(i, j);
+//                }
+//
+//            }    
+//        }
+//        return null;
+//    }
+
   
 }
   

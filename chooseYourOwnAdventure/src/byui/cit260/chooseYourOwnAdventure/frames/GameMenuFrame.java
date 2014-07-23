@@ -22,6 +22,7 @@ public class GameMenuFrame extends javax.swing.JFrame {
     }
     
     
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -87,6 +88,11 @@ public class GameMenuFrame extends javax.swing.JFrame {
         });
 
         jbRescueOptions.setText("RescueOptions");
+        jbRescueOptions.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbRescueOptionsActionPerformed(evt);
+            }
+        });
 
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Current Total Health");
@@ -167,24 +173,30 @@ public class GameMenuFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jbquitActionPerformed
 
     private void jbCollectResourcesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCollectResourcesActionPerformed
-        CollectResourcesFrame collectResourcesFrame = new CollectResourcesFrame();
+        CollectResourcesFrame collectResourcesFrame = new CollectResourcesFrame(this);
         collectResourcesFrame.setVisible(true);
         
         this.setVisible(false);
     }//GEN-LAST:event_jbCollectResourcesActionPerformed
 
     private void jbFindSurvivorsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbFindSurvivorsActionPerformed
-        FindSurvivorFrame findSurvivorFrame = new FindSurvivorFrame();
+        FindSurvivorFrame findSurvivorFrame = new FindSurvivorFrame(this);
         findSurvivorFrame.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jbFindSurvivorsActionPerformed
 
     private void jbChangeLocationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbChangeLocationActionPerformed
-        BeachMapFrame mapFrame = new BeachMapFrame();
+        BeachMapFrame mapFrame = new BeachMapFrame(this);
         mapFrame.setVisible(true);
         
         this.setVisible(false);
     }//GEN-LAST:event_jbChangeLocationActionPerformed
+
+    private void jbRescueOptionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRescueOptionsActionPerformed
+        RescueOptionsFrame rescueOptionsFrame = new RescueOptionsFrame(this);
+        rescueOptionsFrame.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jbRescueOptionsActionPerformed
 
 
 

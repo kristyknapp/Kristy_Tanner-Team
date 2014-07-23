@@ -7,7 +7,9 @@ package byui.cit260.chooseYourOwnAdventure.frames;
 
 import byui.cit260.chooseYourOwnAdventure.control.MapControl;
 import byui.cit260.chooseYourOwnAdventure.model.Location;
+import byui.cit260.chooseYourOwnAdventure.model.Player;
 import chooseyourownadventure.ChooseYourOwnAdventure;
+import java.awt.Point;
 
 /**
  *
@@ -15,11 +17,17 @@ import chooseyourownadventure.ChooseYourOwnAdventure;
  */
 public class BeachMapFrame extends javax.swing.JFrame {
 
+    GameMenuFrame gameMenuFrame;
     /**
      * Creates new form MapFrame
      */
     public BeachMapFrame() {
         initComponents();
+    }
+    
+    public BeachMapFrame(GameMenuFrame gameMenuFrame) {
+        this();
+        this.gameMenuFrame = gameMenuFrame;
     }
 
     /**
@@ -156,36 +164,37 @@ public class BeachMapFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExitActionPerformed
-        ChooseYourOwnAdventure.getGameMenuFrame().setVisible(true);
-        this.setVisible(false);
+        gameMenuFrame.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jbExitActionPerformed
 
     private void jbPlaneCrashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbPlaneCrashActionPerformed
-        // Move Player to Plane Location
-        ChooseYourOwnAdventure.getPlayer().setMoveLocation(MapControl.PLANE_CRASH);
-        ChooseYourOwnAdventure.getGameMenuFrame().setVisible(true);
-        this.setVisible(false);
+        
+        MapControl.movePlayer(MapControl.PLANE_CRASH_LOCATION);
+        
+        gameMenuFrame.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jbPlaneCrashActionPerformed
 
     private void jbOceanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbOceanActionPerformed
         // Move Player to Ocean Location
-        ChooseYourOwnAdventure.getPlayer().setMoveLocation(MapControl.OCEAN);
-        ChooseYourOwnAdventure.getGameMenuFrame().setVisible(true);
-        this.setVisible(false);
+        MapControl.movePlayer(MapControl.OCEAN_LOCATION);
+        gameMenuFrame.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jbOceanActionPerformed
 
     private void jbTreelineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbTreelineActionPerformed
         // Move Player to Treeline Location
-        ChooseYourOwnAdventure.getPlayer().setMoveLocation(MapControl.TREELINE);
-        ChooseYourOwnAdventure.getGameMenuFrame().setVisible(true);
-        this.setVisible(false);
+        MapControl.movePlayer(MapControl.TREELINE_LOCATION);
+        gameMenuFrame.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jbTreelineActionPerformed
 
     private void jbShelterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbShelterActionPerformed
         // Move Player to Shelter Location
-        ChooseYourOwnAdventure.getPlayer().setMoveLocation(MapControl.SHELTER);
-        ChooseYourOwnAdventure.getGameMenuFrame().setVisible(true);
-        this.setVisible(false);
+        MapControl.movePlayer(MapControl.SHELTER_LOCATION);
+        gameMenuFrame.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jbShelterActionPerformed
 
     /**
