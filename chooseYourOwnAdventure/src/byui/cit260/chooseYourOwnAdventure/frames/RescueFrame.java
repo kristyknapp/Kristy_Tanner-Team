@@ -154,23 +154,33 @@ public class RescueFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jbRaftActionPerformed
     
     /*Set button to use RescueControl to generate random rescue outcome*/
-    private void jbFireActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        RescueControl rescue = ChooseYourOwnAdventure.getRandomOutcome();
+    private void jbFireActionPerformed(java.awt.event.ActionEvent evt) {  
+        RescueControl fire = new RescueControl();
+        Fire.setVisible(true);
+        
+        this.setVisible(false);
     }
     
     /*Set button to use RescueControl to generate random rescue outcome*/
-    private void jbMessageActionPerformed(java.awt.event.ActionEvent evt) {                                               RescueControl rescue = ChooseYourOwnAdventure.getRandomOutcome();
+    private void jbMessageActionPerformed(java.awt.event.ActionEvent evt) {                                               RescueControl rescueControl = new RescueControl();
+        rescueControl.setVisible(true);
+        
+        this.setVisible(false);
     }
     
     /*Set button to use RescueControl to generate random rescue outcome*/
     private void jbCallActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        RescueControl rescue = ChooseYourOwnAdventure.getRandomOutcome();
+        RescueControl rescueControl = new RescueControl();
+        rescueControl.setVisible(true);
+        
+        this.setVisible(false);
     }
     
     /*Set button to use RescueControl to generate random rescue outcome*/
     private void jbQuitActionPerformed(java.awt.event.ActionEvent evt) {                                       
         ChooseYourOwnAdventure.getGameMenuFrame().setVisible(true);
         this.setVisible(false);
+    }
     /**
      * @param args the command line arguments
      */
