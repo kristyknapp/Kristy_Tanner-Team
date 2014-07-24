@@ -3,11 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package byui.cit260.chooseYourOwnAdventure.frames;
 
 import byui.cit260.chooseYourOwnAdventure.control.MapControl;
+import byui.cit260.chooseYourOwnAdventure.model.Location;
+import byui.cit260.chooseYourOwnAdventure.model.Player;
 import chooseyourownadventure.ChooseYourOwnAdventure;
+import java.awt.Point;
 
 /**
  *
@@ -15,11 +17,17 @@ import chooseyourownadventure.ChooseYourOwnAdventure;
  */
 public class CliffMapFrame extends javax.swing.JFrame {
 
+    GameMenuFrame gameMenuFrame;
     /**
-     * Creates new form CliffMapFrame
+     * Creates new form MapFrame
      */
-    public CliffMapFrame() {
-        initComponents();
+    public CliffMapFrame(GameMenuFrame gameMenuFrame) {
+        this();
+        this.gameMenuFrame = gameMenuFrame;
+    }
+
+    private CliffMapFrame() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -133,37 +141,38 @@ public class CliffMapFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-   private void jbExitActionPerformed(java.awt.event.ActionEvent evt) {                                       
-        ChooseYourOwnAdventure.getGameMenuFrame().setVisible(true);
-        this.setVisible(false);
+    private void jbExitActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        gameMenuFrame.setVisible(true);
+        this.dispose();
     }                                      
 
     private void jbJungleActionPerformed(java.awt.event.ActionEvent evt) {                                             
-        // Move Player to Jungle Location
-        ChooseYourOwnAdventure.getPlayer().setMoveLocation(MapControl.JUNGLE);
-        ChooseYourOwnAdventure.getGameMenuFrame().setVisible(true);
-        this.setVisible(false);
+        
+        MapControl.movePlayer(MapControl.JUNGLE_LOCATION);
+        
+        gameMenuFrame.setVisible(true);
+        this.dispose();
     }                                            
 
     private void jbCliffTopActionPerformed(java.awt.event.ActionEvent evt) {                                        
-        // Move Player to Clifftop Location
-        ChooseYourOwnAdventure.getPlayer().setMoveLocation(MapControl.CLIFF_TOPS);
-        ChooseYourOwnAdventure.getGameMenuFrame().setVisible(true);
-        this.setVisible(false);
+        // Move Player to Ocean Location
+        MapControl.movePlayer(MapControl.CLIFF_TOPS_LOCATION);
+        gameMenuFrame.setVisible(true);
+        this.dispose();
     }                                       
 
     private void jbStreamActionPerformed(java.awt.event.ActionEvent evt) {                                           
         // Move Player to Treeline Location
-        ChooseYourOwnAdventure.getPlayer().setMoveLocation(MapControl.STREAM);
-        ChooseYourOwnAdventure.getGameMenuFrame().setVisible(true);
-        this.setVisible(false);
+        MapControl.movePlayer(MapControl.STREAM_LOCATION);
+        gameMenuFrame.setVisible(true);
+        this.dispose();
     }                                          
 
     private void jbCaveActionPerformed(java.awt.event.ActionEvent evt) {                                          
         // Move Player to Shelter Location
-        ChooseYourOwnAdventure.getPlayer().setMoveLocation(MapControl.CAVE);
-        ChooseYourOwnAdventure.getGameMenuFrame().setVisible(true);
-        this.setVisible(false);
+        MapControl.movePlayer(MapControl.CAVE_LOCATION);
+        gameMenuFrame.setVisible(true);
+        this.dispose();
     }
     
     /**

@@ -13,12 +13,12 @@ import chooseyourownadventure.ChooseYourOwnAdventure;
  *
  * @author Tanner
  */
-public class RescueFrame extends javax.swing.JFrame {
+public class RescueOptionsFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form RescueOptionsFrame
      */
-    public RescueFrame() {
+    public RescueOptionsFrame() {
         initComponents();
     }
 
@@ -155,8 +155,8 @@ public class RescueFrame extends javax.swing.JFrame {
     
     /*Set button to use RescueControl to generate random rescue outcome*/
     private void jbFireActionPerformed(java.awt.event.ActionEvent evt) {  
-        RescueControl fire = new RescueControl();
-        Fire.setVisible(true);
+        RescueControl rescueControl = new RescueControl();
+        rescueControl.setVisible(true);
         
         this.setVisible(false);
     }
@@ -179,6 +179,7 @@ public class RescueFrame extends javax.swing.JFrame {
     /*Set button to use RescueControl to generate random rescue outcome*/
     private void jbQuitActionPerformed(java.awt.event.ActionEvent evt) {                                       
         ChooseYourOwnAdventure.getGameMenuFrame().setVisible(true);
+        
         this.setVisible(false);
     }
     /**
@@ -198,20 +199,20 @@ public class RescueFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RescueFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RescueOptionsFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RescueFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RescueOptionsFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RescueFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RescueOptionsFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RescueFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(RescueOptionsFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RescueFrame().setVisible(true);
+                new RescueOptionsFrame().setVisible(true);
             }
         });
     }

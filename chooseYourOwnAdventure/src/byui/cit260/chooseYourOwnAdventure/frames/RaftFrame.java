@@ -56,6 +56,11 @@ public class RaftFrame extends javax.swing.JFrame {
         jButton1.setActionCommand("Can I Build?");
 
         jButton2.setText("Launch Raft!");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -120,21 +125,25 @@ public class RaftFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-       //get the players name
-        String input = this.input.getText();
-        
-        if (input() < 6) {
-            jTextArea2.showMessageDialog(this,
-                    "You have enough logs!",
-        else (input() > 6) {
-            jTextArea2.showMessageDialog(this,
-                    "You do not have enough logs! Please collect some more and come back.",
+     
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        int input = Integer.parseInt(jTextField1.getText());
+        if (input < 6) {
+            jTextArea2.setText(
+                    "You have enough logs!");
+        }
+            else {
+            jTextArea2.setText(
+                    "You do not have enough logs! Please collect some more and come back.");
+                    }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String []args {
+    public static void main(String []args) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
