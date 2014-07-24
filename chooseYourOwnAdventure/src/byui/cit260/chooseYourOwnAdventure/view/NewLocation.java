@@ -51,16 +51,16 @@ public class NewLocation extends MenuView{
     }
     
   
-    @Override
-    public boolean doAction(String choice) {
-        try { 
-            //move player to chosen location
-            
-            
-            MapControl.movePlayerToLocation(row, column);
-        } catch (MapControlException ex) {
-            System.out.println(ex.getMessage());
-        }
-        return false;
-    }
+//    @Override
+//    public boolean doAction(String choice) {
+//        try { 
+//            //move player to chosen location
+//            
+//            
+//            MapControl.movePlayerToLocation(row, column);
+//        } catch (MapControlException ex) {
+//            System.out.println(ex.getMessage());
+//        }
+//        return false;
+//    }
 }

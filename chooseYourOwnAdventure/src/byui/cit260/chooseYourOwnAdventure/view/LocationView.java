@@ -31,28 +31,28 @@ public class LocationView extends MenuView {
     public boolean doAction(String choice) {
         switch (choice) {
             case "P": // Move Player Plane Crash Site
-                MapControl.movePlayer("Plane Crash Site");
+                MapControl.movePlayer(MapControl.PLANE_CRASH_LOCATION);
                 break;
             case "T": //Move Player to the Tree line
-                MapControl.movePlayer("Treeline");
+                MapControl.movePlayer(MapControl.TREELINE_LOCATION);
                 break;
             case "O": //move player to the ocean
-                MapControl.movePlayer("Ocean");
+                MapControl.movePlayer(MapControl.OCEAN_LOCATION);
                 break;
             case "S": // move player to shelter
-                MapControl.movePlayer("Shelter");
+                MapControl.movePlayer(MapControl.SHELTER_LOCATION);
                 break;
             case "J": //move player to the Jungle
-                MapControl.movePlayer("Jungle");
+                MapControl.movePlayer(MapControl.JUNGLE_LOCATION);
                 break;
             case "L": //move player to the Cliff Tops
-                MapControl.movePlayer("Cliff Tops");
+                MapControl.movePlayer(MapControl.CLIFF_TOPS_LOCATION);
                 break;
             case "A": // Move player to the stream
-                MapControl.movePlayer("Stream");
+                MapControl.movePlayer(MapControl.STREAM_LOCATION);
                 break;
             case "V": // move player to the cave
-                MapControl.movePlayer("Cave");
+                MapControl.movePlayer(MapControl.CAVE_LOCATION);
                 break;
             case "E": // "Stay Where I Am (Exit)"
                 return true;
