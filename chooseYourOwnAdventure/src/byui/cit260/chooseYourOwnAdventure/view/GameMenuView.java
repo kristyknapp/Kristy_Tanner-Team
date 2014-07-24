@@ -53,7 +53,7 @@ public class GameMenuView extends MenuView {
                     break;
                 case "O": // rescue options
                     RescueOptions rescueOptions = new RescueOptions();
-                    rescueOptions.display();
+                    rescueOptions.displayMenu();
                     break;
                 case "P": // sleep
                     SleepView sleepView = new SleepView();

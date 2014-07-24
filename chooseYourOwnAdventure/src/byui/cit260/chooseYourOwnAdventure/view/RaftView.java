@@ -1,11 +1,15 @@
-*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package byui.cit260.chooseYourOwnAdventure.view;
 
+import byui.cit260.chooseYourOwnAdventure.control.PointsControl;
 import byui.cit260.chooseYourOwnAdventure.control.ProgramControl;
+import byui.cit260.chooseYourOwnAdventure.control.RescueControl;
+import byui.cit260.chooseYourOwnAdventure.model.Player;
+import byui.cit260.chooseYourOwnAdventure.model.Resource;
 import java.util.Scanner;
 
 /**
@@ -33,13 +37,22 @@ public abstract class RaftView extends MenuView{
                 + "\n and 18 logs if you have two others with you.                  "
                 + "\n\n-------------------------------------------------------------");
     }
-   public String doAction (String value) {
-            value = value.toUpperCase();
-                switch (String value) {
-                    case "Y":
-                        /*Display RaftControl, get input, display outcome.*/
+
+   public boolean doAction (String value) {
+       RescueControl rc = new RescueControl();
+       PointsControl pc = new PointsControl();
+       Player p = new Player();
+       Resource r = new Resource();
+            
+       value = value.toUpperCase();
+            switch (value) {
+                case "Y":
+                    double raft = rc.calcRandomRescueOutcome(pc.calcTotalPoints(p.getSleepPoints(), p.getHealthPoints()), r.getQuantityInStock(), 1);
+        System.out.println(raft);
+        break;
                     case "N":
-                        /*Return to Game Menu*/
+                        return true;
         }
-    }
-    
+            return true;
+   }
+}
