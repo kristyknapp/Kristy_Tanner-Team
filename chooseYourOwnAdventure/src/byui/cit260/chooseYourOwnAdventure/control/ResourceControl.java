@@ -21,6 +21,11 @@ public class ResourceControl {
     
     //In Current Location, get Resources
     //If Resource from Radio Selected, Display Message
+    
+       public static void allResources(Resource description) {
+           GameControl.getSortedResources();
+           
+       }
 
        public boolean addResource(int resourceType) {
 
@@ -50,6 +55,7 @@ public class ResourceControl {
             
 
     }
+       
     
     public static Resource findResource(Resource[] resources, String description) {
 

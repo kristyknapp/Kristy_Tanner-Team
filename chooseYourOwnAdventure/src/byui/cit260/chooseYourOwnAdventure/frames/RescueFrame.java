@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package byui.cit260.chooseYourOwnAdventure.frames;
 
 import byui.cit260.chooseYourOwnAdventure.control.RescueControl;
@@ -15,11 +14,18 @@ import chooseyourownadventure.ChooseYourOwnAdventure;
  */
 public class RescueFrame extends javax.swing.JFrame {
 
+    GameMenuFrame gameMenuFrame;
+
     /**
      * Creates new form RescueOptionsFrame
      */
     public RescueFrame() {
         initComponents();
+    }
+
+    public RescueFrame(GameMenuFrame gameMenuFrame) {
+        this();
+        this.gameMenuFrame = gameMenuFrame;
     }
 
     /**
@@ -68,6 +74,11 @@ public class RescueFrame extends javax.swing.JFrame {
         jbPlane.setActionCommand("Plane");
 
         jbBack.setText("Back");
+        jbBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbBackActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Costs 10 Health Points");
 
@@ -152,35 +163,42 @@ public class RescueFrame extends javax.swing.JFrame {
     private void jbRaftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRaftActionPerformed
 
     }//GEN-LAST:event_jbRaftActionPerformed
-    
+
+    private void jbBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBackActionPerformed
+        gameMenuFrame.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jbBackActionPerformed
+
     /*Set button to use RescueControl to generate random rescue outcome*/
-    private void jbFireActionPerformed(java.awt.event.ActionEvent evt) {  
+    private void jbFireActionPerformed(java.awt.event.ActionEvent evt) {
         RescueControl fire = new RescueControl();
         Fire.setVisible(true);
-        
+
         this.setVisible(false);
     }
-    
+
     /*Set button to use RescueControl to generate random rescue outcome*/
-    private void jbMessageActionPerformed(java.awt.event.ActionEvent evt) {                                               RescueControl rescueControl = new RescueControl();
-        rescueControl.setVisible(true);
-        
-        this.setVisible(false);
-    }
-    
-    /*Set button to use RescueControl to generate random rescue outcome*/
-    private void jbCallActionPerformed(java.awt.event.ActionEvent evt) {                                       
+    private void jbMessageActionPerformed(java.awt.event.ActionEvent evt) {
         RescueControl rescueControl = new RescueControl();
         rescueControl.setVisible(true);
-        
+
         this.setVisible(false);
     }
-    
+
     /*Set button to use RescueControl to generate random rescue outcome*/
-    private void jbQuitActionPerformed(java.awt.event.ActionEvent evt) {                                       
+    private void jbCallActionPerformed(java.awt.event.ActionEvent evt) {
+        RescueControl rescueControl = new RescueControl();
+        rescueControl.setVisible(true);
+
+        this.setVisible(false);
+    }
+
+    /*Set button to use RescueControl to generate random rescue outcome*/
+    private void jbQuitActionPerformed(java.awt.event.ActionEvent evt) {
         ChooseYourOwnAdventure.getGameMenuFrame().setVisible(true);
         this.setVisible(false);
     }
+
     /**
      * @param args the command line arguments
      */

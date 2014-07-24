@@ -10,6 +10,7 @@ import byui.cit260.chooseYourOwnAdventure.control.ResourceControl;
 import byui.cit260.chooseYourOwnAdventure.model.Location;
 import byui.cit260.chooseYourOwnAdventure.model.Resource;
 import chooseyourownadventure.ChooseYourOwnAdventure;
+import java.awt.Point;
 import javax.swing.ButtonModel;
 
 /**
@@ -55,6 +56,8 @@ public class CollectResourcesFrame extends javax.swing.JFrame {
         jrbFood = new javax.swing.JRadioButton();
         jrbLogs = new javax.swing.JRadioButton();
         jlTotalResources = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 255, 204));
@@ -97,6 +100,15 @@ public class CollectResourcesFrame extends javax.swing.JFrame {
 
         jtextareaResources.setColumns(20);
         jtextareaResources.setRows(5);
+        jtextareaResources.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jtextareaResourcesAncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
         jScrollPane1.setViewportView(jtextareaResources);
 
         jLabel1.setFont(new java.awt.Font("Eurostile", 1, 36)); // NOI18N
@@ -140,84 +152,96 @@ public class CollectResourcesFrame extends javax.swing.JFrame {
         jlTotalResources.setForeground(new java.awt.Color(255, 255, 255));
         jlTotalResources.setText("Total Resources");
         jlTotalResources.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 jlTotalResourcesAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
             }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
         });
+
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Available resources in your location are displayed below.");
+
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Description       Required         In Stock");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(151, 151, 151))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addGap(28, 28, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jlTotalResources, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jrbRocks)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jrbLogs)
-                                    .addComponent(jrbWater))
-                                .addGap(50, 50, 50)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jrbFood)
-                                    .addComponent(jrbVines)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jrbSleep)
-                                        .addGap(1, 1, 1)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
-                        .addComponent(jbSelectResource)
-                        .addGap(50, 50, 50)
-                        .addComponent(jbExit, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(80, 80, 80))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 506, Short.MAX_VALUE)
-                            .addComponent(jlTotalResources, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                                .addGap(56, 56, 56)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(93, 93, 93)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jrbWater)
+                            .addComponent(jrbRocks)
+                            .addComponent(jrbVines)
+                            .addComponent(jrbFood)
+                            .addComponent(jrbSleep)
+                            .addComponent(jrbLogs)
+                            .addComponent(jbSelectResource)
+                            .addComponent(jbExit, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addGap(21, 21, 21)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(36, 36, 36)
+                .addComponent(jLabel2)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jrbLogs)
-                            .addComponent(jrbVines))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jrbFood)
-                            .addComponent(jrbWater))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jrbRocks)
-                            .addComponent(jrbSleep)))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jrbLogs)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jrbWater)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jrbRocks)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jrbVines)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jrbFood)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jrbSleep)
+                        .addGap(28, 28, 28)
                         .addComponent(jbSelectResource)
-                        .addComponent(jbExit)))
-                .addGap(44, 44, 44)
+                        .addGap(18, 18, 18)
+                        .addComponent(jbExit)
+                        .addGap(40, 40, 40))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)))
                 .addComponent(jlTotalResources)
-                .addGap(41, 41, 41))
+                .addGap(46, 46, 46))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -236,11 +260,6 @@ public class CollectResourcesFrame extends javax.swing.JFrame {
         Resource resource = GameControl.getGame().getResources()[GameControl.WATER];
         String description = resource.getDescription();
 
-        //Search Resource List Function
-        if (resource.equals(description)) {
-            this.jtextareaResources.setText("The resource " + description + " was found in your location.");
-        } else {
-            this.jtextareaResources.setText("The resource " + description + " was not found in your location"); }
 
     }//GEN-LAST:event_jrbWaterActionPerformed
 
@@ -253,11 +272,7 @@ public class CollectResourcesFrame extends javax.swing.JFrame {
         Resource resource = GameControl.getGame().getResources()[GameControl.VINES];
         String description = resource.getDescription();
 
-        //Search Resource List Function
-        if (resource.equals(description)) {
-            this.jtextareaResources.setText("The resource " + description + " was found in your location.");
-        } else {
-            this.jtextareaResources.setText("The resource " + description + " was not found in your location"); }
+
     }//GEN-LAST:event_jrbVinesActionPerformed
 
     private void jbExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbExitActionPerformed
@@ -274,43 +289,27 @@ public class CollectResourcesFrame extends javax.swing.JFrame {
         Resource resource = GameControl.getGame().getResources()[GameControl.FOOD];
         String description = resource.getDescription();
 
-        //Search Resource List Function
-        if (resource.equals(description)) {
-            this.jtextareaResources.setText("The resource " + description + " was found in your location.");
-        } else {
-            this.jtextareaResources.setText("The resource " + description + " was not found in your location"); }
     }//GEN-LAST:event_jrbFoodActionPerformed
 
     private void jrbLogsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbLogsActionPerformed
         //get current location
-        Location location = ChooseYourOwnAdventure.getLocation();
-
-        /*Get resources in Location
-         Search resource list for Water */
+        ChooseYourOwnAdventure.getPlayer().getLocation();
+        //search list of resources in location 
+        //search for survivors in that location
         Resource resource = GameControl.getGame().getResources()[GameControl.LOGS];
-        String description = resource.getDescription();
 
-        //Search Resource List Function
-        if (resource.equals(description)) {
-            this.jtextareaResources.setText("The resource " + description + " was found in your location.");
-        } else {
-            this.jtextareaResources.setText("The resource " + description + " was not found in your location"); }
+        
     }//GEN-LAST:event_jrbLogsActionPerformed
 
     private void jrbRocksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbRocksActionPerformed
         //get current location
-        Location location = ChooseYourOwnAdventure.getLocation();
+        Point currentLocation = ChooseYourOwnAdventure.getPlayer().getLocation();
 
         /*Get resources in Location
          Search resource list for Water */
         Resource resource = GameControl.getGame().getResources()[GameControl.ROCKS];
         String description = resource.getDescription();
 
-        //Search Resource List Function
-        if (resource.equals(description)) {
-            this.jtextareaResources.setText("The resource " + description + " was found in your location.");
-        } else {
-            this.jtextareaResources.setText("The resource " + description + " was not found in your location"); }
     }//GEN-LAST:event_jrbRocksActionPerformed
 
     private void jrbSleepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbSleepActionPerformed
@@ -322,13 +321,6 @@ public class CollectResourcesFrame extends javax.swing.JFrame {
         Resource resource = GameControl.getGame().getResources()[GameControl.SLEEP];
         String description = resource.getDescription();
 
-        //Search Resource List Function
-        if (resource.equals(description)) {
-            this.jtextareaResources.setText("The resource " + description + " was found in your location.");
-            
-        } else {
-            this.jtextareaResources.setText("The resource " + description + " was not found in your location"); 
-        }
         
     }//GEN-LAST:event_jrbSleepActionPerformed
 
@@ -338,17 +330,24 @@ public class CollectResourcesFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jlTotalResourcesAncestorAdded
 
     private void jbSelectResourceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSelectResourceActionPerformed
-        Resource resource = GameControl.getGame().getResources()[GameControl.NUMBER_OF_RESOURCE_ITEMS];
-        String description = resource.getDescription();
-
-        //add resources to Player, Increase Total count
-//        if (this.jrbFood.isSelected()) {
-//            ResourceControl.addResourceToPlayer("Food");
-//        }
-        //ButtonModel selection = this.bgResources.getSelection();
-        //if (selection)
+        
         
     }//GEN-LAST:event_jbSelectResourceActionPerformed
+
+    private void jtextareaResourcesAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jtextareaResourcesAncestorAdded
+        Resource[] resources = GameControl.getSortedResources();
+         
+         
+         for (Resource collectResources : resources) {
+             // DISPLAY the description, the required amount and amount in stock
+             
+             this.jtextareaResources.append("\n" + collectResources.getDescription() + "\t" +
+                                + collectResources.getRequiredAmount() + "\t" +
+                                + collectResources.getQuantityInStock());
+                     
+        }
+      
+    }//GEN-LAST:event_jtextareaResourcesAncestorAdded
 
     /**
      * @param args the command line arguments
@@ -388,6 +387,8 @@ public class CollectResourcesFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup bgResources;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jbExit;
