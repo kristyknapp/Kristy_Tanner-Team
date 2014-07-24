@@ -193,8 +193,8 @@ public class GameMenuFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jbChangeLocationActionPerformed
 
     private void jbRescueOptionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRescueOptionsActionPerformed
-        RescueFrame rescueFrame = new RescueFrame(this);
-        rescueFrame.setVisible(true);
+        RescueOptionsFrame rescueOptionsFrame = new RescueOptionsFrame(this);
+        rescueOptionsFrame.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jbRescueOptionsActionPerformed
 

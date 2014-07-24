@@ -15,11 +15,17 @@ import chooseyourownadventure.ChooseYourOwnAdventure;
  */
 public class RescueOptionsFrame extends javax.swing.JFrame {
 
+    GameMenuFrame gameMenuFrame;
     /**
      * Creates new form RescueOptionsFrame
      */
     public RescueOptionsFrame() {
         initComponents();
+    }
+
+    RescueOptionsFrame(GameMenuFrame gameMenuFrame) {
+        this();
+        this.gameMenuFrame = gameMenuFrame;
     }
 
     /**
@@ -68,6 +74,11 @@ public class RescueOptionsFrame extends javax.swing.JFrame {
         jbPlane.setActionCommand("Plane");
 
         jbBack.setText("Back");
+        jbBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbBackActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Costs 10 Health Points");
 
@@ -152,6 +163,10 @@ public class RescueOptionsFrame extends javax.swing.JFrame {
     private void jbRaftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbRaftActionPerformed
 
     }//GEN-LAST:event_jbRaftActionPerformed
+
+    private void jbBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbBackActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbBackActionPerformed
     
     /*Set button to use RescueControl to generate random rescue outcome*/
     private void jbFireActionPerformed(java.awt.event.ActionEvent evt) {  

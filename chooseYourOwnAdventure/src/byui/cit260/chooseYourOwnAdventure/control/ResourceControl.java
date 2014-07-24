@@ -55,6 +55,7 @@ public class ResourceControl {
             
 
     }
+
        
     
     public static Resource findResource(Resource[] resources, String description) {
@@ -67,7 +68,7 @@ public class ResourceControl {
         return null;
     }
 
-    public static boolean addResourceToPlayer(String description) throws ResourceControlException {
+    public static boolean addResourceToPlayer(String description) {
 
         Location location = ChooseYourOwnAdventure.getLocation();
 

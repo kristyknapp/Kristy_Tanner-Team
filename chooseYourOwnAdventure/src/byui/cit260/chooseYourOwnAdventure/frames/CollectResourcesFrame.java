@@ -101,12 +101,12 @@ public class CollectResourcesFrame extends javax.swing.JFrame {
         jtextareaResources.setColumns(20);
         jtextareaResources.setRows(5);
         jtextareaResources.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 jtextareaResourcesAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         jScrollPane1.setViewportView(jtextareaResources);
@@ -152,12 +152,12 @@ public class CollectResourcesFrame extends javax.swing.JFrame {
         jlTotalResources.setForeground(new java.awt.Color(255, 255, 255));
         jlTotalResources.setText("Total Resources");
         jlTotalResources.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 jlTotalResourcesAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
 
@@ -293,12 +293,12 @@ public class CollectResourcesFrame extends javax.swing.JFrame {
 
     private void jrbLogsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbLogsActionPerformed
         //get current location
-        ChooseYourOwnAdventure.getPlayer().getLocation();
-        //search list of resources in location 
-        //search for survivors in that location
-        Resource resource = GameControl.getGame().getResources()[GameControl.LOGS];
+        Point currentLocation = ChooseYourOwnAdventure.getPlayer().getLocation();
 
-        
+        /*Get resources in Location
+         Search resource list for Water */
+        Resource resource = GameControl.getGame().getResources()[GameControl.LOGS];
+        String description = resource.getDescription();
     }//GEN-LAST:event_jrbLogsActionPerformed
 
     private void jrbRocksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbRocksActionPerformed
@@ -320,17 +320,14 @@ public class CollectResourcesFrame extends javax.swing.JFrame {
          Search resource list for Water */
         Resource resource = GameControl.getGame().getResources()[GameControl.SLEEP];
         String description = resource.getDescription();
-
         
     }//GEN-LAST:event_jrbSleepActionPerformed
 
-    private void jlTotalResourcesAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jlTotalResourcesAncestorAdded
-        // total resources collected
-        
-    }//GEN-LAST:event_jlTotalResourcesAncestorAdded
-
     private void jbSelectResourceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSelectResourceActionPerformed
         
+        
+        ButtonModel selection = this.bgResources.getSelection();
+        ResourceControl.addResourceToPlayer(null);
         
     }//GEN-LAST:event_jbSelectResourceActionPerformed
 
@@ -348,6 +345,11 @@ public class CollectResourcesFrame extends javax.swing.JFrame {
         }
       
     }//GEN-LAST:event_jtextareaResourcesAncestorAdded
+
+    private void jlTotalResourcesAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jlTotalResourcesAncestorAdded
+        int total = GameControl.getTotalPlayerResources();
+        this.jlTotalResources.setText("Total Resources: " + total);
+    }//GEN-LAST:event_jlTotalResourcesAncestorAdded
 
     /**
      * @param args the command line arguments
